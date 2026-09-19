@@ -4,7 +4,6 @@ public class WaveServiceLocator : ServiceLocatorPersistent<IWaveService> { }
 
 public interface IWaveService
 {
-    public float EvaluateHeight(Vector2 worldPos);
+    public void EvaluateWaves(Vector2 worldPos, float amplitudeMult, out float out_height, out Vector3 out_normal);
 
-    public Vector3 EvaluateNormal(Vector3 worldPos);
 }
