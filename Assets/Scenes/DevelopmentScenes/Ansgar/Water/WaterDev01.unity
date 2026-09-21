@@ -200,6 +200,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &639570
@@ -283,6 +284,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2797717
@@ -366,6 +368,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2801589
@@ -582,6 +585,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &5428397
@@ -766,6 +770,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &5670715
@@ -813,7 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151a7206e0de4e0449cd1e868f1df1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleWindService
-  Strength: 10
+  _strength: 1
 --- !u!114 &5670718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +912,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &8483428
@@ -1022,6 +1028,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &14379968
@@ -1105,6 +1112,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &15033925
@@ -1188,6 +1196,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &15292436
@@ -1303,6 +1312,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &16352125
@@ -1386,6 +1396,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &17502754
@@ -1873,6 +1884,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &21724728
@@ -1956,6 +1968,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &23005407
@@ -2039,6 +2052,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &25043013
@@ -2223,6 +2237,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &25945058
@@ -2306,6 +2321,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &26589860
@@ -3187,6 +3203,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &37534268
@@ -3371,6 +3388,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &39582359
@@ -3454,6 +3472,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &39865369
@@ -3569,6 +3588,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &41163340
@@ -3785,6 +3805,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &42595728
@@ -3868,6 +3889,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &42643232
@@ -4015,6 +4037,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &44787638
@@ -4364,6 +4387,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &48247009
@@ -4548,6 +4572,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &48615356
@@ -4631,6 +4656,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &49730434
@@ -4815,6 +4841,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &50285538
@@ -5265,6 +5292,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &56638812
@@ -5380,6 +5408,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &62588283
@@ -5463,6 +5492,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &66578621
@@ -5578,6 +5608,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &68166870
@@ -5693,6 +5724,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &71947298
@@ -5808,6 +5840,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &72706715
@@ -6024,6 +6057,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &73548025
@@ -6107,6 +6141,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &74293063
@@ -6323,6 +6358,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &75699450
@@ -6406,6 +6442,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &75791138
@@ -6489,6 +6526,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &76064906
@@ -6572,6 +6610,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &76650306
@@ -6655,6 +6694,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &77688637
@@ -6839,6 +6879,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &78081724
@@ -6922,6 +6963,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &83213385
@@ -7037,6 +7079,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &83514952
@@ -7120,6 +7163,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &83908971
@@ -7368,6 +7412,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &88387499
@@ -7552,6 +7597,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &90532526
@@ -7667,6 +7713,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &91391841
@@ -7750,6 +7797,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &92231369
@@ -8099,6 +8147,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &97962039
@@ -8384,6 +8433,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &101810941
@@ -8467,6 +8517,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &102178790
@@ -8550,6 +8601,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &104267468
@@ -8697,6 +8749,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &105995333
@@ -8780,6 +8833,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &106512200
@@ -8863,6 +8917,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &107438653
@@ -9079,6 +9134,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &110848941
@@ -9295,6 +9351,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &115486745
@@ -9772,6 +9829,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &122729806
@@ -9855,6 +9913,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &125343091
@@ -9970,6 +10029,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &126092209
@@ -10053,6 +10113,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &126367772
@@ -10269,6 +10330,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &127852085
@@ -10416,6 +10478,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &129619346
@@ -10531,6 +10594,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &132576814
@@ -10848,6 +10912,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &134672969
@@ -10995,6 +11060,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &139808877
@@ -11142,6 +11208,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &141216347
@@ -11427,6 +11494,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &146246339
@@ -11739,6 +11807,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &152271921
@@ -11822,6 +11891,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &152435087
@@ -12006,6 +12076,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &156675625
@@ -12089,6 +12160,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &157332253
@@ -12603,6 +12675,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &164242631 stripped
@@ -12819,6 +12892,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &164896018
@@ -12902,6 +12976,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &165862872
@@ -13219,6 +13294,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &172446087
@@ -13302,6 +13378,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &173906860
@@ -13587,6 +13664,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &180111233
@@ -13771,6 +13849,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &182286112
@@ -14285,6 +14364,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &190605291
@@ -14501,6 +14581,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &197620409
@@ -14584,6 +14665,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &197729374
@@ -15204,6 +15286,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &202587920
@@ -15287,6 +15370,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &202790365
@@ -15370,6 +15454,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &203578606
@@ -15655,6 +15740,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &205600482
@@ -15940,6 +16026,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &207224595
@@ -16023,6 +16110,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &207311064
@@ -16106,6 +16194,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &208565658
@@ -16221,6 +16310,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &209067424
@@ -16304,6 +16394,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &209608659
@@ -16621,6 +16712,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &213871666
@@ -16805,6 +16897,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &214512581
@@ -16888,6 +16981,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &217860799
@@ -16971,6 +17065,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &217934543
@@ -17155,6 +17250,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &219055804
@@ -17807,6 +17903,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &225225418
@@ -17890,6 +17987,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &225266307
@@ -18005,6 +18103,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &226782426
@@ -18088,6 +18187,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &226912440
@@ -18272,6 +18372,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &230537117
@@ -19052,6 +19153,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &242260034
@@ -19135,6 +19237,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &242412735
@@ -19452,6 +19555,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &246574872
@@ -19769,6 +19873,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &251443366
@@ -20054,6 +20159,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &254910247
@@ -20137,6 +20243,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &254989018
@@ -20252,6 +20359,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &255461497
@@ -20335,6 +20443,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &256615551
@@ -20418,6 +20527,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &256769077
@@ -20597,6 +20707,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &259078646
@@ -20680,6 +20791,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &259096286
@@ -20864,6 +20976,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &261186881
@@ -21011,6 +21124,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &264974184
@@ -21094,6 +21208,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &265720102
@@ -21177,6 +21292,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &266219126
@@ -21292,6 +21408,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &269794396
@@ -21375,6 +21492,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &271486391
@@ -22362,6 +22480,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &279136346
@@ -22578,6 +22697,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &280303028
@@ -22826,6 +22946,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &283206476
@@ -22941,6 +23062,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &283940264
@@ -23896,6 +24018,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &291255387
@@ -24144,6 +24267,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &296487044
@@ -24227,6 +24351,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &297076531
@@ -24310,6 +24435,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &298245837
@@ -24558,6 +24684,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &305788967
@@ -25173,6 +25300,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &309787059
@@ -25256,6 +25384,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &309830797
@@ -25339,6 +25468,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &311217276
@@ -25986,6 +26116,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &317380377
@@ -26436,6 +26567,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &321831157
@@ -26519,6 +26651,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &321932223
@@ -26634,6 +26767,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &323471913
@@ -26717,6 +26851,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &324801474
@@ -27398,6 +27533,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &336655166
@@ -27481,6 +27617,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &336922712
@@ -27665,6 +27802,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &337785702
@@ -27748,6 +27886,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &338565921
@@ -27932,6 +28071,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &340416563
@@ -28015,6 +28155,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &341249870
@@ -28098,6 +28239,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &341726955
@@ -28213,6 +28355,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &346774354
@@ -28296,6 +28439,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &347419768
@@ -28741,6 +28885,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &357205944
@@ -28824,6 +28969,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &357361727
@@ -29040,6 +29186,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &363463165
@@ -29155,6 +29302,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &364307980
@@ -29339,6 +29487,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &366207234
@@ -29826,6 +29975,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &370364106
@@ -30010,6 +30160,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &375611803
@@ -30125,6 +30276,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &377083112
@@ -30208,6 +30360,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &378673418
@@ -30291,6 +30444,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &378956305
@@ -30603,6 +30757,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &384855371
@@ -30851,6 +31006,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &389817272
@@ -31461,6 +31617,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &400705437
@@ -31645,6 +31802,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &401583256
@@ -31728,6 +31886,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &403312395
@@ -31843,6 +32002,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &404659429
@@ -31926,6 +32086,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &404782257
@@ -32009,6 +32170,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &405065785
@@ -32422,6 +32584,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &408831384
@@ -32505,6 +32668,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &410575008
@@ -32620,6 +32784,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &413812249
@@ -32703,6 +32868,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &413997770
@@ -32988,6 +33154,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &417247646
@@ -33172,6 +33339,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &418156696
@@ -33388,6 +33556,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &419315471
@@ -34232,6 +34401,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &425259253
@@ -34549,6 +34719,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &427630032
@@ -34664,6 +34835,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &430361310
@@ -35481,6 +35653,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &445741670
@@ -35564,6 +35737,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &445792657
@@ -35780,6 +35954,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &446211926
@@ -35863,6 +36038,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &446470595
@@ -35946,6 +36122,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &450151824
@@ -36029,6 +36206,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &451088494
@@ -36112,6 +36290,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &451874150
@@ -36955,6 +37134,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &459972685
@@ -37038,6 +37218,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &460555086
@@ -37121,6 +37302,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &462558058
@@ -37236,6 +37418,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &465980631
@@ -37319,6 +37502,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &466138501
@@ -37402,6 +37586,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &466819682
@@ -37953,6 +38138,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &471942078
@@ -38036,6 +38222,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &472456143
@@ -38220,6 +38407,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &476432470
@@ -38303,6 +38491,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &480381977
@@ -38780,6 +38969,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &489117314
@@ -39363,6 +39553,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &494791593
@@ -39510,6 +39701,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &498622624
@@ -39689,6 +39881,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &503697150
@@ -40038,6 +40231,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &509706210
@@ -40222,6 +40416,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &511211524
@@ -40470,6 +40665,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &514460181
@@ -40755,6 +40951,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &516094212
@@ -40971,6 +41168,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &518597308
@@ -41054,6 +41252,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &519264272
@@ -41169,6 +41368,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &519978392
@@ -41417,6 +41617,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &522272719
@@ -41596,6 +41797,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &528152958
@@ -41812,6 +42014,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &533350264
@@ -42395,6 +42598,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &539846417
@@ -42744,6 +42948,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &545005853
@@ -43460,6 +43665,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &550997861
@@ -43644,6 +43850,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &553267914
@@ -43727,6 +43934,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &553416330
@@ -43911,6 +44119,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &555361477
@@ -43994,6 +44203,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &556221013
@@ -44210,6 +44420,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &559285434
@@ -44293,6 +44504,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &559344801
@@ -44610,6 +44822,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &561517256
@@ -44858,6 +45071,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &567223108
@@ -45409,6 +45623,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &574277665
@@ -45492,6 +45707,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &574382960
@@ -45575,6 +45791,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &574859794
@@ -45658,6 +45875,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &575781268
@@ -45805,6 +46023,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &576831579
@@ -45888,6 +46107,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &577203856
@@ -46104,6 +46324,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &579703578
@@ -46554,6 +46775,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &586528973
@@ -46871,6 +47093,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &591133958
@@ -46954,6 +47177,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &591758294
@@ -47138,6 +47362,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &593707810
@@ -47285,6 +47510,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &596364135
@@ -47400,6 +47626,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &596789358
@@ -48415,6 +48642,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &600524596
@@ -48663,6 +48891,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &604776279
@@ -48847,6 +49076,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &606618152
@@ -48930,6 +49160,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &607045896
@@ -49210,6 +49441,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &611231755
@@ -49293,6 +49525,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &612108420
@@ -49509,6 +49742,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &616037666
@@ -49592,6 +49826,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &619765874
@@ -49877,6 +50112,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &623449046
@@ -50226,6 +50462,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &626735128
@@ -50309,6 +50546,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &627567788
@@ -50392,6 +50630,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &628135713
@@ -50507,6 +50746,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &630128712
@@ -50755,6 +50995,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &634357026
@@ -51136,6 +51377,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &636000822
@@ -51219,6 +51461,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &636567098
@@ -51308,8 +51551,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636567098}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3646235, y: 0, z: 0, w: 0.931155}
-  m_LocalPosition: {x: 0, y: 46, z: -40}
+  m_LocalRotation: {x: 0.4034502, y: 0, z: 0, w: 0.91500163}
+  m_LocalPosition: {x: 3.54, y: 68.4, z: -45.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51876,6 +52119,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &639637623
@@ -52060,6 +52304,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &642101159
@@ -52244,6 +52489,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &643307575
@@ -52428,6 +52674,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &643587022
@@ -52543,6 +52790,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &647249799
@@ -52626,6 +52874,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &647861857
@@ -52741,6 +52990,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &648955744
@@ -52824,6 +53074,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &650249071
@@ -52907,6 +53158,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &650305324
@@ -53091,6 +53343,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &653689388
@@ -53376,6 +53629,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &654854649
@@ -53459,6 +53713,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &656441537
@@ -53574,6 +53829,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &658313625
@@ -54214,6 +54470,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &661375498
@@ -54632,6 +54889,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &667204908
@@ -54715,6 +54973,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &667382243
@@ -54798,6 +55057,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &667411420
@@ -54966,6 +55226,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!4 &668797482
@@ -55065,6 +55326,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &672306845
@@ -55148,6 +55410,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &672792914
@@ -55231,6 +55494,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &673581461
@@ -55314,6 +55578,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &675466883
@@ -55461,6 +55726,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &676620843
@@ -55576,6 +55842,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &677952957
@@ -55691,6 +55958,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &680592138
@@ -55875,6 +56143,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &681666682
@@ -56293,6 +56562,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &685540482
@@ -56674,6 +56944,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &688383022
@@ -56757,6 +57028,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &688893831
@@ -57037,6 +57309,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &695476017
@@ -57386,6 +57659,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &697239797
@@ -57735,6 +58009,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &701364165
@@ -58020,6 +58295,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &703774970
@@ -58598,6 +58874,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &720465636
@@ -58713,6 +58990,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &724251615
@@ -58929,6 +59207,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &726311840
@@ -59113,6 +59392,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &732264676
@@ -59196,6 +59476,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &732317956
@@ -59604,6 +59885,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &740456000
@@ -59687,6 +59969,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &740775669
@@ -59770,6 +60053,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &740940778
@@ -60119,6 +60403,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &744960786
@@ -60202,6 +60487,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &745562101
@@ -60519,6 +60805,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &749524588
@@ -60799,6 +61086,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &754487044
@@ -61483,6 +61771,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &763759920
@@ -61598,6 +61887,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &764792316
@@ -61782,6 +62072,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &765526809
@@ -62168,6 +62459,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &768259663
@@ -62251,6 +62543,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &770453548
@@ -62398,6 +62691,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &774017403
@@ -62646,6 +62940,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &775563613
@@ -62729,6 +63024,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &777695624
@@ -62844,6 +63140,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &781305851
@@ -63331,6 +63628,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &786252631
@@ -63515,6 +63813,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &786922497
@@ -63598,6 +63897,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &787702960
@@ -63681,6 +63981,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &788491590
@@ -63998,6 +64299,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &792030898
@@ -64214,6 +64516,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &796188269
@@ -64297,6 +64600,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &797182905
@@ -64646,6 +64950,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &802198517
@@ -64963,6 +65268,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &806292645
@@ -65546,6 +65852,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &812456868
@@ -65661,6 +65968,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &813467746
@@ -65808,6 +66116,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &815580511
@@ -66492,6 +66801,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &823619413
@@ -66708,6 +67018,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &827783071
@@ -66791,6 +67102,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &828108952
@@ -66975,6 +67287,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &829578138
@@ -67260,6 +67573,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &832102558
@@ -67439,6 +67753,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &833979813
@@ -67554,6 +67869,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &835717455
@@ -67637,6 +67953,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &836262183
@@ -68055,6 +68372,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &843319135
@@ -68335,6 +68653,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &847869261
@@ -68418,6 +68737,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &851754506
@@ -68501,6 +68821,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &852179516
@@ -68616,6 +68937,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &854496796
@@ -69130,6 +69452,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &861116317
@@ -69213,6 +69536,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &862540907
@@ -69296,6 +69620,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &863414116
@@ -69672,6 +69997,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &866923513
@@ -69957,6 +70283,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &872555985
@@ -70040,6 +70367,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &873323269
@@ -70256,6 +70584,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &878216768
@@ -70371,6 +70700,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &885488319
@@ -70454,6 +70784,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &888235278
@@ -70670,6 +71001,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &889521061
@@ -70886,6 +71218,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &891686473
@@ -71469,6 +71802,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &895436586
@@ -71584,6 +71918,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &896332973
@@ -72103,6 +72438,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &902630922
@@ -72186,6 +72522,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &903285703
@@ -72503,6 +72840,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &907700767
@@ -72820,6 +73158,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &910818654
@@ -73270,6 +73609,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &919961225
@@ -73454,6 +73794,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &920686227
@@ -73537,6 +73878,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &920691580
@@ -73620,6 +73962,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &921461215
@@ -73900,6 +74243,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &927829515
@@ -73983,6 +74327,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &928255013
@@ -74332,6 +74677,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &930347459
@@ -74415,6 +74761,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &930634356
@@ -74663,6 +75010,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &935893308
@@ -74847,6 +75195,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &940735344
@@ -75063,6 +75412,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &942528504
@@ -75784,6 +76134,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &952466484
@@ -75867,6 +76218,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &952562909
@@ -76051,6 +76403,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &954751710
@@ -76235,6 +76588,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &955921070
@@ -76749,6 +77103,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &963143298
@@ -77162,6 +77517,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &966685203
@@ -77245,6 +77601,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &967918723
@@ -77956,6 +78313,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &981884857
@@ -78236,6 +78594,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &987123945
@@ -78782,6 +79141,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1002727770
@@ -79067,6 +79427,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1004783521
@@ -79214,6 +79575,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1008472297
@@ -79329,6 +79691,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1010041125
@@ -79412,6 +79775,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1010207756
@@ -79628,6 +79992,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1014366074
@@ -80046,6 +80411,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1018013369
@@ -80129,6 +80495,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1018071333
@@ -80212,6 +80579,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1018275566
@@ -80396,6 +80764,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1020059358
@@ -81048,6 +81417,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1030757011
@@ -81365,6 +81735,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1032714528
@@ -81512,6 +81883,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1036690918
@@ -81925,6 +82297,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1041824166
@@ -82008,6 +82381,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1042623261
@@ -82091,6 +82465,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1042861994
@@ -82275,6 +82650,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1043289050
@@ -82555,6 +82931,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1051673053
@@ -82638,6 +83015,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1051954877
@@ -82721,6 +83099,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1052352182
@@ -82905,6 +83284,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1052966634
@@ -83658,6 +84038,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1058457766
@@ -84076,6 +84457,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1062967607
@@ -84489,6 +84871,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1068746852
@@ -84572,6 +84955,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1071841244
@@ -85251,6 +85635,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1087128511
@@ -85334,6 +85719,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1087818836
@@ -85449,6 +85835,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1088786332
@@ -85734,6 +86121,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1089684720
@@ -85817,6 +86205,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1091408309
@@ -86134,6 +86523,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1095458062
@@ -86318,6 +86708,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1096863329
@@ -86502,6 +86893,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1097973924
@@ -86718,6 +87110,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1102523087
@@ -86865,6 +87258,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1105783435
@@ -87081,6 +87475,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1107361696
@@ -87398,6 +87793,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1110358501
@@ -87646,6 +88042,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1117989925
@@ -87729,6 +88126,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1118393194
@@ -87945,6 +88343,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1122300025
@@ -88193,6 +88592,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1128798023
@@ -88409,6 +88809,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1129661028
@@ -88593,6 +88994,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1130196421
@@ -88841,6 +89243,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1133748443
@@ -88956,6 +89359,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1134666034
@@ -89369,6 +89773,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1137616313
@@ -89452,6 +89857,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1137905515
@@ -89700,6 +90106,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1140413940
@@ -89783,6 +90190,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1140839875
@@ -89866,6 +90274,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1142096308
@@ -90050,6 +90459,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1147710438
@@ -90133,6 +90543,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1148889674
@@ -90465,6 +90876,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1155412649
@@ -90649,6 +91061,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1156935299
@@ -90833,6 +91246,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1160559477
@@ -90916,6 +91330,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1162569006
@@ -90999,6 +91414,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1162906861
@@ -91114,6 +91530,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1163327619
@@ -91197,6 +91614,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1165496719
@@ -91514,6 +91932,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1169261305
@@ -91597,6 +92016,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1169375174
@@ -91680,6 +92100,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1173625841
@@ -91763,6 +92184,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1175188305
@@ -92181,6 +92603,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1183478708
@@ -92296,6 +92719,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1184927007
@@ -92379,6 +92803,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1186095909
@@ -92462,6 +92887,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1186746131
@@ -93338,6 +93764,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1204717441
@@ -93554,6 +93981,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1209113831
@@ -93637,6 +94065,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1209938002
@@ -93885,6 +94314,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1215547925
@@ -94032,6 +94462,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1215929129
@@ -94115,6 +94546,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1216409653
@@ -94299,6 +94731,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1222996374
@@ -94414,6 +94847,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1225126523
@@ -94497,6 +94931,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1225327413
@@ -94814,6 +95249,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1227822829
@@ -94993,6 +95429,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1231140694
@@ -95475,6 +95912,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1239200084
@@ -95590,6 +96028,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1239822964
@@ -95806,6 +96245,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1245365953
@@ -96192,6 +96632,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1251885776
@@ -96275,6 +96716,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1253988173
@@ -96358,6 +96800,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1254542246
@@ -96473,6 +96916,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1257688166
@@ -96652,6 +97096,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1261187564
@@ -96767,6 +97212,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1264904452
@@ -96850,6 +97296,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1265156369
@@ -97268,6 +97715,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1265885830
@@ -97383,6 +97831,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1269587566
@@ -97567,6 +98016,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1271487787
@@ -97985,6 +98435,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1275156017
@@ -98169,6 +98620,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1275302268
@@ -98353,6 +98805,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1278784168
@@ -98569,6 +99022,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1280096801
@@ -98765,6 +99219,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1281729627
@@ -99114,6 +99569,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1286001346
@@ -99532,6 +99988,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1289302428
@@ -99780,6 +100237,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1291312043
@@ -99895,6 +100353,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1291474903
@@ -99978,6 +100437,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1292229157
@@ -100295,6 +100755,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1300103563
@@ -100479,6 +100940,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1303577428
@@ -100562,6 +101024,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1304713055
@@ -100847,6 +101310,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1306606964
@@ -101265,6 +101729,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1308258802
@@ -101449,6 +101914,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1310430020
@@ -101633,6 +102099,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1311897722
@@ -101748,6 +102215,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1313250678
@@ -101895,6 +102363,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1314316744
@@ -101978,6 +102447,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1314366880
@@ -102226,6 +102696,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1315185854
@@ -102474,6 +102945,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1318443517
@@ -102892,6 +103364,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1323635417
@@ -103172,6 +103645,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1326889630
@@ -103420,6 +103894,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1330306070
@@ -103503,6 +103978,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1331411488
@@ -103586,6 +104062,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1332624828
@@ -103701,6 +104178,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1335162531
@@ -103981,6 +104459,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1338281556
@@ -104096,6 +104575,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1340872505
@@ -104179,6 +104659,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1341897881
@@ -104294,6 +104775,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1344005242
@@ -104611,6 +105093,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1346522904
@@ -104891,6 +105374,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1348605886
@@ -105208,6 +105692,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1351964023
@@ -105291,6 +105776,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1352566749
@@ -105677,6 +106163,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1355734961
@@ -105792,6 +106279,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1356359834
@@ -105907,6 +106395,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1358775345
@@ -106054,6 +106543,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1360943165
@@ -106137,6 +106627,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1363853075
@@ -106449,6 +106940,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1369615103
@@ -106532,6 +107024,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1371784924
@@ -106615,6 +107108,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1375374985
@@ -106698,6 +107192,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1375522895
@@ -106914,6 +107409,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1385833967
@@ -107098,6 +107594,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1386037917
@@ -107484,6 +107981,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1391043767
@@ -107902,6 +108400,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1399364255
@@ -108017,6 +108516,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1401242702
@@ -108201,6 +108701,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1402212871
@@ -108412,6 +108913,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1407960642
@@ -108697,6 +109199,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1409683676
@@ -108780,6 +109283,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1410247449
@@ -108863,6 +109367,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1410287010
@@ -109047,6 +109552,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1410874120
@@ -109231,6 +109737,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1411710152
@@ -109479,6 +109986,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1413132999
@@ -109929,6 +110437,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1419465360
@@ -110549,6 +111058,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1422223397
@@ -110733,6 +111243,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1423148135
@@ -111045,6 +111556,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1428992690
@@ -111527,6 +112039,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1430951318
@@ -111610,6 +112123,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1430952280
@@ -111693,6 +112207,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1432332516
@@ -112478,6 +112993,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1441516170
@@ -112561,6 +113077,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1441699776
@@ -112910,6 +113427,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1447019019
@@ -112993,6 +113511,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1447380715
@@ -113076,6 +113595,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1447790888
@@ -113159,6 +113679,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1447972215
@@ -113242,6 +113763,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1447985395
@@ -113527,6 +114049,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1452083202
@@ -113642,6 +114165,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1452317640
@@ -113725,6 +114249,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1455575685
@@ -113973,6 +114498,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1458194483
@@ -114189,6 +114715,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1459321178
@@ -114336,6 +114863,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1463585822
@@ -114616,6 +115144,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1468434444
@@ -114933,6 +115462,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1472001361
@@ -115117,6 +115647,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1473038501
@@ -115301,6 +115832,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1473888138
@@ -115384,6 +115916,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1474441131
@@ -115568,6 +116101,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1476551333
@@ -115784,6 +116318,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1477568417
@@ -115968,6 +116503,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1479324309
@@ -116849,6 +117385,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1492965149
@@ -117065,6 +117602,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1497814617
@@ -117148,6 +117686,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1498234666
@@ -117231,6 +117770,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1498421214
@@ -117415,6 +117955,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1500007663
@@ -117530,6 +118071,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1502634749
@@ -117613,6 +118155,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1502700661
@@ -117696,6 +118239,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1503128645
@@ -117779,6 +118323,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1503141650
@@ -117926,6 +118471,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1503284382
@@ -118110,6 +118656,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1504116459
@@ -118358,6 +118905,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1507351697
@@ -118574,6 +119122,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1513397519
@@ -118657,6 +119206,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1514974230
@@ -119043,6 +119593,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1516976565
@@ -119126,6 +119677,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1517907451
@@ -119443,6 +119995,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1522595455
@@ -119526,6 +120079,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1522692228
@@ -119609,6 +120163,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1522899868
@@ -119724,6 +120279,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1524701389
@@ -120009,6 +120565,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1525596566
@@ -120193,6 +120750,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1526483475
@@ -120409,6 +120967,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1528593947
@@ -120726,6 +121285,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1529725006
@@ -121075,6 +121635,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1534514476
@@ -121158,6 +121719,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1538668559
@@ -121374,6 +121936,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1539482045
@@ -121717,6 +122280,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1547103893
@@ -121933,6 +122497,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1548505850
@@ -122016,6 +122581,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1550261145
@@ -122099,6 +122665,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1556805875
@@ -122480,6 +123047,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1570042146
@@ -122563,6 +123131,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1570830556
@@ -122747,6 +123316,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1572584806
@@ -122830,6 +123400,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1574021238
@@ -123078,6 +123649,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1578680584
@@ -123193,6 +123765,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1578847047
@@ -123276,6 +123849,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1578913845
@@ -123561,6 +124135,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1581451464
@@ -123644,6 +124219,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1583818623
@@ -123759,6 +124335,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1584082898
@@ -124103,6 +124680,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1587744126
@@ -124186,6 +124764,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1588934759
@@ -124269,6 +124848,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1589690915
@@ -124586,6 +125166,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1595940500
@@ -124770,6 +125351,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1597044946
@@ -124853,6 +125435,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1597616105
@@ -124936,6 +125519,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1602029362
@@ -125120,6 +125704,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1604185132
@@ -125304,6 +125889,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1605753919
@@ -125520,6 +126106,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1606974939
@@ -125667,6 +126254,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1607846799
@@ -126117,6 +126705,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1615588734
@@ -126200,6 +126789,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1615748841
@@ -126517,6 +127107,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1622844077
@@ -126664,6 +127255,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1627071390
@@ -127183,6 +127775,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1630008586
@@ -127289,8 +127882,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630229503}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3646235, y: 0, z: 0, w: 0.931155}
-  m_LocalPosition: {x: 0, y: 46, z: -40}
+  m_LocalRotation: {x: 0.1444618, y: 0, z: 0, w: 0.9895104}
+  m_LocalPosition: {x: 0, y: 21.958353, z: -43.434074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127332,7 +127925,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: 1.5
+        Gain: 2.3
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -127377,7 +127970,7 @@ MonoBehaviour:
   TargetOffset: {x: 0, y: 0, z: 0}
   TrackerSettings:
     BindingMode: 2
-    PositionDamping: {x: 1, y: 10, z: 1}
+    PositionDamping: {x: 2, y: 2, z: 2}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
@@ -127406,7 +127999,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 17.5
+    Value: 0
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -127652,6 +128245,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1631542359
@@ -127836,6 +128430,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1633410896
@@ -127919,6 +128514,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1633686368
@@ -128103,6 +128699,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1636558625
@@ -128186,6 +128783,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1636621265
@@ -128269,6 +128867,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1636763542
@@ -128352,6 +128951,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1637327315
@@ -128733,6 +129333,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1640906881
@@ -128816,6 +129417,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1641279644
@@ -128899,6 +129501,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1643589087
@@ -129014,6 +129617,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1644910782
@@ -129198,6 +129802,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1648488473
@@ -129574,6 +130179,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1654888830
@@ -129657,6 +130263,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1656549374
@@ -129740,6 +130347,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1657809736
@@ -129855,6 +130463,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1659846713
@@ -130135,6 +130744,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1662107733
@@ -130319,6 +130929,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1665332591
@@ -130434,6 +131045,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1667776757
@@ -130650,6 +131262,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1669110376
@@ -130834,6 +131447,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1673054597
@@ -130917,6 +131531,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1673690506
@@ -131000,6 +131615,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1674287819
@@ -131216,6 +131832,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1674868241
@@ -131432,6 +132049,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1678847112
@@ -131515,6 +132133,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1680835814
@@ -131630,6 +132249,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1681730404
@@ -131713,6 +132333,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1682001352
@@ -133008,6 +133629,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1697157382
@@ -133288,6 +133910,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1700189094
@@ -133403,6 +134026,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1702817287
@@ -133651,6 +134275,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1706814020
@@ -134330,6 +134955,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1719006696
@@ -134514,6 +135140,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1719957085
@@ -134730,6 +135357,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1727812717
@@ -134845,6 +135473,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1730474997
@@ -134928,6 +135557,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1731485202
@@ -135011,6 +135641,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1732298331
@@ -135126,6 +135757,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1732770207
@@ -135273,6 +135905,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1734926029
@@ -135457,6 +136090,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1735573914
@@ -136040,6 +136674,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1739405941
@@ -136123,6 +136758,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1740560420
@@ -136206,6 +136842,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1740582256
@@ -136289,6 +136926,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1743088191
@@ -136707,6 +137345,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1748347329
@@ -137013,6 +137652,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1753264188
@@ -137096,6 +137736,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1753473313
@@ -137546,6 +138187,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1758685706
@@ -137794,6 +138436,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1761771473
@@ -137877,6 +138520,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1762468528
@@ -138061,6 +138705,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1764523129
@@ -138309,6 +138954,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1768162901
@@ -139057,6 +139703,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1784302321
@@ -139443,6 +140090,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1787543794
@@ -139728,6 +140376,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1789573035
@@ -139811,6 +140460,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1790422743
@@ -139894,6 +140544,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1790742130
@@ -140376,6 +141027,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1797519732
@@ -141289,6 +141941,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1810366095
@@ -141505,6 +142158,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1811080274
@@ -141854,6 +142508,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1818675953
@@ -142070,6 +142725,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1823679255
@@ -142110,8 +142766,9 @@ MonoBehaviour:
   Size: 1
   MinimumDepth: 0.6
   doMinimumDepth: 1
-  maxDampening: 0.9
-  minDampening: 0.6
+  maxDampening: 0.6
+  minDampening: 0.4
+  aerodynamicTangentResistance: 5
   submergedFrac: 0
   testForce: 0
 --- !u!4 &1823679257
@@ -142202,9 +142859,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatControler
   rb: {fileID: 0}
   rotationSpeed: 1
-  movementSpeed: 1500
+  movementSpeed: 1000
+  windMinRange: -0.5
   movementVector: {x: 0, y: 0}
   rudder: {fileID: 0}
+  _windFraction: 0
 --- !u!1 &1824261038
 GameObject:
   m_ObjectHideFlags: 0
@@ -142318,6 +142977,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1825440263
@@ -142869,6 +143529,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1832825565
@@ -143420,6 +144081,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1846107649
@@ -143503,6 +144165,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1846717375
@@ -143751,6 +144414,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1849634633
@@ -143866,6 +144530,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1853048121
@@ -143949,6 +144614,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1854043147
@@ -144702,6 +145368,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1861966659
@@ -145019,6 +145686,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1864508549
@@ -145102,6 +145770,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1864658367
@@ -145185,6 +145854,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1865419611
@@ -145470,6 +146140,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1866691322
@@ -145755,6 +146426,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1868218215
@@ -146035,6 +146707,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1869327706
@@ -146118,6 +146791,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1869406856
@@ -146201,6 +146875,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1871371236
@@ -146449,6 +147124,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1872801644
@@ -146532,6 +147208,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1873493570
@@ -146647,6 +147324,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1873667739
@@ -147129,6 +147807,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1878432664
@@ -147414,6 +148093,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1880326336
@@ -148758,6 +149438,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1898506915
@@ -148841,6 +149522,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1899130697
@@ -149387,6 +150069,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1908468447
@@ -149603,6 +150286,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1909549461
@@ -149989,6 +150673,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1910600224
@@ -150104,6 +150789,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1913761397
@@ -150187,6 +150873,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1914525190
@@ -150435,6 +151122,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1916586593
@@ -150651,6 +151339,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1918011616
@@ -150835,6 +151524,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1920954221
@@ -151083,6 +151773,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1923064309
@@ -151166,6 +151857,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1923405890
@@ -151249,6 +151941,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1923917986
@@ -151529,6 +152222,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1927226328
@@ -151777,6 +152471,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1929572537
@@ -151892,6 +152587,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1932107880
@@ -152076,6 +152772,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1934500531
@@ -152159,6 +152856,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1935282025
@@ -152242,6 +152940,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1935295604
@@ -152325,6 +153024,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1935507291
@@ -152509,6 +153209,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1939106219
@@ -153299,6 +154000,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1946085386
@@ -153744,6 +154446,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1959936166
@@ -154290,6 +154993,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1964776119
@@ -154506,6 +155210,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1966120827
@@ -154786,6 +155491,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1972437078
@@ -155002,6 +155708,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1975784350
@@ -155218,6 +155925,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1977033456
@@ -155333,6 +156041,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1978121909
@@ -155416,6 +156125,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1978891888
@@ -155691,6 +156401,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1985738831
@@ -156008,6 +156719,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1988344036
@@ -156091,6 +156803,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1990788879
@@ -156174,6 +156887,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1992204074
@@ -156289,6 +157003,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1993063502
@@ -156372,6 +157087,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1993110873
@@ -156455,6 +157171,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1993278383
@@ -156538,6 +157255,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1993604868
@@ -156653,6 +157371,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &1995179872
@@ -157002,6 +157721,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &1999694030
@@ -157085,6 +157805,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2000494495
@@ -157200,6 +157921,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2001541494
@@ -157283,6 +158005,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2003029249
@@ -157366,6 +158089,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2003180525
@@ -157449,6 +158173,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2003551999
@@ -157532,6 +158257,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2003627420
@@ -157615,6 +158341,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2004711409
@@ -158491,6 +159218,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2014645206
@@ -158574,6 +159302,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2015677767
@@ -158758,6 +159487,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2015918103
@@ -158974,6 +159704,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2018714076
@@ -159057,6 +159788,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2019890210
@@ -159140,6 +159872,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2019955158
@@ -159388,6 +160121,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2020688412
@@ -159636,6 +160370,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2025373225
@@ -159719,6 +160454,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2026872652
@@ -159802,6 +160538,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2028565545
@@ -159917,6 +160654,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2029979965
@@ -160133,6 +160871,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2037525066
@@ -160216,6 +160955,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2037865232
@@ -160432,6 +161172,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2040492272
@@ -160616,6 +161357,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2042013601
@@ -160699,6 +161441,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2042564248
@@ -160782,6 +161525,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2043560973
@@ -160865,6 +161609,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2043907138
@@ -162650,6 +163395,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2075001802
@@ -162733,6 +163479,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2075237954
@@ -163183,6 +163930,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2081475514
@@ -163330,6 +164078,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2082729213
@@ -163546,6 +164295,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2087339397
@@ -163762,6 +164512,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2088380146
@@ -163845,6 +164596,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2088389508
@@ -164061,6 +164813,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2091219899
@@ -164442,6 +165195,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2095906689
@@ -164658,6 +165412,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2097955194
@@ -164975,6 +165730,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2102957100
@@ -165159,6 +165915,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2105760460
@@ -165577,6 +166334,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2109977157
@@ -165660,6 +166418,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2110306517
@@ -165844,6 +166603,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2112602921
@@ -165959,6 +166719,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2115995480
@@ -166042,6 +166803,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2116712325
@@ -166157,6 +166919,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2118453109
@@ -166240,6 +167003,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2118456847
@@ -166323,6 +167087,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2119822316
@@ -166507,6 +167272,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2120824424
@@ -166787,6 +167553,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2129720075
@@ -166971,6 +167738,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1 &2131110543
@@ -167251,6 +168019,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2139719343
@@ -167579,6 +168348,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1001 &2143117380
@@ -168268,6 +169038,7 @@ MonoBehaviour:
   doMinimumDepth: 0
   maxDampening: 0.9
   minDampening: 0.6
+  aerodynamicTangentResistance: 1
   submergedFrac: 0
   testForce: 0
 --- !u!1660057539 &9223372036854775807

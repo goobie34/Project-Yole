@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputManagerEntry;
 
 public class BoatControler : MonoBehaviour
 {
