@@ -4,8 +4,6 @@ using UnityEngine;
 public class CameraState : MonoBehaviour, ICameraState
 {
     public bool TestBtn = false;
-
-
     [SerializeField] private CinemachineCamera _stateCamera;
 
     public bool activeState { get; private set; }
