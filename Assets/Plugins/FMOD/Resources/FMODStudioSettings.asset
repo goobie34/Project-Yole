@@ -479,8 +479,20 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - amb
+  - amb.assets
+  - amb.streams
   - Master.assets
   - Master.streams
+  - mus
+  - mus.assets
+  - mus.streams
+  - sfx
+  - sfx.assets
+  - sfx.streams
+  - ui
+  - ui.assets
+  - ui.streams
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
