@@ -17,6 +17,8 @@ public class BuoyancyController : MonoBehaviour
     public float maxDampening = 0.8f;
     public float minDampening = 0.4f;
 
+    public float aerodynamicTangentResistance = 1f;
+
     private float _waterHeight = 0f;
     private Vector3 _waterNormal = Vector3.up;
 
@@ -62,18 +64,34 @@ public class BuoyancyController : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y,0), rb.linearVelocity.z);
         } 
 
-        child.localRotation = Quaternion.Slerp(child.localRotation, GetDirectionFromUpp(), submergedFrac * 0.5f);
+        child.localRotation = Quaternion.Slerp(child.localRotation,  GetDirectionFromUpp(_waterNormal), submergedFrac * 0.5f);
 
         rb.AddForce(child.forward * testForce);
 
        
 
-        rb.linearDamping = Mathf.Lerp(minDampening,maxDampening, submergedFrac);
+        rb.linearDamping = Mathf.Lerp(minDampening,maxDampening, submergedFrac );
+
+        //;
+
+        //;
+
+        var breakingForce = BreakingAcceleration(new Vector2(transform.forward.z, -transform.forward.x).normalized, new Vector2(rb.linearVelocity.x, rb.linearVelocity.z), 1, aerodynamicTangentResistance);
+
+        var testValue = rb.angularVelocity + breakingForce;
+
+        rb.AddForce(breakingForce, ForceMode.Acceleration);
     }
 
-    private Vector3 BreakingForce(Vector3 direction, Vector3 velocity, float submergedFrac)
+    private Vector3 BreakingAcceleration(Vector2 tangent, Vector2 velocity, float submergedFrac, float aerodynamic)
     {
-        return Vector3.zero;
+        float faceingFront = Vector3.Dot(tangent.normalized,velocity) * aerodynamic;
+
+        float breakingFactor = -faceingFront * submergedFrac;
+
+        var tangentBreakingForce = tangent * breakingFactor;
+
+        return new Vector3(tangentBreakingForce.x, 0, tangentBreakingForce.y);
     }
 
     private float CalculateSubmergedFraction(float waterHeight, float currentHeight, float size)
@@ -87,9 +105,9 @@ public class BuoyancyController : MonoBehaviour
         return Mathf.Clamp01((bottomDepth / size) * -1);
     }
 
-    private Quaternion GetDirectionFromUpp()
+    private Quaternion GetDirectionFromUpp(Vector3 normal)
     {
-        return Quaternion.FromToRotation(Vector3.up, transform.InverseTransformDirection(_waterNormal));
+        return Quaternion.FromToRotation(Vector3.up, transform.InverseTransformDirection(normal));
     }
 
 
