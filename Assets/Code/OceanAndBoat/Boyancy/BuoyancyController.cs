@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.LightAnchor;
 
 public class BuoyancyController : MonoBehaviour
@@ -12,7 +13,9 @@ public class BuoyancyController : MonoBehaviour
     public float Size = 1;
 
     public float MinimumDepth = 0.5f;
+
     public bool doMinimumDepth = false;
+
 
     public float maxDampening = 0.8f;
     public float minDampening = 0.4f;
@@ -54,21 +57,27 @@ public class BuoyancyController : MonoBehaviour
     {
         submergedFrac = CalculateSubmergedFraction(_waterHeight, rb.position.y, Size);
 
-        rb.AddForce(_waterNormal * submergedFrac * BuoyancyForce * rb.mass);
+        var bouyancyForce = _waterNormal * submergedFrac * BuoyancyForce * rb.mass;
 
-        if(doMinimumDepth && submergedFrac >= MinimumDepth)
-        {
-            rb.position += Vector3.up * Mathf.Pow((submergedFrac - MinimumDepth),2) * Size;
+        rb.AddForce(bouyancyForce);
 
 
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y,0), rb.linearVelocity.z);
-        } 
+       
+            
+
 
         child.localRotation = Quaternion.Slerp(child.localRotation,  GetDirectionFromUpp(_waterNormal), submergedFrac * 0.5f);
 
         rb.AddForce(child.forward * testForce);
+        if (doMinimumDepth)
+        {
+            var f = BowForce(_waterNormal, rb.linearVelocity);
+            f *= Unity.Mathematics.math.smoothstep(MinimumDepth, 1, submergedFrac);
+            rb.AddForce(f, ForceMode.VelocityChange);
 
-       
+
+        }
+
 
         rb.linearDamping = Mathf.Lerp(minDampening,maxDampening, submergedFrac );
 
@@ -82,6 +91,24 @@ public class BuoyancyController : MonoBehaviour
 
         rb.AddForce(breakingForce, ForceMode.Acceleration);
     }
+
+    private void BowForceLegacy()
+    {
+        if (doMinimumDepth && submergedFrac >= MinimumDepth)
+        {
+            rb.position += Vector3.up * Mathf.Pow((submergedFrac - MinimumDepth), 2) * Size;
+
+
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, 0), rb.linearVelocity.z);
+        }
+    }
+
+    private Vector3 BowForce(Vector3 waterNormal,Vector3 velocity)
+    {
+        return waterNormal *  -Mathf.Min(Vector3.Dot(velocity, waterNormal),0);
+    }
+
+   
 
     private Vector3 BreakingAcceleration(Vector2 tangent, Vector2 velocity, float submergedFrac, float aerodynamic)
     {
