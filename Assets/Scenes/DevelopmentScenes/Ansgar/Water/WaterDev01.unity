@@ -127925,7 +127925,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: 2.3
+        Gain: 2.2999997
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -127936,7 +127936,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: -1
+        Gain: -1.0000002
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -142766,9 +142766,9 @@ MonoBehaviour:
   Size: 1
   MinimumDepth: 0.6
   doMinimumDepth: 1
-  maxDampening: 0.6
-  minDampening: 0.4
-  aerodynamicTangentResistance: 5
+  maxDampening: 0.2
+  minDampening: 0.1
+  aerodynamicTangentResistance: 10
   submergedFrac: 0
   testForce: 0
 --- !u!4 &1823679257
@@ -142859,7 +142859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatControler
   rb: {fileID: 0}
   rotationSpeed: 1
-  movementSpeed: 1000
+  movementSpeed: 250
   windMinRange: -0.5
   movementVector: {x: 0, y: 0}
   rudder: {fileID: 0}
