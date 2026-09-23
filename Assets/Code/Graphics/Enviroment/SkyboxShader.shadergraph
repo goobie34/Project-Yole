@@ -155,6 +155,12 @@
         },
         {
             "m_Id": "5f12aa2a956c434592d3a1e02136149c"
+        },
+        {
+            "m_Id": "f75ecd9513684fb7a8996241f954498a"
+        },
+        {
+            "m_Id": "6a0bbfa088394184a97f86037c42b0aa"
         }
     ],
     "m_GroupDatas": [
@@ -420,6 +426,20 @@
                     "m_Id": "58023010f6c54790a2e7dd4b997cc11c"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "6a0bbfa088394184a97f86037c42b0aa"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "f75ecd9513684fb7a8996241f954498a"
+                },
+                "m_SlotId": -566617270
             }
         },
         {
@@ -1301,10 +1321,10 @@
             "m_Id": "afafdba3d4e24cd58262802ba38bd73a"
         },
         {
-            "m_Id": "e393efa2647a442f877336910282d8b9"
+            "m_Id": "4c51b51dd34a4088a3b770a6af8f069e"
         },
         {
-            "m_Id": "4c51b51dd34a4088a3b770a6af8f069e"
+            "m_Id": "e393efa2647a442f877336910282d8b9"
         }
     ]
 }
@@ -1559,8 +1579,8 @@
     "m_customAttributes": [],
     "m_Value": {
         "r": 0.0,
-        "g": 0.06430765986442566,
-        "b": 0.1018868088722229,
+        "g": 0.0,
+        "b": 0.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -2160,7 +2180,7 @@
     "m_Title": "New Group",
     "m_Position": {
         "x": 160.0,
-        "y": 935.1998901367188
+        "y": 935.199951171875
     }
 }
 
@@ -2246,6 +2266,42 @@
     "m_ShaderOutputName": "Out",
     "m_StageCapability": 3,
     "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.ViewDirectionNode",
+    "m_ObjectId": "6a0bbfa088394184a97f86037c42b0aa",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "View Direction",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 1444.6270751953125,
+            "y": -864.117431640625,
+            "width": 208.00001525878907,
+            "height": 311.99993896484377
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "7f7903f8a68c45cab04939def0c3f9cb"
+        }
+    ],
+    "synonyms": [
+        "eye direction"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 2,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Space": 2
 }
 
 {
@@ -2558,6 +2614,29 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "7f7903f8a68c45cab04939def0c3f9cb",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.CubemapInputMaterialSlot",
     "m_ObjectId": "820ece96053b4a808c6685968fdabdef",
     "m_Id": 1,
@@ -2733,6 +2812,22 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "954597dde52f469d9f1cb60033f01eab",
+    "m_Id": 1,
+    "m_DisplayName": "SunFraction",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "SunFraction",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": [],
+    "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "957ce712d8514342bde847ed25805e5d",
     "m_Id": 1,
@@ -2829,6 +2924,29 @@
         "w": 0.0
     },
     "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "9e1287f5dc4344099d0032fe302abd03",
+    "m_Id": -566617270,
+    "m_DisplayName": "ViewDirection",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_ViewDirection",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -3085,7 +3203,7 @@
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],
-    "m_Value": 0.9990000128746033,
+    "m_Value": 0.9980000257492065,
     "m_FloatType": 0,
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
@@ -3557,9 +3675,9 @@
         "m_Position": {
             "serializedVersion": "2",
             "x": 1874.400146484375,
-            "y": 63.9999885559082,
+            "y": 69.60002136230469,
             "width": 208.0,
-            "height": 358.4000244140625
+            "height": 358.39996337890627
         }
     },
     "m_Slots": [
@@ -4035,8 +4153,8 @@
     "m_ObjectId": "e76a2047bd3947a69039f123057d0cbc",
     "m_Title": "New Group",
     "m_Position": {
-        "x": -1994.39990234375,
-        "y": 13.60009765625
+        "x": -1994.4000244140625,
+        "y": 13.599964141845704
     }
 }
 
@@ -4241,10 +4359,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 550.4000854492188,
-            "y": -1309.60009765625,
-            "width": 160.800048828125,
-            "height": 33.60009765625
+            "x": 516.0000610351563,
+            "y": -1311.2000732421875,
+            "width": 159.99993896484376,
+            "height": 33.5999755859375
         }
     },
     "m_Slots": [
@@ -4352,6 +4470,51 @@
         "e32": 0.0,
         "e33": 1.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
+    "m_ObjectId": "f75ecd9513684fb7a8996241f954498a",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Sun Skybox",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 1848.7998046875,
+            "y": -793.5999145507813,
+            "width": 236.0,
+            "height": 278.39996337890627
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "9e1287f5dc4344099d0032fe302abd03"
+        },
+        {
+            "m_Id": "954597dde52f469d9f1cb60033f01eab"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedSubGraph": "{\n    \"subGraph\": {\n        \"fileID\": -5475051401550479605,\n        \"guid\": \"4a50d9b6ecb4f3445907806b1d19ad5d\",\n        \"type\": 3\n    }\n}",
+    "m_PropertyGuids": [
+        "c1ad42fd-ce4f-466f-85a0-78557d37800c"
+    ],
+    "m_PropertyIds": [
+        -566617270
+    ],
+    "m_Dropdowns": [],
+    "m_DropdownSelectedEntries": []
 }
 
 {
