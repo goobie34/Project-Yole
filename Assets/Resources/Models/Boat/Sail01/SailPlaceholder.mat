@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1996476825303943511
+--- !u!114 &-6558228632407829333
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,18 +20,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ToonStone
+  m_Name: SailPlaceholder
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -95,7 +96,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TransparantTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fa671babb8c41614daf593003682836c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -113,9 +114,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
-    - _Ambiant_Oppacity: 0.5
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
+    - _Ambiant_Oppacity: 1
     - _Amplitude: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -124,14 +125,14 @@ Material:
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 0.4
+    - _DffuseToon: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EdgeScale: 0.6
+    - _EdgeScale: 1
     - _Edge_Far_Lerp: 0.5
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -165,13 +166,13 @@ Material:
     m_Colors:
     - _Ambiant_Color: {r: 0.15686275, g: 0.007843138, b: 0.14901961, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.068, g: 0.055047624, b: 0.055047624, a: 1}
+    - _Color: {r: 0.5849056, g: 0.49121037, b: 0.27258807, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Inner_Crevase_Color: {r: 0.2, g: 0.047058824, b: 0.39607844, a: 0.3372549}
-    - _Inner_Edge_Color: {r: 0.8867924, g: 0.766124, b: 0.6943752, a: 1}
+    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.3372549}
+    - _Inner_Edge_Color: {r: 0.7735849, g: 0.32972473, b: 0, a: 0}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Outer_Edge_Color: {r: 0.077210344, g: 0.06849494, b: 0.09578448, a: 0.7254902}
+    - _Outer_Edge_Color: {r: 1, g: 0.80484647, b: 0.60188675, a: 1}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
     - _Rim_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
