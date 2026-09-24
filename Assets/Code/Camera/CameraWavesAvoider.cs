@@ -7,6 +7,8 @@ public class CameraWavesAvoider : MonoBehaviour
 
     [SerializeField] private float offset = 0f;
 
+    [SerializeField] private float distanceFromWater;
+
     private Vector3 _defaultOffset;
 
    
@@ -43,6 +45,12 @@ public class CameraWavesAvoider : MonoBehaviour
 
         waterServcie.EvaluateWaves(GetWorldPos(), 1, out var height, out var normal);
 
-        _camera.TargetOffset = _defaultOffset + Vector3.up * ( height + offset);
+        distanceFromWater = _camera.transform.position.y - height - offset;
+
+        distanceFromWater = Mathf.Min(distanceFromWater, 0);
+
+        
+
+        _camera.TargetOffset = _defaultOffset + Vector3.up * -distanceFromWater;
     }
 }
