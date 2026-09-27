@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 1980304858951964306}
   - component: {fileID: 2165786210894184460}
   - component: {fileID: 4599325820633300057}
+  - component: {fileID: 2856241186129229270}
   - component: {fileID: 6672838950893166036}
   - component: {fileID: 8077287165775798351}
+  - component: {fileID: 9206598008232123505}
+  - component: {fileID: 5724200277896835962}
   m_Layer: 0
   m_Name: BoatCamera
   m_TagString: Untagged
@@ -113,7 +116,7 @@ MonoBehaviour:
     SplineCurvature: 0.215
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: 0
+    Value: -140.62881
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -123,7 +126,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 0
+    Value: 7.779704
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -155,6 +158,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLookAt
   LookAtOffset: {x: 0, y: 2, z: 0}
+--- !u!114 &2856241186129229270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387709091898316485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe43d662878a7c43bcd44d43c9e2094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDeoccluder
+  CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  IgnoreTag: Player
+  TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  MinimumDistanceFromTarget: 0.4
+  AvoidObstacles:
+    Enabled: 1
+    DistanceLimit: 0
+    MinimumOcclusionTime: 0
+    CameraRadius: 1
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Strategy: 2
+    MaximumEffort: 1
+    SmoothingTime: 0.1
+    Damping: 10
+    DampingWhenOccluded: 5
+  ShotQualityEvaluation:
+    Enabled: 0
+    OptimalDistance: 10
+    NearLimit: 5
+    FarLimit: 30
+    MaxQualityBoost: 0.2
 --- !u!114 &6672838950893166036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +246,7 @@ MonoBehaviour:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
         Gain: -1.0000002
         CancelDeltaTime: 0
-      InputValue: 0
+      InputValue: -0
       Driver:
         AccelTime: 1
         DecelTime: 0.1
@@ -221,3 +263,51 @@ MonoBehaviour:
         DecelTime: 0
   PlayerIndex: -1
   AutoEnableInputs: 1
+--- !u!114 &9206598008232123505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387709091898316485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2e7d2bd6ef73245ad8d19be7b7ba91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraWavesAvoider
+  _camera: {fileID: 0}
+  _hardLookAt: {fileID: 0}
+  offset: -2
+  lookAtOffset: -2
+  lookAtLerp: 0.01
+  lookAtMult: 0.6
+--- !u!114 &5724200277896835962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387709091898316485}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7de3aefa901374ba29464584a3109a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDecollider
+  CameraRadius: 2
+  Decollision:
+    Enabled: 1
+    ObstacleLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Damping: 10
+    SmoothingTime: 1.438
+  TerrainResolution:
+    Enabled: 1
+    TerrainLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    MaximumRaycast: 20
+    Damping: 5
