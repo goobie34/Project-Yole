@@ -10,7 +10,10 @@ public class SimpleWindService : MonoBehaviour, IWindService
 
     private IEnumerator Start()
     {
-        yield return new WaitForEndOfFrame();
+        while(WindServiceLocator.Instance == null)
+        {
+            yield return new WaitForEndOfFrame();
+        }
 
         WindServiceLocator.Instance?.Register(this);
     }

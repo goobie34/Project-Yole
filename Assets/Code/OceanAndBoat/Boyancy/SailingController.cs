@@ -1,0 +1,169 @@
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+
+public class SailingController : MonoBehaviour
+{
+    
+    public float sailAngle;
+    public float sailAngularVelocity;
+
+    private float sailWindDot = 0;
+
+    public float windAngle;
+    public float maxAngle;
+
+    public float sailRotationAcceleration = 10f;
+    public float sailAngularDampening = 0.5f;
+
+    public Transform mastOriginPos;
+    public Transform sailTipPos;
+    public Transform ropeHitchPos;
+
+    public Transform sailRotator;
+
+    private float mastL;
+    private float boatL;
+    public float ropeL = 1;
+
+    private Vector3 sailDirection;
+    private Vector3 windDirection = Vector3.forward;
+    private Vector3 windDirectionWorld = Vector3.forward;
+    private float windMagnitude = 0;
+
+    public float appliedAcceleration;
+
+    public float inputValue;
+    public float ropeInputSpeed = 0.01f;
+
+    private Rigidbody rb;
+
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        CalculateLengths();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ropeL += inputValue * ropeInputSpeed * Time.deltaTime;
+
+        ropeL = Mathf.Clamp(ropeL,0,4);
+
+        GetWind();
+        UpdateAngles();
+
+        sailWindDot = AngleDot(windAngle * Mathf.Deg2Rad, (sailAngle + 90) * Mathf.Deg2Rad);
+
+
+        sailAngularVelocity += sailWindDot * sailRotationAcceleration * windMagnitude;
+
+        ClampSail();
+        UpdatePysics();
+
+        sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
+
+        rb.AddForce(sailRotator.TransformDirection(1,0,0) * appliedAcceleration * windMagnitude, ForceMode.Acceleration);
+
+    }
+
+    private float AngleDot(float a, float b)
+    {
+        return Mathf.Cos(a) * Mathf.Cos(b) + Mathf.Sin(a) * Mathf.Sin(b) ;
+    }
+
+    private void GetWind()
+    {
+        if (!WindServiceLocator.Instance.TryGet(out var windService)) { return; }
+        windService.EvaluateWind(transform.position, Time.time, out windDirectionWorld, out windMagnitude);
+        windDirection = transform.InverseTransformDirection(windDirectionWorld);
+    }
+
+    private void UpdateAngles()
+    {
+        
+
+        maxAngle = GetMaxAngleFromTrig(boatL, boatL, ropeL) * Mathf.Rad2Deg;
+
+        windAngle = Vector3.SignedAngle(Vector3.forward, windDirection, Vector3.up) ;
+
+        
+    }
+
+    private void UpdatePysics()
+    {
+        
+
+        sailAngle += sailAngularVelocity * Time.deltaTime;
+
+        sailAngularVelocity *= sailAngularDampening;
+
+        
+    }
+
+    private void ClampSail()
+    {
+        if(sailAngle <= -maxAngle)
+        {
+            sailAngle = -maxAngle;
+
+            appliedAcceleration = sailWindDot;
+
+            sailAngularVelocity = Mathf.Max(sailAngularVelocity, 0);
+
+            return;
+        }
+
+        if (sailAngle >= maxAngle)
+        {
+            sailAngle = maxAngle;
+
+
+            appliedAcceleration = sailWindDot;
+
+            sailAngularVelocity = Mathf.Min(sailAngularVelocity, 0);
+
+            return;
+        }
+
+        appliedAcceleration = 0;
+
+
+        
+    }
+
+    private void CalculateLengths()
+    {
+        var flat = new Vector3(1, 0, 1);
+
+        mastL = Vector3.Distance(
+            Vector3.Scale(mastOriginPos.position, flat),
+            Vector3.Scale(sailTipPos.position, flat));
+
+        boatL = Vector3.Distance(
+            Vector3.Scale(mastOriginPos.position, flat),
+            Vector3.Scale(ropeHitchPos.position, flat));
+    }
+
+    private float GetMaxAngleFromTrig(float mastL, float boatL, float ropeL)
+    {
+        return Mathf.Acos((mastL * mastL + boatL * boatL - ropeL * ropeL) / (2 * mastL * boatL));
+    }
+
+    private void OnExtendSail(InputValue input)
+    {
+        inputValue = input.Get<float>();
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawRay(transform.position, sailDirection);
+    }
+
+}
