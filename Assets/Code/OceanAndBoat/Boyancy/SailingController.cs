@@ -49,7 +49,7 @@ public class SailingController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         ropeL += inputValue * ropeInputSpeed * Time.deltaTime;
 
@@ -68,7 +68,7 @@ public class SailingController : MonoBehaviour
 
         sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
 
-        rb.AddForce(sailRotator.TransformDirection(1,0,0) * appliedAcceleration * windMagnitude, ForceMode.Acceleration);
+        rb.AddForce(sailRotator.TransformDirection(1,0,0) * appliedAcceleration * windMagnitude * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
 
     }
 
@@ -99,7 +99,7 @@ public class SailingController : MonoBehaviour
     {
         
 
-        sailAngle += sailAngularVelocity * Time.deltaTime;
+        sailAngle += sailAngularVelocity * Time.fixedDeltaTime;
 
         sailAngularVelocity *= sailAngularDampening;
 

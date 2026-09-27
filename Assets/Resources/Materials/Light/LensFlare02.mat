@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1129088285888133595
+--- !u!114 &-2628770405627759783
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LighthouseWhite 1
-  m_Shader: {fileID: -6465566751694194690, guid: e40a645cb09d0e8458fb6d5d7177673e, type: 3}
+  m_Name: LensFlare02
+  m_Shader: {fileID: -6465566751694194690, guid: 8d5a4b0c57a53614f9352d1429614db1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -30,8 +30,7 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -63,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 656d874bdbefcab49aa4eeb090172030, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -74,27 +73,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _OverlayTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _RimTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Specular_Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TransparantTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -115,70 +98,42 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Ambiant_Oppacity: 1
-    - _Amplitude: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _BlendOp: 0
     - _BumpScale: 1
-    - _CLUSTER_LIGHT_LOOP: 0
-    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 0.03
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EdgeScale: 1
-    - _Edge_Far_Lerp: 0.5
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 1
+    - _FarScale: 0.01
+    - _GlossMapScale: 0
     - _Glossiness: 0
-    - _GlossyReflections: 1
-    - _Glossyness: 10
-    - _MAIN_LIGHT_SHADOWS: 0
-    - _MAIN_LIGHT_SHADOWS_CASCADE: 0
-    - _MAIN_LIGHT_SHADOWS_SCREEN: 0
-    - _Metalic: 0
+    - _GlossyReflections: 0
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimPow: 2
-    - _Rim_Toon: 0
-    - _SampleGI: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Specular_Toon: 0
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _UVSec: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
-    - _ZTest: 4
     - _ZWrite: 1
-    - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 1, g: 0.9651226, b: 0.35283017, a: 1}
-    - _Color: {r: 3.8530943, g: 4, b: 0.4754715, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.2603773, g: 0.23403251, b: 0.19012454, a: 1}
+    - _Color2: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.3372549}
-    - _Inner_Edge_Color: {r: 0.8792453, g: 0.7321879, b: 0.6486507, a: 1}
-    - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
-    - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Outer_Edge_Color: {r: 0.078431375, g: 0.06666667, b: 0.09411765, a: 0.7254902}
-    - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim_Color: {r: 0.7490199, g: 0.7490199, b: 0.7490199, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Specular_Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
