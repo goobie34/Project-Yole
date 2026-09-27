@@ -128,7 +128,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 3
+    - _DffuseToon: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 0.6
@@ -141,7 +141,7 @@ Material:
     - _MAIN_LIGHT_SHADOWS: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 0
     - _MAIN_LIGHT_SHADOWS_SCREEN: 0
-    - _Metalic: 0.3
+    - _Metalic: -0.6
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -149,7 +149,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimPow: 3
+    - _RimPow: 2
     - _Rim_Toon: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
@@ -165,18 +165,18 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 0.03773582, g: 0.0012459948, b: 0.03773582, a: 1}
+    - _Ambiant_Color: {r: 0.15686275, g: 0.007843138, b: 0.14901961, a: 1}
     - _BaseColor: {r: 1, g: 0.6722406, b: 0.38272727, a: 1}
-    - _Color: {r: 0.254717, g: 0.16664815, b: 0.09011214, a: 1}
+    - _Color: {r: 0.131, g: 0.08791291, b: 0.052007, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.3372549}
-    - _Inner_Edge_Color: {r: 0.2264151, g: 0.11936014, b: 0.056603774, a: 1}
+    - _Inner_Crevase_Color: {r: 0.6760053, g: 0.59989315, b: 0.7735849, a: 1}
+    - _Inner_Edge_Color: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Outer_Edge_Color: {r: 0.078431375, g: 0.06666667, b: 0.09411765, a: 0.7254902}
+    - _Outer_Edge_Color: {r: 0.116374254, g: 0.09413308, b: 0.14716971, a: 0.7254902}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Rim_Color: {r: 0.04905659, g: 0.03135246, b: 0.024713414, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Specular_Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
+    - _Specular_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
