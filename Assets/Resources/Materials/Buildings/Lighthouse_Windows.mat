@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LighthouseGrey
+  m_Name: Lighthouse_Windows
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -128,7 +128,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 0.03
+    - _DffuseToon: 0.1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 1
@@ -137,7 +137,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Glossyness: 10
+    - _Glossyness: 100
     - _MAIN_LIGHT_SHADOWS: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 0
     - _MAIN_LIGHT_SHADOWS_SCREEN: 0
@@ -154,7 +154,7 @@ Material:
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Specular_Toon: 0
+    - _Specular_Toon: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -167,16 +167,16 @@ Material:
     m_Colors:
     - _Ambiant_Color: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
     - _BaseColor: {r: 0.29746228, g: 0.29746228, b: 0.29746228, a: 1}
-    - _Color: {r: 0.11320752, g: 0.10519756, b: 0.10519756, a: 1}
+    - _Color: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.48235294}
-    - _Inner_Edge_Color: {r: 0.8792453, g: 0.7321879, b: 0.6486507, a: 0}
+    - _Inner_Crevase_Color: {r: 0.29310673, g: 0.25575, b: 0.341, a: 0.3647059}
+    - _Inner_Edge_Color: {r: 1, g: 1, b: 1, a: 0}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
-    - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Outer_Edge_Color: {r: 0.3756883, g: 0.36594516, b: 0.3886792, a: 0.7254902}
+    - _Outer_Crevase_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Outer_Edge_Color: {r: 1, g: 1, b: 1, a: 0}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
+    - _Rim_Color: {r: 1, g: 0.96327287, b: 0.9037736, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Specular_Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
+    - _Specular_Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
