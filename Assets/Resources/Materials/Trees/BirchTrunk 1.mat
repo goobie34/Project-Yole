@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OakTrunk.001
+  m_Name: BirchTrunk 1
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: e87253a22c6dc0b47ba89bf1dbe9db26, type: 3}
+        m_Texture: {fileID: 2800000, guid: 450056364e2445340bf7f203b20548a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e87253a22c6dc0b47ba89bf1dbe9db26, type: 3}
+        m_Texture: {fileID: 2800000, guid: 450056364e2445340bf7f203b20548a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -106,6 +106,7 @@ Material:
     - _Amplitude: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
+    - _BlendOp: 0
     - _BumpScale: 1
     - _CLUSTER_LIGHT_LOOP: 0
     - _CastShadows: 1
@@ -118,8 +119,8 @@ Material:
     - _DffuseToon: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EdgeScale: 0.6
-    - _Edge_Far_Lerp: 0.5
+    - _EdgeScale: 0.7
+    - _Edge_Far_Lerp: 0.7
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -138,6 +139,7 @@ Material:
     - _ReceiveShadows: 1
     - _RimPow: 3
     - _Rim_Toon: 0
+    - _SampleGI: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -152,22 +154,22 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 0.8251572, g: 0.7377358, b: 1, a: 1}
+    - _Ambiant_Color: {r: 0.16593087, g: 0.17406021, b: 0.2981131, a: 1}
     - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.5568628}
-    - _Inner_Edge_Color: {r: 0.78113204, g: 0.78113204, b: 0.78113204, a: 1}
+    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.47058824}
+    - _Inner_Edge_Color: {r: 1, g: 1, b: 1, a: 0}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Outer_Edge_Color: {r: 0.21428585, g: 0, b: 1, a: 1}
+    - _Outer_Edge_Color: {r: 0.2528302, g: 0.2528302, b: 0.2528302, a: 1}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
     - _Rim_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular_Color: {r: 0.7490197, g: 0.7490197, b: 0.7490197, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &5192304182838542019
+--- !u!114 &521937281000952812
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
