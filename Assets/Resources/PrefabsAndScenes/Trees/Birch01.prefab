@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 254.03856
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 19.876314
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -141.78867
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55,13 +55,37 @@ PrefabInstance:
     - target: {fileID: 1563060058744779799, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1a9d531a977aae546a45587a18b16969, type: 2}
+      objectReference: {fileID: 2100000, guid: f28dfe05921e15143a18f4e70419318d, type: 2}
     - target: {fileID: 2440443220931919216, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1ef3758414b31a24987e7847ce80affa, type: 2}
+      objectReference: {fileID: 2100000, guid: a6c85f2d8d353bc4198160e550945d8e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -5715574728806165671, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4995506724020728497}
   m_SourcePrefab: {fileID: 100100000, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
+--- !u!1 &6618707649125342188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5715574728806165671, guid: 5fd2c0c3395136449a775424d6a2fa8d, type: 3}
+  m_PrefabInstance: {fileID: 7742933072601532597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4995506724020728497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618707649125342188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02730acf3ac9044ca2733452be9a983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShellTexture
+  targetObject: {fileID: 0}
+  shellMesh: {fileID: 0}
+  material: {fileID: 0}
+  shell_count: 8
