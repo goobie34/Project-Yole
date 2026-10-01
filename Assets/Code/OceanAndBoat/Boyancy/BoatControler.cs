@@ -5,6 +5,8 @@ public class BoatControler : MonoBehaviour
 {
     public Rigidbody rb;
 
+  
+
     public float rotationSpeed = 1;
     public float movementSpeed = 1500;
 
@@ -19,10 +21,12 @@ public class BoatControler : MonoBehaviour
 
     public float _windFraction;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if(rb == null) rb = GetComponent<Rigidbody>();
+
 
         if (rudder == null) rudder = transform;
     }
@@ -40,7 +44,6 @@ public class BoatControler : MonoBehaviour
         //_windFraction = Mathf.SmoothStep(1, windMinRange, Vector3.Dot(transform.forward, _windDirection)) * _windMagnitude;
 
         rb.AddForce(transform.forward * movementVector.y * movementSpeed * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
-        
     }
 
     private void OnMove(InputValue input)

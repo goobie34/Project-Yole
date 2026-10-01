@@ -37,14 +37,25 @@ public class SailingController : MonoBehaviour
     public float inputValue;
     public float ropeInputSpeed = 0.01f;
 
+    private float angularWorldDelta = 0;
+    private float worldSailAngle = 0;
+
+    public float sailInertia = 1f;
+
     private Rigidbody rb;
 
+    public BoatRotationManager rotator;
+    public Vector2 windLeanStrength;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        if (rotator == null)
+            rotator = GetComponentInChildren<BoatRotationManager>();
+
         CalculateLengths();
     }
 
@@ -60,15 +71,30 @@ public class SailingController : MonoBehaviour
 
         sailWindDot = AngleDot(windAngle * Mathf.Deg2Rad, (sailAngle + 90) * Mathf.Deg2Rad);
 
+        
 
-        sailAngularVelocity += sailWindDot * sailRotationAcceleration * windMagnitude;
+        sailAngularVelocity += (sailWindDot * sailRotationAcceleration * windMagnitude) / sailInertia + angularWorldDelta * Time.deltaTime * 60;
 
         ClampSail();
         UpdatePysics();
 
-        sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
+        var  newWorldSailAngle = transform.rotation.eulerAngles.y + sailAngle;
 
-        rb.AddForce(sailRotator.TransformDirection(1,0,0) * appliedAcceleration * windMagnitude * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
+        angularWorldDelta = Mathf.DeltaAngle(newWorldSailAngle, worldSailAngle);
+        worldSailAngle = newWorldSailAngle;
+
+        sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
+        var force = sailRotator.TransformDirection(1, 0, 0) * appliedAcceleration * windMagnitude;
+        rb.AddForce(force * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
+
+
+        var leaningPitch = -Vector3.Dot(transform.forward, force);
+
+        var leaningRoll = -Vector3.Dot(transform.right, force);
+        
+
+        rotator?.ApplyLocalAngularAcceleration(new Vector2(leaningPitch, leaningRoll) * windLeanStrength);
+
 
     }
 
@@ -80,8 +106,24 @@ public class SailingController : MonoBehaviour
     private void GetWind()
     {
         if (!WindServiceLocator.Instance.TryGet(out var windService)) { return; }
+        
+        
         windService.EvaluateWind(transform.position, Time.time, out windDirectionWorld, out windMagnitude);
+        
+        //Debug.DrawRay(sailTipPos.position, windDirectionWorld * windMagnitude, Color.red);
+
+       
+
+        windDirectionWorld = windDirectionWorld * windMagnitude - rb.linearVelocity;
+
+        windMagnitude = windDirectionWorld.magnitude;
+
+        windDirectionWorld = windDirectionWorld.normalized;
+
         windDirection = transform.InverseTransformDirection(windDirectionWorld);
+
+        //Debug.DrawRay(sailTipPos.position, windDirectionWorld * windMagnitude, Color.limeGreen);
+
     }
 
     private void UpdateAngles()
@@ -90,7 +132,7 @@ public class SailingController : MonoBehaviour
 
         maxAngle = GetMaxAngleFromTrig(boatL, boatL, ropeL) * Mathf.Rad2Deg;
 
-        windAngle = Vector3.SignedAngle(Vector3.forward, windDirection, Vector3.up) ;
+        windAngle = Vector3.SignedAngle(Vector3.forward, -windDirection, Vector3.up) ;
 
         
     }

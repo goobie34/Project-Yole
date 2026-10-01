@@ -6,7 +6,8 @@ public class BuoyancyController : MonoBehaviour
 {
     public Rigidbody rb;
 
-    public Transform child;
+    public BoatRotationManager rotator;
+    
 
     public float BuoyancyForce = 12;
 
@@ -21,6 +22,10 @@ public class BuoyancyController : MonoBehaviour
     public float minDampening = 0.4f;
 
     public float aerodynamicTangentResistance = 1f;
+    public float downAcc = 5;
+    public float downPow = 2;
+
+    public float normalRotationalForce = 0.1f;
 
     private float _waterHeight = 0f;
     private Vector3 _waterNormal = Vector3.up;
@@ -30,11 +35,15 @@ public class BuoyancyController : MonoBehaviour
 
     public float testForce = 10;
 
+    public float bankingLeanForce = 1f;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if(rb == null ) rb = GetComponent<Rigidbody>();
+        if(rotator == null )
+            rotator = GetComponentInChildren<BoatRotationManager>();
     }
 
     // Update is called once per frame
@@ -62,13 +71,13 @@ public class BuoyancyController : MonoBehaviour
         rb.AddForce(bouyancyForce);
 
 
-       
-            
 
 
-        child.localRotation = Quaternion.Slerp(child.localRotation,  GetDirectionFromUpp(_waterNormal), submergedFrac * 0.5f);
 
-        rb.AddForce(child.forward * testForce);
+        rotator?.ApplyPullToNormal(transform.InverseTransformDirection(_waterNormal), normalRotationalForce * submergedFrac);
+        //child.localRotation = Quaternion.Slerp(child.localRotation,  GetDirectionFromUpp(_waterNormal), submergedFrac * 0.5f);
+
+        //rb.AddForce(child.forward * testForce);
         if (doMinimumDepth)
         {
             var f = BowForce(_waterNormal, rb.linearVelocity);
@@ -85,11 +94,17 @@ public class BuoyancyController : MonoBehaviour
 
         //;
 
+        rb.AddForce(Vector3.up * Mathf.Pow((1 - submergedFrac), downPow) * downAcc * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
+
         var breakingForce = BreakingAcceleration(new Vector2(transform.forward.z, -transform.forward.x).normalized, new Vector2(rb.linearVelocity.x, rb.linearVelocity.z), 1, aerodynamicTangentResistance);
+
+        float bankingLean = Vector3.Dot(transform.right, breakingForce);
+
+        rotator?.ApplyLocalAngularAcceleration(new Vector2(0, bankingLean * bankingLeanForce));
 
         var testValue = rb.angularVelocity + breakingForce;
 
-        rb.AddForce(breakingForce, ForceMode.Acceleration);
+        rb.AddForce(breakingForce * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
     }
 
     private void BowForceLegacy()
