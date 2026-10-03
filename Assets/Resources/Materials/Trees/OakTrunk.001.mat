@@ -11,11 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _CLUSTER_LIGHT_LOOP
-  - _MAIN_LIGHT_SHADOWS
-  - _MAIN_LIGHT_SHADOWS_CASCADE
-  - _MAIN_LIGHT_SHADOWS_SCREEN
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -106,12 +102,12 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Ambiant_Oppacity: 0.5
+    - _Ambiant_Oppacity: 0.4
     - _Amplitude: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
-    - _CLUSTER_LIGHT_LOOP: 1
+    - _CLUSTER_LIGHT_LOOP: 0
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -119,7 +115,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 3
+    - _DffuseToon: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 0.6
@@ -129,9 +125,9 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Glossyness: 10
-    - _MAIN_LIGHT_SHADOWS: 1
-    - _MAIN_LIGHT_SHADOWS_CASCADE: 1
-    - _MAIN_LIGHT_SHADOWS_SCREEN: 1
+    - _MAIN_LIGHT_SHADOWS: 0
+    - _MAIN_LIGHT_SHADOWS_CASCADE: 0
+    - _MAIN_LIGHT_SHADOWS_SCREEN: 0
     - _Metalic: 0.3
     - _Metallic: 0
     - _Mode: 0
@@ -158,17 +154,17 @@ Material:
     m_Colors:
     - _Ambiant_Color: {r: 0.8251572, g: 0.7377358, b: 1, a: 1}
     - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.3372549}
-    - _Inner_Edge_Color: {r: 0.8792453, g: 0.7321879, b: 0.6486507, a: 1}
+    - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.5568628}
+    - _Inner_Edge_Color: {r: 0.78113204, g: 0.78113204, b: 0.78113204, a: 1}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Outer_Edge_Color: {r: 0.3039302, g: 0.2933357, b: 0.3509434, a: 0.6666667}
+    - _Outer_Edge_Color: {r: 0.21428585, g: 0, b: 1, a: 1}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
     - _Rim_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Specular_Color: {r: 0.7490197, g: 0.7490197, b: 0.7490197, a: 0.1921569}
+    - _Specular_Color: {r: 0.7490197, g: 0.7490197, b: 0.7490197, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &5192304182838542019

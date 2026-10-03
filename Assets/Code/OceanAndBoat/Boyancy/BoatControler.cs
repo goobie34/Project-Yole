@@ -39,7 +39,7 @@ public class BoatControler : MonoBehaviour
 
         //_windFraction = Mathf.SmoothStep(1, windMinRange, Vector3.Dot(transform.forward, _windDirection)) * _windMagnitude;
 
-        rb.AddForce(transform.forward * movementVector.y * movementSpeed * 1);
+        rb.AddForce(transform.forward * movementVector.y * movementSpeed * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
         
     }
 
