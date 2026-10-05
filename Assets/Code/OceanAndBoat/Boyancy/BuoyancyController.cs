@@ -104,6 +104,7 @@ public class BuoyancyController : MonoBehaviour
 
         bankingRotator?.ApplyLocalAngularAcceleration(new Vector2(0, bankingLean * bankingLeanForce));
 
+
         var testValue = rb.angularVelocity + breakingForce;
 
         rb.AddForce(breakingForce * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
