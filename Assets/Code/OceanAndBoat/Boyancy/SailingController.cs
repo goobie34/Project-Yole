@@ -116,9 +116,12 @@ public class SailingController : MonoBehaviour
 
         //Debug.DrawRay(sailTipPos.position, windDirectionWorld * windMagnitude, Color.red);
 
-        float windDifference = Mathf.Max(windMagnitude - rb.linearVelocity.magnitude, 0);
 
-        
+
+        float windDifference = Mathf.Max(windMagnitude - Vector3.Dot(transform.forward, rb.linearVelocity),0);  //Mathf.Max(windMagnitude - rb.linearVelocity.magnitude, 0);
+
+
+
 
         windMagnitude = windDifference;
 
