@@ -108,7 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatControler
   rb: {fileID: 0}
   rotationSpeed: 1
-  movementSpeed: 1.4
+  f_movementSpeed: 1.4
+  r_movementSpeed: 1
   windMinRange: -0.5
   movementVector: {x: 0, y: 0}
   currentInput: {x: 0, y: 0}
