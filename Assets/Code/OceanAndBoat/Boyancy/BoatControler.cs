@@ -20,6 +20,7 @@ public class BoatControler : MonoBehaviour
 
 
     public Transform rudder;
+    public float _maxRudderAngle = 70f;
 
     private Vector3 _windDirection = Vector3.zero;
     private float _windMagnitude = 0;
@@ -39,7 +40,9 @@ public class BoatControler : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        currentInput = Vector2.Lerp(currentInput,movementVector,inputLerp);
+        float deltaScaledLerp = inputLerp * (Time.fixedDeltaTime * 60);
+
+        currentInput = Vector2.Lerp(currentInput,movementVector, deltaScaledLerp);
 
         if(WindServiceLocator.Instance.TryGet(out var windService))
         {
@@ -47,7 +50,7 @@ public class BoatControler : MonoBehaviour
         }
 
         transform.RotateAround(rudder.position, Vector3.up, currentInput.x * rotationSpeed);
-
+        if(rudder != null) rudder.localRotation = Quaternion.Euler(0, currentInput.x * _maxRudderAngle, 0);
         //_windFraction = Mathf.SmoothStep(1, windMinRange, Vector3.Dot(transform.forward, _windDirection)) * _windMagnitude;
 
         rb.AddForce(transform.forward * currentInput.y * movementSpeed * Time.fixedDeltaTime * 60, ForceMode.Acceleration);

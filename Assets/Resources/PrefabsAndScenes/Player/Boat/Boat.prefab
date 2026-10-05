@@ -111,7 +111,10 @@ MonoBehaviour:
   movementSpeed: 1.4
   windMinRange: -0.5
   movementVector: {x: 0, y: 0}
-  rudder: {fileID: 0}
+  currentInput: {x: 0, y: 0}
+  inputLerp: 0.08
+  rudder: {fileID: 6577592587229642210}
+  _maxRudderAngle: -26
   _windFraction: 0
 --- !u!114 &8211974438612366662
 MonoBehaviour:
@@ -166,6 +169,8 @@ MonoBehaviour:
   ropeHitchPos: {fileID: 430627517669051800}
   sailRotator: {fileID: 4361230546231067605}
   ropeL: 2
+  ropeMin: 0.7
+  ropeMax: 4
   appliedAcceleration: 0
   inputValue: 0
   ropeInputSpeed: 3
@@ -404,6 +409,11 @@ Transform:
 --- !u!4 &6374406134653532143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2132311502532514232, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
+  m_PrefabInstance: {fileID: 5035321907142338135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6577592587229642210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2209370774041959349, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
   m_PrefabInstance: {fileID: 5035321907142338135}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6849546511079376660
