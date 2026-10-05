@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5520043086799656160}
+  - {fileID: 5707172403382489588}
   - {fileID: 4877075943526635291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,7 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatControler
   rb: {fileID: 0}
-  rotator: {fileID: 0}
+  rotator: {fileID: 3362615881404684064}
+  bankingRotator: {fileID: 5784330721100925085}
   BuoyancyForce: 25
   Size: 1
   MinimumDepth: 0.1
@@ -62,7 +63,7 @@ MonoBehaviour:
   aerodynamicTangentResistance: 10
   downAcc: -5
   downPow: 2
-  normalRotationalForce: 4
+  normalRotationalForce: 6
   submergedFrac: 0
   testForce: 0
   bankingLeanForce: 1
@@ -169,7 +170,7 @@ MonoBehaviour:
   inputValue: 0
   ropeInputSpeed: 3
   sailInertia: 1
-  rotator: {fileID: 0}
+  rotator: {fileID: 5784330721100925085}
   windLeanStrength: {x: 0, y: 1}
 --- !u!114 &8937615477696856301
 MonoBehaviour:
@@ -196,7 +197,7 @@ GameObject:
   - component: {fileID: 5520043086799656160}
   - component: {fileID: 5784330721100925085}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Rotator2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,14 +211,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2835776110408742043}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6378437650161492223}
   - {fileID: 6374406134653532143}
-  m_Father: {fileID: 3720717429902052107}
+  m_Father: {fileID: 5707172403382489588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5784330721100925085
 MonoBehaviour:
@@ -235,8 +236,8 @@ MonoBehaviour:
   angularVelocity: {x: 0, y: 0}
   angularAcceleration: {x: 0, y: 0}
   dampening: {x: 0.1, y: 0.1}
-  inertia: {x: 500, y: 500}
-  uppForceStrength: 0.4
+  inertia: {x: 600, y: 500}
+  uppForceStrength: 2
 --- !u!1 &5350312510942824846
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +269,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3720717429902052107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6407733142316580686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5707172403382489588}
+  - component: {fileID: 3362615881404684064}
+  m_Layer: 0
+  m_Name: Rotator1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5707172403382489588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407733142316580686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5520043086799656160}
+  m_Father: {fileID: 3720717429902052107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3362615881404684064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407733142316580686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359e69b5d1c895f43a005f11de224282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatRotationManager
+  pitchRoll: {x: 0, y: 0}
+  angularVelocity: {x: 0, y: 0}
+  angularAcceleration: {x: 0, y: 0}
+  dampening: {x: 0.2, y: 0.2}
+  inertia: {x: 100, y: 100}
+  uppForceStrength: 0
 --- !u!1001 &5035321907142338135
 PrefabInstance:
   m_ObjectHideFlags: 0

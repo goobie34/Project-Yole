@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -26,6 +25,11 @@ public class SailingController : MonoBehaviour
     private float mastL;
     private float boatL;
     public float ropeL = 1;
+
+    public float ropeMin = 0.7f;
+    public float ropeMax = 4f;
+
+
 
     private Vector3 sailDirection;
     private Vector3 windDirection = Vector3.forward;
@@ -64,7 +68,7 @@ public class SailingController : MonoBehaviour
     {
         ropeL += inputValue * ropeInputSpeed * Time.deltaTime;
 
-        ropeL = Mathf.Clamp(ropeL,0,4);
+        ropeL = Mathf.Clamp(ropeL, ropeMin, ropeMax);
 
         GetWind();
         UpdateAngles();
@@ -109,16 +113,20 @@ public class SailingController : MonoBehaviour
         
         
         windService.EvaluateWind(transform.position, Time.time, out windDirectionWorld, out windMagnitude);
-        
+
         //Debug.DrawRay(sailTipPos.position, windDirectionWorld * windMagnitude, Color.red);
 
-       
+        float windDifference = Mathf.Max(windMagnitude - rb.linearVelocity.magnitude, 0);
 
-        windDirectionWorld = windDirectionWorld * windMagnitude - rb.linearVelocity;
+        
 
-        windMagnitude = windDirectionWorld.magnitude;
+        windMagnitude = windDifference;
 
-        windDirectionWorld = windDirectionWorld.normalized;
+        //windDirectionWorld = windDirectionWorld * windMagnitude - rb.linearVelocity;
+
+        //windMagnitude = windDirectionWorld.magnitude;
+
+        //windDirectionWorld = windDirectionWorld.normalized;
 
         windDirection = transform.InverseTransformDirection(windDirectionWorld);
 
@@ -128,7 +136,6 @@ public class SailingController : MonoBehaviour
 
     private void UpdateAngles()
     {
-        
 
         maxAngle = GetMaxAngleFromTrig(boatL, boatL, ropeL) * Mathf.Rad2Deg;
 

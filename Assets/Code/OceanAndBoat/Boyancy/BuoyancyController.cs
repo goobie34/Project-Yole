@@ -7,7 +7,9 @@ public class BuoyancyController : MonoBehaviour
     public Rigidbody rb;
 
     public BoatRotationManager rotator;
-    
+    public BoatRotationManager bankingRotator;
+
+
 
     public float BuoyancyForce = 12;
 
@@ -100,7 +102,7 @@ public class BuoyancyController : MonoBehaviour
 
         float bankingLean = Vector3.Dot(transform.right, breakingForce);
 
-        rotator?.ApplyLocalAngularAcceleration(new Vector2(0, bankingLean * bankingLeanForce));
+        bankingRotator?.ApplyLocalAngularAcceleration(new Vector2(0, bankingLean * bankingLeanForce));
 
         var testValue = rb.angularVelocity + breakingForce;
 
