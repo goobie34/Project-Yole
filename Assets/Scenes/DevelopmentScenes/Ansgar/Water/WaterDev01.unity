@@ -663,6 +663,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1458591832}
     m_Modifications:
+    - target: {fileID: 247304123501884383, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3896894800333196725, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
       propertyPath: m_Name
       value: Lighthouse
@@ -712,6 +716,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
+--- !u!4 &233814694 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 247304123501884383, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
+  m_PrefabInstance: {fileID: 233814693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &242100900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2908,7 +2917,7 @@ Transform:
   - {fileID: 1819664301}
   - {fileID: 1246518782}
   - {fileID: 541103397}
-  - {fileID: 2026010339}
+  - {fileID: 233814694}
   - {fileID: 376269118}
   - {fileID: 1823971575}
   - {fileID: 1029972494}
@@ -4728,11 +4737,6 @@ MonoBehaviour:
   sunTransform: {fileID: 1708660189}
   DayNightFrac: 0
   testAngle: 0
---- !u!4 &2026010339 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4422356163545077519, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
-  m_PrefabInstance: {fileID: 233814693}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2071995735
 GameObject:
   m_ObjectHideFlags: 0
