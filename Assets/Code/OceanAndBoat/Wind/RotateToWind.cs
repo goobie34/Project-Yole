@@ -18,7 +18,7 @@ public class RotateToWind : MonoBehaviour
 
 
         windService.EvaluateWind(transform.position, Time.time, out var windDirection, out var mag);
-        var localWind = -transform.InverseTransformDirection(windDirection);
+        var localWind = transform.InverseTransformDirection(windDirection);
         localWind.y = 0;
         childTarget.localRotation = Quaternion.FromToRotation(Vector3.forward, localWind);
     }
