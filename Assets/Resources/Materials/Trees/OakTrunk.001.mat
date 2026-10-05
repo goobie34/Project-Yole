@@ -116,7 +116,6 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DffuseToon: 0
-    - _DiffuseToonMin: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 0.6
@@ -137,8 +136,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimPow: 2
-    - _Rim_Toon: 0.3
+    - _RimPow: 3
+    - _Rim_Toon: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -161,9 +160,9 @@ Material:
     - _Inner_Edge_Color: {r: 0.78113204, g: 0.78113204, b: 0.78113204, a: 1}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Outer_Edge_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Outer_Edge_Color: {r: 0.21428585, g: 0, b: 1, a: 1}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim_Color: {r: 1, g: 0.64354134, b: 0.42075467, a: 0.06666667}
+    - _Rim_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular_Color: {r: 0.7490197, g: 0.7490197, b: 0.7490197, a: 0}
   m_BuildTextureStacks: []
