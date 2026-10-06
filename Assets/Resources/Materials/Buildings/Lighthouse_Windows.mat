@@ -115,7 +115,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Ambiant_Oppacity: 0.5
+    - _Ambiant_Oppacity: 1
     - _Amplitude: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -166,13 +166,13 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
+    - _Ambiant_Color: {r: 1, g: 0.52207637, b: 0, a: 1}
     - _BaseColor: {r: 0.29746228, g: 0.29746228, b: 0.29746228, a: 1}
     - _Color: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Inner_Crevase_Color: {r: 0.29310673, g: 0.25575, b: 0.341, a: 0.3647059}
     - _Inner_Edge_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
+    - _NightColor: {r: 1, g: 1, b: 1, a: 0}
     - _Outer_Crevase_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Outer_Edge_Color: {r: 1, g: 1, b: 1, a: 0}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
