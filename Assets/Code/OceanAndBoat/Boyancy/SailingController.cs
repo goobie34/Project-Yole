@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -27,6 +26,11 @@ public class SailingController : MonoBehaviour
     private float boatL;
     public float ropeL = 1;
 
+    public float ropeMin = 0.7f;
+    public float ropeMax = 4f;
+
+
+
     private Vector3 sailDirection;
     private Vector3 windDirection = Vector3.forward;
     private Vector3 windDirectionWorld = Vector3.forward;
@@ -37,14 +41,25 @@ public class SailingController : MonoBehaviour
     public float inputValue;
     public float ropeInputSpeed = 0.01f;
 
+    private float angularWorldDelta = 0;
+    private float worldSailAngle = 0;
+
+    public float sailInertia = 1f;
+
     private Rigidbody rb;
 
+    public BoatRotationManager rotator;
+    public Vector2 windLeanStrength;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        if (rotator == null)
+            rotator = GetComponentInChildren<BoatRotationManager>();
+
         CalculateLengths();
     }
 
@@ -53,22 +68,37 @@ public class SailingController : MonoBehaviour
     {
         ropeL += inputValue * ropeInputSpeed * Time.deltaTime;
 
-        ropeL = Mathf.Clamp(ropeL,0,4);
+        ropeL = Mathf.Clamp(ropeL, ropeMin, ropeMax);
 
         GetWind();
         UpdateAngles();
 
         sailWindDot = AngleDot(windAngle * Mathf.Deg2Rad, (sailAngle + 90) * Mathf.Deg2Rad);
 
+        
 
-        sailAngularVelocity += sailWindDot * sailRotationAcceleration * windMagnitude;
+        sailAngularVelocity += (sailWindDot * sailRotationAcceleration * windMagnitude) / sailInertia + angularWorldDelta * Time.deltaTime * 60;
 
         ClampSail();
         UpdatePysics();
 
-        sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
+        var  newWorldSailAngle = transform.rotation.eulerAngles.y + sailAngle;
 
-        rb.AddForce(sailRotator.TransformDirection(1,0,0) * appliedAcceleration * windMagnitude * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
+        angularWorldDelta = Mathf.DeltaAngle(newWorldSailAngle, worldSailAngle);
+        worldSailAngle = newWorldSailAngle;
+
+        sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
+        var force = sailRotator.TransformDirection(1, 0, 0) * appliedAcceleration * windMagnitude;
+        rb.AddForce(force * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
+
+
+        var leaningPitch = -Vector3.Dot(transform.forward, force);
+
+        var leaningRoll = -Vector3.Dot(transform.right, force);
+        
+
+        rotator?.ApplyLocalAngularAcceleration(new Vector2(leaningPitch, leaningRoll) * windLeanStrength);
+
 
     }
 
@@ -80,17 +110,39 @@ public class SailingController : MonoBehaviour
     private void GetWind()
     {
         if (!WindServiceLocator.Instance.TryGet(out var windService)) { return; }
+        
+        
         windService.EvaluateWind(transform.position, Time.time, out windDirectionWorld, out windMagnitude);
+
+        //Debug.DrawRay(sailTipPos.position, windDirectionWorld * windMagnitude, Color.red);
+
+
+
+        float windDifference = Mathf.Max(windMagnitude - Vector3.Dot(transform.forward, rb.linearVelocity),0);  //Mathf.Max(windMagnitude - rb.linearVelocity.magnitude, 0);
+
+
+
+
+        windMagnitude = windDifference;
+
+        //windDirectionWorld = windDirectionWorld * windMagnitude - rb.linearVelocity;
+
+        //windMagnitude = windDirectionWorld.magnitude;
+
+        //windDirectionWorld = windDirectionWorld.normalized;
+
         windDirection = transform.InverseTransformDirection(windDirectionWorld);
+
+        //Debug.DrawRay(sailTipPos.position, windDirectionWorld * windMagnitude, Color.limeGreen);
+
     }
 
     private void UpdateAngles()
     {
-        
 
         maxAngle = GetMaxAngleFromTrig(boatL, boatL, ropeL) * Mathf.Rad2Deg;
 
-        windAngle = Vector3.SignedAngle(Vector3.forward, windDirection, Vector3.up) ;
+        windAngle = Vector3.SignedAngle(Vector3.forward, -windDirection, Vector3.up) ;
 
         
     }
