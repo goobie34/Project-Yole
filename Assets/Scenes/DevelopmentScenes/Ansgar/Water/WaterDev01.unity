@@ -2893,6 +2893,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6048034765020822908, guid: 744db34fb89e427409f168e6c9821588, type: 3}
   m_PrefabInstance: {fileID: 759006202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &769123473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769123475}
+  - component: {fileID: 769123474}
+  m_Layer: 0
+  m_Name: MapDepthBaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &769123474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769123473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10456e4b856c4946a5d55ba22f88c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldDepthBaker
+  _mapSize: 3000
+  _maxDepth: 100
+  _mapDepthTexture: {fileID: 8400000, guid: 9fa425d64ede5f04fbba81b189d3ff1a, type: 2}
+  _rendererIndex: 1
+--- !u!4 &769123475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769123473}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 272.31058, y: 28.14772, z: -149.05147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &770229051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9079,3 +9127,4 @@ SceneRoots:
   - {fileID: 992323017}
   - {fileID: 397749888}
   - {fileID: 1166723191}
+  - {fileID: 769123475}
