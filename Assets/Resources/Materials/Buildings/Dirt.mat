@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1129088285888133595
+--- !u!114 &-8518103290346748812
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HouseWalls
+  m_Name: Dirt
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -115,7 +115,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Ambiant_Oppacity: -0.33
+    - _Ambiant_Oppacity: 0.5
     - _Amplitude: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -128,20 +128,20 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 1.31
+    - _DffuseToon: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EdgeScale: 1
-    - _Edge_Far_Lerp: -10
+    - _EdgeScale: 0.6
+    - _Edge_Far_Lerp: 0.5
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Glossyness: 0
+    - _Glossyness: 10
     - _MAIN_LIGHT_SHADOWS: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 0
     - _MAIN_LIGHT_SHADOWS_SCREEN: 0
-    - _Metalic: 0
+    - _Metalic: -0.6
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -149,7 +149,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimPow: 1
+    - _RimPow: 2
     - _Rim_Toon: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
@@ -165,18 +165,18 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
-    - _BaseColor: {r: 0.23584908, g: 0.17688681, b: 0.17688681, a: 1}
-    - _Color: {r: 0.24056605, g: 0.24056605, b: 0.24056605, a: 1}
+    - _Ambiant_Color: {r: 0.15686275, g: 0.007843138, b: 0.14901961, a: 1}
+    - _BaseColor: {r: 1, g: 0.6722406, b: 0.38272727, a: 1}
+    - _Color: {r: 0.0754717, g: 0.06744393, b: 0.06087576, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Inner_Crevase_Color: {r: 0, g: 0, b: 0, a: 0.48235294}
-    - _Inner_Edge_Color: {r: 0, g: 0, b: 0, a: 0}
-    - _NightColor: {r: 0.19139372, g: 0.19992286, b: 0.21698111, a: 0}
-    - _Outer_Crevase_Color: {r: 0.122641504, g: 0.113964036, b: 0.113964036, a: 0}
-    - _Outer_Edge_Color: {r: 0.23584908, g: 0.090051465, b: 0, a: 0.7254902}
+    - _Inner_Crevase_Color: {r: 0.6760053, g: 0.59989315, b: 0.7735849, a: 1}
+    - _Inner_Edge_Color: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
+    - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
+    - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Outer_Edge_Color: {r: 0.116374254, g: 0.09413308, b: 0.14716971, a: 0.7254902}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 0.039215688}
+    - _Rim_Color: {r: 0.04905659, g: 0.03135246, b: 0.024713414, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Specular_Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
+    - _Specular_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
