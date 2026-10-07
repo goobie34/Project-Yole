@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TulipGreen
+  m_Name: Grass
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -119,7 +119,7 @@ Material:
     - _DiffuseToonMin: 0.25
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EdgeScale: 0.5
+    - _EdgeScale: 0.6
     - _Edge_Far_Lerp: 0.5
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
@@ -137,8 +137,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimPow: 3
-    - _Rim_Toon: 0
+    - _RimPow: 2
+    - _Rim_Toon: 0.3
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -153,19 +153,19 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 0, g: 0.13679245, b: 0.021685185, a: 1}
+    - _Ambiant_Color: {r: 0.15686275, g: 0.007843138, b: 0.14901961, a: 1}
     - _BaseColor: {r: 0.2432923, g: 0.39258298, b: 0.17034462, a: 1}
-    - _Color: {r: 0.1515219, g: 0.2830189, b: 0.020024918, a: 1}
+    - _Color: {r: 0.062542535, g: 0.118999995, b: 0.0070210015, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Inner_Crevase_Color: {r: 0.080111735, g: 0.4716981, b: 0, a: 0.3372549}
-    - _Inner_Edge_Color: {r: 0.10919225, g: 0.24528301, b: 0.10297258, a: 1}
+    - _Inner_Crevase_Color: {r: 0.66252446, g: 0.53396225, b: 1, a: 0.3372549}
+    - _Inner_Edge_Color: {r: 0.8792453, g: 0.7321879, b: 0.6486507, a: 1}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Outer_Edge_Color: {r: 0.037675757, g: 0.16037738, b: 0.024964407, a: 0.7254902}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Rim_Color: {r: 0.04905659, g: 0.04905659, b: 0.04905659, a: 0}
+    - _Rim_Color: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Specular_Color: {r: 0.7075472, g: 0.6574849, b: 0.6574849, a: 0}
+    - _Specular_Color: {r: 0.03529412, g: 0.03529412, b: 0.03529412, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1393182064995770965
