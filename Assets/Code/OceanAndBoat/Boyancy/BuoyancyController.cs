@@ -51,17 +51,20 @@ public class BuoyancyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        EvaluateWaterValues();
+        if (!EvaluateWaterValues()) return;
 
         UpdateBoatPhysics();
     }
 
-    private void EvaluateWaterValues()
+    private bool EvaluateWaterValues()
     {
         if (WaveServiceLocator.Instance.TryGet(out var waveManager))
         {
             waveManager.EvaluateWaves(GetWorldVec2Pos(), 1, out _waterHeight, out _waterNormal);
+            return true;
         }
+
+        return false;
     }
 
     private void UpdateBoatPhysics()
