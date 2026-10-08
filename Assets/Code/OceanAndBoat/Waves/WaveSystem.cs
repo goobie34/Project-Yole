@@ -1,15 +1,32 @@
 using UnityEngine;
+using System.Collections;
 
 public class WaveSystem : MonoBehaviour, IWaveService
 {
     [SerializeField] private SumOfSinesManager sumOfSinesManager;
 
+    public Texture2D heightMap;
+    public float mapSideLength = 1000;
+    public float amplitudeScale = 1;
+
     float time = 0;
+
+    private IEnumerator Start()
+    {
+        while (this.isActiveAndEnabled)
+        {
+            WaveServiceLocator.Instance?.Register(this);
+            if (WaveServiceLocator.Instance != null)
+                break;
+            yield return new WaitForFixedUpdate();
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
         WaveServiceLocator.Instance?.Register(this);
+
     }
 
     void OnDisable()
@@ -24,7 +41,16 @@ public class WaveSystem : MonoBehaviour, IWaveService
 
     public void EvaluateWaves(Vector2 worldPos, float amplitudeMult, out float out_height, out Vector3 out_normal)
     {
-        sumOfSinesManager.EvaluateWaves(worldPos, time, amplitudeMult, out out_height, out out_normal);
+        var pivot = new Vector2(0.5f, 0.5f);
+
+        Vector2 uv = (worldPos - pivot) / mapSideLength + pivot;
+
+        float heightMapAmp = heightMap != null ? heightMap.GetPixelBilinear(uv.x, uv.y).a : 1;
+        
+
+        float amplitude = heightMapAmp * amplitudeScale * amplitudeMult;
+
+        sumOfSinesManager.EvaluateWaves(worldPos, time, amplitude, out out_height, out out_normal);
     }
 
 

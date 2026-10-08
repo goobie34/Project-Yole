@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 8457873409252190570}
   - component: {fileID: 3149026758148871753}
   - component: {fileID: 938893037725605709}
+  - component: {fileID: 1245572425893713410}
   m_Layer: 0
   m_Name: WaveSystem
   m_TagString: Untagged
@@ -163,6 +164,9 @@ MonoBehaviour:
       wavelength: 10
       speed: 3
       steepness: 2
+  heightMap: {fileID: 2800000, guid: b82f60789f5366047a69cfc7c236cea0, type: 3}
+  mapSideLength: 800
+  amplitudeScale: 1
 --- !u!114 &938893037725605709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +179,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a06a4366e3d1f40a6d0d043d288d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveSystemTester01
+--- !u!114 &1245572425893713410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6864813926756791959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5eebf22247ca2f44ab08bccbe161ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveServiceLocator
 --- !u!1 &8936685079911719404
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,4 +248,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151a7206e0de4e0449cd1e868f1df1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleWindService
-  _strength: 25
+  _strength: 20

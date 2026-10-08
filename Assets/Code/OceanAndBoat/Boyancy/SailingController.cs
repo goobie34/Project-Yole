@@ -37,6 +37,7 @@ public class SailingController : MonoBehaviour
     private float windMagnitude = 0;
 
     public float appliedAcceleration;
+    public float sailAccelerationPow = 1;
 
     public float inputValue;
     public float ropeInputSpeed = 0.01f;
@@ -88,7 +89,10 @@ public class SailingController : MonoBehaviour
         worldSailAngle = newWorldSailAngle;
 
         sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
-        var force = sailRotator.TransformDirection(1, 0, 0) * appliedAcceleration * windMagnitude;
+
+        float sailAcceleration = Mathf.Pow(Mathf.Abs(appliedAcceleration), sailAccelerationPow) * (appliedAcceleration < 0? -1 : 1);
+
+        var force = sailRotator.TransformDirection(1, 0, 0) * sailAcceleration * windMagnitude;
         rb.AddForce(force * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
 
 
