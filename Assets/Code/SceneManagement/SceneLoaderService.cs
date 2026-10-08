@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,10 +14,20 @@ public class SceneLoaderService : MonoBehaviour
             new string[] {"2.1","2.2","2.3"},
             new string[] {"3.1","3.2","3.3"},
         };
-        StartCoroutine(TestSequentialBatches(batches));
+        StartCoroutine(LoadSequentialWrapped(TestSequentialBatches(batches)));
     }
 
-    public IEnumerator TestSequentialBatches(string[][] batches)
+    public IEnumerator LoadSequentialWrapped(IEnumerable<Coroutine> batchLoader)
+    {
+        int i = 0;
+        foreach (var iterator in batchLoader)
+        {
+            Debug.Log($"loading batch {i++}");
+            yield return iterator;
+        }
+    }
+ 
+    public IEnumerable<Coroutine> TestSequentialBatches(string[][] batches)
     {
         for(int i = 0; i < batches.Length; i++)
         {
@@ -49,9 +60,11 @@ public class SceneLoaderService : MonoBehaviour
 
     public IEnumerator LoadSingle(string single)
     {
-        yield return new WaitForSeconds(Random.Range(5, 20));
+        var time = Random.Range(0f, 20f);
 
-        Debug.Log(single);
+        yield return new WaitForSeconds(time);
+
+        Debug.Log($"{single}, time: {time}");
     }
 
 
