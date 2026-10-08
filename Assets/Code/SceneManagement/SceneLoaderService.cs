@@ -1,43 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
-public class SceneLoaderService : MonoBehaviour
+public class SceneLoaderService : MonoBehaviour, ISceneLoaderService
 {
 
     public void Start()
     {
-        string[][] batches = new string[][] 
-        {
-            new string[] {"1.1","1.2","1.3"},
-            new string[] {"2.1","2.2","2.3"},
-            new string[] {"3.1","3.2","3.3"},
-        };
-        StartCoroutine(LoadSequentialWrapped(TestSequentialBatches(batches)));
+        SceneLoaderServiceLocator.Instance.Register(this);
     }
 
-    public IEnumerator LoadSequentialWrapped(IEnumerable<Coroutine> batchLoader)
+    public Coroutine StartAuxSceneLoader(string[][] sceneBatches)
     {
-        int i = 0;
+        return StartCoroutine
+        (
+            AwaitCoruitneBatch
+            (
+                LoadAuxSceneBatchesSequential(sceneBatches)
+            )
+        );
+    }
+
+
+    public IEnumerable<Coroutine> LoadAuxSceneBatchesSequential(string[][] sceneBatches)
+    {
+        Debug.Log("SceneLoader ------- Loading Aux Scenes Start");
+
+        for (int i = 0; i < sceneBatches.Length; i++)
+        {
+
+            Debug.Log($"SceneLoader - Loading AuxSceneBatch: '{i}'");
+            var batchProgress = LoadBatchAux(sceneBatches[i], i);
+
+            yield return StartCoroutine(AwaitCoroutines(batchProgress));
+        }
+
+        Debug.Log("SceneLoader ------- Loading Aux Scenes End");
+    }
+
+    
+
+
+    private IEnumerator AwaitCoruitneBatch(IEnumerable<Coroutine> batchLoader)
+    {
         foreach (var iterator in batchLoader)
         {
-            Debug.Log($"loading batch {i++}");
             yield return iterator;
         }
     }
  
-    public IEnumerable<Coroutine> TestSequentialBatches(string[][] batches)
-    {
-        for(int i = 0; i < batches.Length; i++)
-        {
-            var batchProgress = LoadBatch(batches[i]);
-
-            yield return StartCoroutine(AwaitBatch(batchProgress));
-        }
-    }
-
-    public IEnumerator AwaitBatch(Coroutine[] batch)
+    private IEnumerator AwaitCoroutines(Coroutine[] batch)
     {
         foreach (Coroutine i in batch)
         {
@@ -45,34 +59,39 @@ public class SceneLoaderService : MonoBehaviour
         }
     }
 
-    public Coroutine[] LoadBatch(string[] batch)
+    private Coroutine[] LoadBatchAux(string[] batch, int batchNr)
     {
         Coroutine[] batchLoaders = new Coroutine[batch.Length];
 
         for(int i = 0; i < batch.Length; i++)
         {
-            batchLoaders[i] = StartCoroutine(LoadSingle(batch[i]));
+            Debug.Log($"SceneLoader ---- Loading Scene '{batch[i]}', nr {i} of batch {batchNr}");
+
+
+            batchLoaders[i] = StartCoroutine(LoadSingleAux(batch[i]));
         }
 
         return batchLoaders;
 
     }
 
-    public IEnumerator LoadSingle(string single)
+    private IEnumerator LoadSingleAux(string single)
     {
-        var time = Random.Range(0f, 20f);
+        LoadSceneParameters parameters = new LoadSceneParameters();
+        parameters.loadSceneMode = LoadSceneMode.Additive;
+        
 
-        yield return new WaitForSeconds(time);
+        var sceneLoader = SceneManager.LoadSceneAsync(single, parameters);
 
-        Debug.Log($"{single}, time: {time}");
+        while (!sceneLoader.isDone)
+        {
+            yield return null;
+        }
+
+        
     }
 
 
-    public void LoadAuxScene(string sceneName)
-    {
-        
-        
-        
-    }
+    
 
 }
