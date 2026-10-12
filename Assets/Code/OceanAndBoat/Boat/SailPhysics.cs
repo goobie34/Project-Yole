@@ -20,9 +20,20 @@ public class SailPhysics : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        UpdatePhysics(Time.fixedDeltaTime);
+    }
+
+    private void UpdatePhysics(float deltaTime)
+    {
+
+
+        sailAngle += sailAngularVelocity * deltaTime;
+
+        sailAngularVelocity *= sailAngularDampening;
+
+
     }
 
     public void ApplyAngularAccelerationToSail(float acceleration)
