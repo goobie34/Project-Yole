@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WaveServiceLocator : ServiceLocatorPersistent<IWaveService> { }
+public class WaveServiceLocator : ServiceLocator<IWaveService> { }
 
 public interface IWaveService
 {

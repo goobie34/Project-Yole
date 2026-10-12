@@ -115,7 +115,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Ambiant_Oppacity: 0.4
+    - _Ambiant_Oppacity: -0.33
     - _Amplitude: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -128,7 +128,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 1
+    - _DffuseToon: 1.31
+    - _DiffuseToonMin: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 1
@@ -165,13 +166,13 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Ambiant_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
     - _BaseColor: {r: 0.23584908, g: 0.17688681, b: 0.17688681, a: 1}
-    - _Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
+    - _Color: {r: 0.24056605, g: 0.24056605, b: 0.24056605, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Inner_Crevase_Color: {r: 0, g: 0, b: 0, a: 0.48235294}
     - _Inner_Edge_Color: {r: 0, g: 0, b: 0, a: 0}
-    - _NightColor: {r: 0.13741545, g: 0.14053729, b: 0.1509434, a: 0}
+    - _NightColor: {r: 0.19139372, g: 0.19992286, b: 0.21698111, a: 0}
     - _Outer_Crevase_Color: {r: 0.122641504, g: 0.113964036, b: 0.113964036, a: 0}
     - _Outer_Edge_Color: {r: 0.23584908, g: 0.090051465, b: 0, a: 0.7254902}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
