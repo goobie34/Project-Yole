@@ -34,7 +34,6 @@ public class BoatSoundController : MonoBehaviour
 
     private void OnDestroy()
     {
-        eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        eventInstance.release();
+        AudioManager.CleanUp(eventInstance);
     }
 }
