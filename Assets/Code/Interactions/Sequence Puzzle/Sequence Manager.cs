@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SequenceManager : MonoBehaviour
@@ -9,7 +10,8 @@ public class SequenceManager : MonoBehaviour
     
     private int currentIndex = 0;
     private int currentStep = 1;
-    private float sequenceLengthPerObject = 1;
+    
+    [SerializeField] private float sequenceLengthPerObject = 1;
 
     private SequenceState currentState;
 
@@ -123,6 +125,8 @@ public class SequenceManager : MonoBehaviour
             currentStep = 1;
 
             currentState = SequenceState.NotBegun;
+
+            ShuffleSequence();
             StartCoroutine(RestartSequence());
         }
     }
@@ -131,6 +135,28 @@ public class SequenceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         StartSequence();
+    }
+
+    private void ShuffleSequence()
+    {
+        int n = sequence.Length;
+        SequencePlayer[] tempSequence = sequence;
+
+        List<SequencePlayer> sequenceList = new(tempSequence);
+        List<SequencePlayer> shuffledSequence = new();
+
+        for (int i = 0; i < n; i++)
+        {
+            int randomIndex = Random.Range(0, sequenceList.Count);
+
+            shuffledSequence.Add(sequenceList[randomIndex]);
+            sequenceList.RemoveAt(randomIndex);
+        }
+
+        for (int i = 0; i < shuffledSequence.Count; i++)
+        {
+            sequence[i] = shuffledSequence[i];
+        }
     }
 }
 
