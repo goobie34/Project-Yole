@@ -1930,35 +1930,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4681696124998558773, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: field of view
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 145.16232
+      value: 3.54
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.019192
+      value: 68.4
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.270344
+      value: -45.9
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.02203421
+      value: 0.91500163
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00446119
+      value: 0.4034502
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9798653
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19838993
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6021941698935999855, guid: aa737c7b07d1aac40806fe65630e0232, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2512,6 +2512,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
+--- !u!4 &1047510767 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 247304123501884383, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
+  m_PrefabInstance: {fileID: 1047510766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1066859720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1566142615967540852, guid: 3a7d50e4bd6b4ab409037dd1e0e5c1a9, type: 3}
@@ -2803,7 +2808,7 @@ Transform:
   - {fileID: 1643584650}
   - {fileID: 1704424615}
   - {fileID: 1013329201}
-  - {fileID: 1192119327}
+  - {fileID: 1047510767}
   - {fileID: 1561618009}
   - {fileID: 177172792}
   - {fileID: 919582194}
@@ -2942,11 +2947,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905d5754b1025164f99e2c37da269032, type: 3}
---- !u!4 &1192119327 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4422356163545077519, guid: cce70a42c1e070942a8473a0ba708abd, type: 3}
-  m_PrefabInstance: {fileID: 1047510766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1227968491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3913,20 +3913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4a522c83b5fea478e69f6dedc73082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
-  defaultMusic:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  queuedMusic:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!1001 &1676665450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4161,7 +4147,7 @@ MonoBehaviour:
       Data2: 1285613417
       Data3: 1661055631
       Data4: 327799274
-    Path: event:/mus_ocean_day
+    Path: event:/Music/mus_ocean_day
 --- !u!65 &1759673378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4850,7 +4836,7 @@ MonoBehaviour:
       Data2: 1125579902
       Data3: -146074433
       Data4: 1917875060
-    Path: event:/amb_wind_gust
+    Path: event:/Ambience/amb_wind_gust
   listenerObject: {fileID: 2025614390}
 --- !u!1 &2089226877
 GameObject:

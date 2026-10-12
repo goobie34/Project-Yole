@@ -2,34 +2,38 @@ using FMODUnity;
 using UnityEngine;
 
 /// <summary>
-/// Temporary music trigger using OnTriggerEnter and Exit.
+/// Music trigger using OnTriggerEnter and OnTriggerExit.
 /// </summary>
 [RequireComponent (typeof(BoxCollider))]
 public class MusicTriggerScript : MonoBehaviour
 {
     [SerializeField] EventReference eventReference;
+    [SerializeField] string triggerTag;
+    TagHandle tagHandle;
 
     //Using TagHandle instead of string for performance
     //https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Component.CompareTag.html
-    TagHandle playerTag;
-
+    private void Start()
+    {
+        if (MusicManager.Instance == null)
+            throw new System.Exception("MusicManager singleton instance cannot be found.");
+    }
     private void OnEnable()
     {
-        playerTag = TagHandle.GetExistingTag("player");
+        tagHandle = TagHandle.GetExistingTag(triggerTag);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag(playerTag)) return;
+        if (!other.gameObject.CompareTag(tagHandle)) return;
 
         MusicManager.Instance.ChangeMusic(eventReference);
-        MusicManager.Instance.StartMusic();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag(playerTag)) return;
+        if (!other.gameObject.CompareTag(tagHandle)) return;
 
-        MusicManager.Instance.StopMusic();
+        MusicManager.Instance.StopMusic(eventReference);
     }
 }

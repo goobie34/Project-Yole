@@ -1,51 +1,95 @@
+using FMOD;
 using FMOD.Studio;
 using FMODUnity;
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Manages music event instances. (Currently only 1).
-/// 
-/// WIP. IS NOT IN FUNCTIONAL STATE.
+/// Manages music event instances and music playback. By default it lets music event instances fade out according to FMOD's ADHRS envelope.
 /// </summary>
 public class MusicManager : SingletonPersistent<MusicManager>
 {
-    //temp
-    [SerializeField] EventReference defaultMusic;
-    public EventReference queuedMusic;
-
-    EventInstance musicInstance;
-    EVENT_CALLBACK musicStoppedCallback;
+    EventInstance currentMusicInstance;
+    List<EventInstance> fadingMusicInstances;
     private void Start()
     {
-        musicStoppedCallback = new EVENT_CALLBACK(MusicStoppedCallback);
+        fadingMusicInstances = new List<EventInstance>();
     }
     public void ChangeMusic(EventReference reference)
     {
-        musicInstance.setCallback(musicStoppedCallback, EVENT_CALLBACK_TYPE.STOPPED);
+        if (currentMusicInstance.isValid())
+        {
+            fadingMusicInstances.Add(currentMusicInstance);
+            StartCoroutine(FadeOutAndRelease(currentMusicInstance));
+        }
 
-        queuedMusic = reference;
-        StopMusic(true);
-
-        musicInstance.setCallback(musicStoppedCallback, EVENT_CALLBACK_TYPE.STOPPED);
-
+        currentMusicInstance = RuntimeManager.CreateInstance(reference);
+        currentMusicInstance.start();
     }
 
-    public void StartMusic() => musicInstance.start();
-    public void StopMusic(bool fadeOut = true) => musicInstance.stop(fadeOut ? FMOD.Studio.STOP_MODE.ALLOWFADEOUT : FMOD.Studio.STOP_MODE.IMMEDIATE);
-    public void PauseMusic() => musicInstance.setPaused(true);
-    public void ResumeMusic() => musicInstance.setPaused(false);
-
-    static FMOD.RESULT MusicStoppedCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, IntPtr instancePtr, IntPtr parameterPtr)
+    public void StartMusic() => currentMusicInstance.start();
+    public void PauseMusic() => currentMusicInstance.setPaused(true);
+    public void ResumeMusic() => currentMusicInstance.setPaused(false);
+    public void StopMusic(EventReference reference, bool fadeOut = true)
     {
-        Instance.musicInstance.release();
-        Instance.musicInstance = RuntimeManager.CreateInstance(Instance.queuedMusic);
-
-        Debug.Log("MUSIC STOPPED NOW");
-        return FMOD.RESULT.OK;
+        if (AudioManager.CompareGUID(currentMusicInstance, reference))
+        {
+            StopMusicInstance(currentMusicInstance, fadeOut);
+        }
     }
+    public void StopMusic(bool fadeOut = true)
+    {
+        StopMusicInstance(currentMusicInstance, fadeOut);
+    }
+    private void StopMusicInstance(EventInstance instance, bool fadeOut = true)
+    {
+        if (!instance.isValid()) return;
+
+        if (fadeOut)
+        {
+            fadingMusicInstances.Add(instance);
+            StartCoroutine(FadeOutAndRelease(instance));
+        }
+        else
+        {
+            instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            instance.release();
+        }
+    }
+
+    private IEnumerator FadeOutAndRelease(EventInstance instance)
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        while (true)
+        {
+            if (!instance.isValid())
+                break;
+
+            PLAYBACK_STATE state;
+            instance.getPlaybackState(out state);
+            if (state == PLAYBACK_STATE.STOPPED)
+                break;
+
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+        if (instance.isValid())
+        {
+            instance.release();
+            fadingMusicInstances.Remove(instance);
+        }
+    }
+
     void OnDestroy()
     {
-        musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        musicInstance.release();
+        currentMusicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        currentMusicInstance.release();
+
+        foreach(var instance in fadingMusicInstances)
+        {
+            instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            instance.release();
+        }
     }
 }

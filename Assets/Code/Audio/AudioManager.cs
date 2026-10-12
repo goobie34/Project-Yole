@@ -15,7 +15,14 @@ public class AudioManager : SingletonPersistent<AudioManager>
     }
 
     public static void CleanUp(EventInstance instance) { instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); instance.release(); }
-
+    public static bool CompareGUID(EventInstance instance, EventReference reference)
+    {
+        EventDescription instanceDescription;
+        GUID instanceGuid;
+        instance.getDescription(out instanceDescription);
+        instanceDescription.getID(out instanceGuid);
+        return instanceGuid == reference.Guid;
+    }
 
     //    [SerializeField] bool debug = true;    
 
