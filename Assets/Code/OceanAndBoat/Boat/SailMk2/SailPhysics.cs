@@ -5,13 +5,15 @@ public class SailPhysics : MonoBehaviour
     [Header("Configs")]
     public float sailInertia = 1f;
     public float sailAngularDampening = 0.5f;
-    public Transform RotatorObject;
+    public Transform boatRotationReference;
 
     [Header("Data")]
     public float sailAngle;
     public float sailAngularVelocity;
+    public float sailAngularAcceleration;
+    public Quaternion sailRotation { get; private set; }
 
-    
+    public Quaternion sailRotationWorld => sailRotation * boatRotationReference.rotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,22 +24,26 @@ public class SailPhysics : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdatePhysics(Time.fixedDeltaTime);
+        
+        UpdatePhysics(Time.fixedDeltaTime * 60);
+
+        sailRotation =  Quaternion.Euler(0, sailAngle, 0);
     }
 
-    private void UpdatePhysics(float deltaTime)
+    public void UpdatePhysics(float deltaTime)
     {
-
+        //sailAngularVelocity += sailAngularAcceleration * deltaTime;
 
         sailAngle += sailAngularVelocity * deltaTime;
 
-        sailAngularVelocity *= sailAngularDampening;
+        sailAngularVelocity *= 1 - sailAngularDampening;
 
+        sailAngularAcceleration = 0;
 
     }
 
     public void ApplyAngularAccelerationToSail(float acceleration)
     {
-
+        sailAngularVelocity += acceleration / sailInertia;
     }
 }

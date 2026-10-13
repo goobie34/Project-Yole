@@ -47,15 +47,24 @@ public class SailingController : MonoBehaviour
 
     public float sailInertia = 1f;
 
+    
+
     private Rigidbody rb;
+    private BoatStateMachine stateMachine;
 
     public BoatRotationManager rotator;
     public Vector2 windLeanStrength;
 
+    public float closeSailLerp = 1; // 0 = closed, 1 = open
+
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(stateMachine == null)
+            stateMachine = GetComponent<BoatStateMachine>();
+
         rb = GetComponent<Rigidbody>();
 
         if (rotator == null)
@@ -67,20 +76,37 @@ public class SailingController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdateRope();
+        var state = GetCurrentState();
 
         GetWind();
+        SailingStateUpdate(Time.fixedDeltaTime);
+        
+
+    }
+
+    private BoatState GetCurrentState()
+    {
+        if (stateMachine == null)
+            return BoatState.Sailing_Control;
+
+        return stateMachine.currentState;
+    }
+
+    private void SailingStateUpdate(float deltaTime)
+    {
+        UpdateRope(deltaTime);
+
         UpdateAngles();
 
         ApplyWindToSail();
 
-        sailAngularVelocity += angularWorldDelta * Time.fixedDeltaTime * 60;
+        sailAngularVelocity += angularWorldDelta * deltaTime * 60;
 
         ClampSail();
 
         UpdatePysics();
 
-        var  newWorldSailAngle = transform.rotation.eulerAngles.y + sailAngle;
+        var newWorldSailAngle = transform.rotation.eulerAngles.y + sailAngle;
 
         angularWorldDelta = Mathf.DeltaAngle(newWorldSailAngle, worldSailAngle);
         worldSailAngle = newWorldSailAngle;
@@ -91,20 +117,13 @@ public class SailingController : MonoBehaviour
 
 
         ApplySailForce();
-
-        //var leaningPitch = -Vector3.Dot(transform.forward, force);
-
-        //var leaningRoll = -Vector3.Dot(transform.right, force);
-        
-
-        //rotator?.ApplyLocalAngularAcceleration(new Vector2(leaningPitch, leaningRoll) * windLeanStrength);
-
-
     }
 
-    private void UpdateRope()
+    
+
+    private void UpdateRope(float deltaTime)
     {
-        ropeL += inputValue * ropeInputSpeed * Time.deltaTime;
+        ropeL += inputValue * ropeInputSpeed * deltaTime;
 
         ropeL = Mathf.Clamp(ropeL, ropeMin, ropeMax);
     }

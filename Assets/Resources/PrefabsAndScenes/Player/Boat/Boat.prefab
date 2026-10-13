@@ -9,12 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3720717429902052107}
+  - component: {fileID: 2529870576010615926}
   - component: {fileID: 5240318828239005542}
   - component: {fileID: 2078481628017992260}
   - component: {fileID: 4925442953686576831}
   - component: {fileID: 8211974438612366662}
   - component: {fileID: 8558962277348566581}
-  - component: {fileID: 8937615477696856301}
+  - component: {fileID: 6973025270834750243}
+  - component: {fileID: 8228180133650774383}
+  - component: {fileID: 4569623145186282597}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -39,6 +42,20 @@ Transform:
   - {fileID: 4877075943526635291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2529870576010615926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2faa6d70630df45ae9c256fcac24ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatStateMachine
+  startingState: 10
+  testOverride: 0
 --- !u!114 &5240318828239005542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,13 +171,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376179927878851857}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe4200d767dff2458aeab4183591732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SailingController
   sailAngle: 0
   sailAngularVelocity: 0
+  sailWindDot: 0
   windAngle: 0
   maxAngle: 0
   sailRotationAcceleration: 3
@@ -179,20 +197,65 @@ MonoBehaviour:
   sailInertia: 1
   rotator: {fileID: 5784330721100925085}
   windLeanStrength: {x: 0, y: 1}
---- !u!114 &8937615477696856301
+  closeSailLerp: 1
+--- !u!114 &6973025270834750243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376179927878851857}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f78d3106e186140ba7954740e19390, type: 3}
+  m_Script: {fileID: 11500000, guid: f711d149b54a164408edfe0a5053e8f4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SailingForce
-  _controller: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::SailPhysics
+  sailInertia: 1
+  sailAngularDampening: 0.5
+  boatRotationReference: {fileID: 5520043086799656160}
+  sailAngle: 0
+  sailAngularVelocity: 0
+  sailAngularAcceleration: 0
+--- !u!114 &8228180133650774383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0563432cef3aa409a5fbf679a4b435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SailWindManager
+  windDirection: {x: 0, y: 0, z: 0}
   windMagnitude: 0
+--- !u!114 &4569623145186282597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4467ca084571a0d4b867d00261a65ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SailingForceControler
+  hitchPointLength: 5
+  mainsailRopeLength: 1
+  sailAngularSpeedMult: 3
+  effectiveAnglePow: 3
+  windManager: {fileID: 0}
+  sailSimulator: {fileID: 0}
+  rb: {fileID: 0}
+  maxAngle: 0
+  sailWindDot: 0
+  pushAmount: 0
+  appliedAcceleration: 0
+  localWindDirection: {x: 0, y: 0, z: 0}
+  localWindMagnitude: 0
+  localWindAngle: 0
 --- !u!1 &2835776110408742043
 GameObject:
   m_ObjectHideFlags: 0

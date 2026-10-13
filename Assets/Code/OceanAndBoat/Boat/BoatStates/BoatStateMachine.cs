@@ -3,7 +3,7 @@ using UnityEngine;
 public class BoatStateMachine : MonoBehaviour
 {
     [SerializeField] private BoatState startingState = BoatState.Sailing_Control;
-
+    [SerializeField] private bool testOverride = false;
     public BoatState currentState { get; private set; }
 
     public void Start()
@@ -11,8 +11,19 @@ public class BoatStateMachine : MonoBehaviour
         SetState(startingState);
     }
 
+    private void FixedUpdate()
+    {
+        if (testOverride)
+        {
+            if (startingState != currentState)
+                SetState(startingState);
+        }
+    }
+
     public void SetState(BoatState state)
     {
+
+
         var oldState = currentState;
         
         currentState = state;
