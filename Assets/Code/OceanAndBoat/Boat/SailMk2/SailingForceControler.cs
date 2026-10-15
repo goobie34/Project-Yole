@@ -108,11 +108,11 @@ public class SailingForceControler : MonoBehaviour
     {
         if (sailAngle <= -maxAngle)
         {
-            sailAngle = -maxAngle;
+            //sailAngle = -maxAngle;
 
             pushAmount = sailWindDot;
 
-            sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, 0, maxAngle);
+            sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, 0, Mathf.Max(-maxAngle - sailAngle, maxAngle));
 
             angularAcceleration = Mathf.Clamp(angularAcceleration, 0, maxAngle);
 
@@ -121,12 +121,14 @@ public class SailingForceControler : MonoBehaviour
 
         if (sailAngle >= maxAngle)
         {
-            sailAngle = maxAngle;
+            //sailAngle = maxAngle;
 
 
             pushAmount = sailWindDot;
 
             sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, -maxAngle, 0);
+            sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, Mathf.Min(maxAngle - sailAngle, -maxAngle), 0);
+
 
             angularAcceleration = Mathf.Clamp(angularAcceleration, -maxAngle, 0);
 

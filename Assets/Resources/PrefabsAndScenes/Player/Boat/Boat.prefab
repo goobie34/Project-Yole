@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6973025270834750243}
   - component: {fileID: 8228180133650774383}
   - component: {fileID: 4569623145186282597}
+  - component: {fileID: 5871083788774766902}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -244,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SailingForceControler
   hitchPointLength: 5
   mainsailRopeLength: 1
-  sailAngularSpeedMult: 3
+  sailAngularSpeedMult: 0.3
   effectiveAnglePow: 3
   windManager: {fileID: 0}
   sailSimulator: {fileID: 0}
@@ -256,6 +257,27 @@ MonoBehaviour:
   localWindDirection: {x: 0, y: 0, z: 0}
   localWindMagnitude: 0
   localWindAngle: 0
+--- !u!114 &5871083788774766902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21321404dace00a459b4daa73972e090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SailRopeControler
+  minRopeLength: 1
+  maxRopeLength: 6
+  extendSpeed: 0.3
+  pullInSpeed: 0.3
+  minExtendLerp: 0.5
+  minPullInLerp: 0.5
+  sailControler: {fileID: 0}
+  inputValue: 0
+  ropeLength: 0
 --- !u!1 &2835776110408742043
 GameObject:
   m_ObjectHideFlags: 0
