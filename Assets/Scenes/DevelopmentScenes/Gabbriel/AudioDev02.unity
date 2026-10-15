@@ -330,14 +330,9 @@ MonoBehaviour:
       Data2: 1333041465
       Data3: -745548358
       Data4: -1191301033
-    Path: event:/SFX/sfx_boat_splash_sailing
-  rb: {fileID: 1256791424}
+    Path: event:/SFX/sfx_boat_travel_forward
+  parameterName: 
   maxVelocity: 10
---- !u!54 &1256791424 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 2078481628017992260, guid: 32416c68cfb9cf64a90393e3b321501f, type: 3}
-  m_PrefabInstance: {fileID: 4118201397404894329}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1280096801
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,12 +17,36 @@ public class AudioManager : SingletonPersistent<AudioManager>
     public static void CleanUp(EventInstance instance) { instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); instance.release(); }
     public static bool CompareGUID(EventInstance instance, EventReference reference)
     {
-        EventDescription instanceDescription;
-        GUID instanceGuid;
-        instance.getDescription(out instanceDescription);
-        instanceDescription.getID(out instanceGuid);
-        return instanceGuid == reference.Guid;
+        return GetGUID(instance) == reference.Guid;
     }
+
+    public static EventDescription GetEventDescription(EventInstance instance)
+    {
+        EventDescription description;
+        instance.getDescription(out description);
+        return description;
+    }
+    public static GUID GetGUID(EventInstance instance)
+    {
+        GUID guid;
+        GetEventDescription(instance).getID(out guid);
+        return guid;
+    }
+
+    public static PARAMETER_DESCRIPTION GetParameterDescription(EventInstance instance, string parameterName)
+    {
+        PARAMETER_DESCRIPTION description;
+        GetEventDescription(instance).getParameterDescriptionByName(parameterName, out description);
+        return description;
+    }
+    public static PARAMETER_ID GetParameterID(EventInstance instance, string parameterName)
+    {
+        return GetParameterDescription(instance, parameterName).id;
+    }
+
+    
+
+
 
     //    [SerializeField] bool debug = true;    
 
