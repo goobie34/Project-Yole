@@ -7,6 +7,28 @@ public class MaterialApplier : MonoBehaviour
     [SerializeField] private Material yellowMaterial;
     [SerializeField] private Material greenMaterial;
 
+    [SerializeField] private SequencePlayer sequencePlayer;
+
+    private void Start()
+    {
+        if (sequencePlayer != null)
+        {
+            sequencePlayer.OnSequenceDeselect.AddListener(ApplyDefault);
+            sequencePlayer.OnSequenceSelect.AddListener(ApplyYellow);
+            sequencePlayer.OnCorrectInput.AddListener(ApplyGreen);
+            sequencePlayer.OnWrongInput.AddListener(ApplyRed);
+        }
+        else Debug.Log("SequencePlayer was not found!");
+    }
+
+    public void SubscribeToSequencePlayer(SequencePlayer SP)
+    {
+        SP.OnSequenceDeselect.AddListener(ApplyDefault);
+        SP.OnSequenceSelect.AddListener(ApplyYellow);
+        SP.OnCorrectInput.AddListener(ApplyGreen);
+        SP.OnWrongInput.AddListener(ApplyRed);
+    }
+
     public void ApplyGreen()
     {
         GetComponent<Renderer>().material = greenMaterial;
