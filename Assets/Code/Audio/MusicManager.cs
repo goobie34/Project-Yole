@@ -1,4 +1,3 @@
-using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
@@ -9,11 +8,20 @@ using UnityEngine;
 /// </summary>
 public class MusicManager : SingletonPersistent<MusicManager>
 {
+    [SerializeField] EventReference startupMusicEvent;
+
     EventInstance currentMusicInstance;
     List<EventInstance> fadingMusicInstances;
+
+    public EventInstance CurrentMusic { get{ return currentMusicInstance; }}
     private void Start()
     {
         fadingMusicInstances = new List<EventInstance>();
+
+        if (!startupMusicEvent.IsNull)
+        {
+            ChangeMusic(startupMusicEvent);
+        }
     }
     public void ChangeMusic(EventReference reference)
     {
@@ -79,6 +87,23 @@ public class MusicManager : SingletonPersistent<MusicManager>
             instance.release();
             fadingMusicInstances.Remove(instance);
         }
+    }
+
+    public bool SetParameter(EventReference reference, PARAMETER_ID id, float val)
+    {
+        if (AudioManager.GetGUID(currentMusicInstance) != reference.Guid)
+            return false;
+        
+        currentMusicInstance.setParameterByID(id, val);
+        return true;
+    }
+    public bool SetParameter(EventReference reference, PARAMETER_ID id, string label)
+    {
+        if (AudioManager.GetGUID(currentMusicInstance) != reference.Guid)
+            return false;
+        
+        currentMusicInstance.setParameterByIDWithLabel(id, label);
+        return true;
     }
 
     void OnDestroy()

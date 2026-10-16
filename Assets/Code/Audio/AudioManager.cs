@@ -39,13 +39,18 @@ public class AudioManager : SingletonPersistent<AudioManager>
         GetEventDescription(instance).getParameterDescriptionByName(parameterName, out description);
         return description;
     }
+
     public static PARAMETER_ID GetParameterID(EventInstance instance, string parameterName)
     {
         return GetParameterDescription(instance, parameterName).id;
     }
-
-    
-
+    public static PARAMETER_ID GetParameterID(EventReference reference, string parameterName)
+    {
+        EventDescription eventDescription = RuntimeManager.GetEventDescription(reference);
+        PARAMETER_DESCRIPTION parameterDescription;
+        eventDescription.getParameterDescriptionByName(parameterName, out parameterDescription);
+        return parameterDescription.id;
+    }
 
 
     //    [SerializeField] bool debug = true;    

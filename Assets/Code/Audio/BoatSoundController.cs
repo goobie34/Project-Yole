@@ -37,7 +37,7 @@ public class BoatSoundController : MonoBehaviour
 
         eventInstance.setParameterByID(parameterID, paramVal);
 
-        Debug.Log(paramVal);
+        //Debug.Log(paramVal);
     }
 
     private void OnDestroy()
