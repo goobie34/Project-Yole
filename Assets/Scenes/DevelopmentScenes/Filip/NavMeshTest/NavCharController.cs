@@ -24,6 +24,15 @@ public class NavCharController : MonoBehaviour
     [SerializeField]
     private float maxHeightDifference = 0.3f;
 
+    [Header("Edge Push")]
+    [SerializeField]
+    private float edgePushSpeed = 2f;
+    [SerializeField]
+    private float edgePushDuration = 0.15f;
+
+    private Vector3 edgePushDirection;
+    private float edgePushTimer;
+
     private Vector2 movementInput;
     public Vector3 currentVelocity;
 
@@ -65,6 +74,18 @@ public class NavCharController : MonoBehaviour
         if (cameraTransform == null)
             return;
 
+        //Handle edge push
+        if (edgePushTimer > 0f)
+        {
+            edgePushTimer -= Time.deltaTime;
+
+            Vector3 pushVelocity = edgePushDirection * edgePushSpeed;
+
+            MoveOnNavMesh(pushVelocity, false);
+
+            return;
+        }
+
         //Get camera directions
         Vector3 cameraForward = cameraTransform.forward;
         Vector3 cameraRight = cameraTransform.right;
@@ -87,12 +108,12 @@ public class NavCharController : MonoBehaviour
         
         currentVelocity = Vector3.MoveTowards(currentVelocity, targetVelocity, currentAcceleration * Time.deltaTime);
 
-        MoveOnNavMesh();
+        MoveOnNavMesh(currentVelocity, true);
     }
 
-    private void MoveOnNavMesh()
+    private void MoveOnNavMesh(Vector3 velocity, bool allowEdgePush)
     {
-        if (currentVelocity.sqrMagnitude < 0.0001f)
+        if (velocity.sqrMagnitude < 0.0001f)
             return;
 
         //Find current NavMesh position
@@ -104,7 +125,7 @@ public class NavCharController : MonoBehaviour
         }
 
         //Calculate desired movement
-        Vector3 movement = currentVelocity * Time.deltaTime;
+        Vector3 movement = velocity * Time.deltaTime;
 
         Vector3 targetPosition = currentHit.position + movement;
 
@@ -113,7 +134,21 @@ public class NavCharController : MonoBehaviour
 
         if (isBlocked)
         {
-            Debug.LogWarning("FAILED: NavMesh.RayCast blocked movement");
+            if (allowEdgePush)
+            {
+                //Push backwards, opposite to movement
+                edgePushDirection = -velocity.normalized;
+                edgePushDirection.y = 0f;
+                edgePushDirection.Normalize();
+
+                edgePushTimer = edgePushDuration;
+            }
+            else
+            {
+                //Stop push if it hits another boundary
+                edgePushTimer = 0f;
+            }
+            
             currentVelocity = Vector3.zero;
             return;
         }
