@@ -121,7 +121,7 @@ public class SailingForceControler : MonoBehaviour
     {
         if(sailAngle <= 0)
         {
-            sailAngularVelocity = Mathf.Min(Mathf.Max(sailAngularVelocity, (-maxAngle - sailAngle)), maxAngle - sailAngle);
+            sailAngularVelocity = Mathf.Min(Mathf.Max(sailAngularVelocity, (-maxAngle - sailAngle) * ropeClampVelocityMult), maxAngle - sailAngle);
             sailAngularVelocity = Mathf.Min(sailAngularVelocity, ropeClampMaxVelocity);
 
             if (sailAngle <= -maxAngle)
@@ -143,7 +143,7 @@ public class SailingForceControler : MonoBehaviour
 
         if (sailAngle >= 0)
         {
-            sailAngularVelocity = Mathf.Max(Mathf.Min(sailAngularVelocity, (maxAngle - sailAngle)), -maxAngle - sailAngle);
+            sailAngularVelocity = Mathf.Max(Mathf.Min(sailAngularVelocity, (maxAngle - sailAngle) * ropeClampVelocityMult), -maxAngle - sailAngle);
             sailAngularVelocity = Mathf.Max(sailAngularVelocity, -ropeClampMaxVelocity);
 
             if (sailAngle >= maxAngle)
