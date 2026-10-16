@@ -254,7 +254,7 @@ MonoBehaviour:
   hitchPointLength: 5
   mainsailRopeLength: 1
   sailAngularSpeedMult: 0.3
-  ropeClampMaxVelocity: 7
+  ropeClampMaxVelocity: 100
   ropeClampVelocityMult: 1
   effectiveAnglePow: 3
   windManager: {fileID: 0}
@@ -282,11 +282,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SailRopeControler
   minRopeLength: 1
   maxRopeLength: 6
-  extendSpeed: 0.4
+  extendSpeed: 0.5
   pullInSpeed: 0.3
-  minExtendLerp: 0.7
-  minPullInLerp: 0.5
-  inputLerp: 0.5
+  minExtendLerp: 0.5
+  minPullInLerp: 0.4
+  inputLerp: 0.25
   sailControler: {fileID: 0}
   boatFlags: {fileID: 0}
   targetInputValue: 0
