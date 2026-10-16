@@ -31,7 +31,7 @@ public class BoatCollision : MonoBehaviour
     {
         var velocity = collision.relativeVelocity;
 
-        float directionalSpeed = Vector3.Dot(collision.contacts[0].normal, velocity);
+        float directionalSpeed = velocity.magnitude; //Vector3.Dot(collision.contacts[0].normal, velocity);
 
 
         if (fuzzyFlags.Get_Stunned > 0)

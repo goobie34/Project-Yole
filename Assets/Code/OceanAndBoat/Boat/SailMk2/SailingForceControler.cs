@@ -119,47 +119,39 @@ public class SailingForceControler : MonoBehaviour
 
     private void ClampSail(ref float sailAngle, ref float sailAngularVelocity, ref float angularAcceleration)
     {
-        if(sailAngle <= 0)
+
+        if (sailAngle <= -maxAngle)
         {
-            
 
-            if (sailAngle <= -maxAngle)
-            {
+            pushAmount = sailWindDot;
 
-                pushAmount = sailWindDot;
-
-                sailAngularVelocity = Mathf.Min(Mathf.Max(sailAngularVelocity, (-maxAngle - sailAngle) * ropeClampVelocityMult), maxAngle - sailAngle);
-                sailAngularVelocity = Mathf.Min(sailAngularVelocity, ropeClampMaxVelocity);
+            sailAngularVelocity = Mathf.Min(Mathf.Max(sailAngularVelocity, (-maxAngle - sailAngle) ), maxAngle - sailAngle);
+            sailAngularVelocity = Mathf.Min(sailAngularVelocity, ropeClampMaxVelocity);
 
 
-                angularAcceleration = Mathf.Clamp(angularAcceleration, 0, maxAngle);
+            angularAcceleration = Mathf.Clamp(angularAcceleration, 0, maxAngle);
 
-                return;
-            }
+            return;
+        }
+        if (sailAngle >= maxAngle)
+        {
+            //sailAngle = maxAngle;
+
+
+            pushAmount = sailWindDot;
+
+
+
+            sailAngularVelocity = Mathf.Max(Mathf.Min(sailAngularVelocity, (maxAngle - sailAngle) ), -maxAngle - sailAngle);
+            sailAngularVelocity = Mathf.Max(sailAngularVelocity, -ropeClampMaxVelocity);
+
+            angularAcceleration = Mathf.Clamp(angularAcceleration, -maxAngle, 0);
+
+            return;
         }
 
 
-        if (sailAngle >= 0)
-        {
-            
-
-            if (sailAngle >= maxAngle)
-            {
-                //sailAngle = maxAngle;
-
-
-                pushAmount = sailWindDot;
-
-
-               
-                sailAngularVelocity = Mathf.Max(Mathf.Min(sailAngularVelocity, (maxAngle - sailAngle) * ropeClampVelocityMult), -maxAngle - sailAngle);
-                sailAngularVelocity = Mathf.Max(sailAngularVelocity, -ropeClampMaxVelocity);
-
-                angularAcceleration = Mathf.Clamp(angularAcceleration, -maxAngle, 0);
-
-                return;
-            }
-        }
+       
 
         pushAmount = 0;
 
