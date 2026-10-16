@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoatStateMachine : MonoBehaviour
 {
@@ -6,9 +7,19 @@ public class BoatStateMachine : MonoBehaviour
     [SerializeField] private bool testOverride = false;
     public BoatState currentState { get; private set; }
 
+    public UnityEvent<BoatState> EVENT_OnStateEnter = new();
+    public UnityEvent<BoatState> EVENT_OnStateExit = new();
+
+
     public void Start()
     {
         SetState(startingState);
+    }
+
+    private void OnDestroy()
+    {
+        EVENT_OnStateEnter.RemoveAllListeners();
+        EVENT_OnStateExit.RemoveAllListeners();
     }
 
     private void FixedUpdate()
@@ -33,7 +44,8 @@ public class BoatStateMachine : MonoBehaviour
 
     private void OnStateChange(BoatState oldState, BoatState newState)
     {
-
+        EVENT_OnStateExit.Invoke(oldState);
+        EVENT_OnStateEnter.Invoke(newState);
     }
 
 }

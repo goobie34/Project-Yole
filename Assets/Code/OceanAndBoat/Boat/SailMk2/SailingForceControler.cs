@@ -11,6 +11,8 @@ public class SailingForceControler : MonoBehaviour
     [Header("Angular properties")]
 
     public float sailAngularSpeedMult = 3;
+    public float ropeClampMaxVelocity = 5f;
+    public float ropeClampVelocityMult = 2;
 
     [Header("Force properties")]
 
@@ -21,6 +23,10 @@ public class SailingForceControler : MonoBehaviour
     public SailWindManager windManager;
     public SailPhysics sailSimulator;
     public Rigidbody rb;
+    public BoatVariableManager boatFlags;
+    private float sailForceFlag => boatFlags != null ? boatFlags.Get_SailForce : 1;
+    private float sailRopeFreeFlag => boatFlags != null ? boatFlags.Get_FreeMainsailRope : 1;
+
 
     [Header("Data")]
     public float maxAngle;
@@ -37,7 +43,10 @@ public class SailingForceControler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(windManager == null)
+        if(boatFlags == null)
+            boatFlags = GetComponentInParent<BoatVariableManager>();
+
+        if (windManager == null)
             windManager = GetComponent<SailWindManager>();
 
         if(sailSimulator == null)
@@ -65,6 +74,7 @@ public class SailingForceControler : MonoBehaviour
             return;
 
         ApplyAngularWindForce(normalizedDeltaTime);
+
 
         ClampSail(ref sailSimulator.sailAngle, ref sailSimulator.sailAngularVelocity, ref sailSimulator.sailAngularAcceleration);
 
@@ -97,6 +107,9 @@ public class SailingForceControler : MonoBehaviour
 
     private void UpdateAngles()
     {
+        
+        float mainsailRopeLength = Mathf.Lerp(0,this.mainsailRopeLength, sailRopeFreeFlag);
+
         maxAngle = GetMaxAngleFromTrig(hitchPointLength, hitchPointLength, mainsailRopeLength) * Mathf.Rad2Deg;
 
 
@@ -106,39 +119,57 @@ public class SailingForceControler : MonoBehaviour
 
     private void ClampSail(ref float sailAngle, ref float sailAngularVelocity, ref float angularAcceleration)
     {
-        if (sailAngle <= -maxAngle)
+        if(sailAngle <= 0)
         {
-            //sailAngle = -maxAngle;
+            sailAngularVelocity = Mathf.Min(Mathf.Max(sailAngularVelocity, (-maxAngle - sailAngle)), maxAngle - sailAngle);
+            sailAngularVelocity = Mathf.Min(sailAngularVelocity, ropeClampMaxVelocity);
 
-            pushAmount = sailWindDot;
+            if (sailAngle <= -maxAngle)
+            {
+                //sailAngle = -maxAngle;
 
-            sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, 0, Mathf.Max(-maxAngle - sailAngle, maxAngle));
+                pushAmount = sailWindDot;
 
-            angularAcceleration = Mathf.Clamp(angularAcceleration, 0, maxAngle);
+                
 
-            return;
+                //Mathf.Clamp(sailAngularVelocity, 0, -maxAngle - sailAngle);// Mathf.Max(-maxAngle - sailAngle, maxAngle));
+
+                angularAcceleration = Mathf.Clamp(angularAcceleration, 0, maxAngle);
+
+                return;
+            }
         }
 
-        if (sailAngle >= maxAngle)
+
+        if (sailAngle >= 0)
         {
-            //sailAngle = maxAngle;
+            sailAngularVelocity = Mathf.Max(Mathf.Min(sailAngularVelocity, (maxAngle - sailAngle)), -maxAngle - sailAngle);
+            sailAngularVelocity = Mathf.Max(sailAngularVelocity, -ropeClampMaxVelocity);
+
+            if (sailAngle >= maxAngle)
+            {
+                //sailAngle = maxAngle;
 
 
-            pushAmount = sailWindDot;
+                pushAmount = sailWindDot;
 
-            sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, -maxAngle, 0);
-            sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, Mathf.Min(maxAngle - sailAngle, -maxAngle), 0);
+                //sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, -maxAngle, 0);
+                
+                //Mathf.Clamp(sailAngularVelocity, -maxAngle - sailAngle,0);// Mathf.Min(maxAngle - sailAngle, -maxAngle), 0);
 
 
-            angularAcceleration = Mathf.Clamp(angularAcceleration, -maxAngle, 0);
+                angularAcceleration = Mathf.Clamp(angularAcceleration, -maxAngle, 0);
 
-            return;
+                return;
+            }
         }
 
         pushAmount = 0;
 
 
     }
+
+   
 
     private void ApplyAngularWindForce(float deltaTime)
     {
@@ -161,7 +192,7 @@ public class SailingForceControler : MonoBehaviour
 
         Debug.DrawRay(transform.position, sailDirection);
 
-        var force = sailDirection * appliedAcceleration * localWindMagnitude;
+        var force = sailDirection * appliedAcceleration * localWindMagnitude * sailForceFlag;
         rb.AddForce(force * (deltaTime), ForceMode.Acceleration);
     }
 

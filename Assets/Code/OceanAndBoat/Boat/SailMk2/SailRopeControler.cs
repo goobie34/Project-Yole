@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class SailRopeControler : MonoBehaviour
 {
@@ -18,6 +17,9 @@ public class SailRopeControler : MonoBehaviour
     [Header("Dependencies")]
     public SailingForceControler sailControler;
 
+    public BoatVariableManager boatFlags;
+    private float sailControlFlag => boatFlags != null ? boatFlags.Get_ControlMainsailRope : 1;
+
     [Header("Data")]
     public float inputValue;
 
@@ -25,7 +27,10 @@ public class SailRopeControler : MonoBehaviour
 
     private void Start()
     {
-        if(sailControler == null)
+        if(boatFlags == null)
+            boatFlags = GetComponentInParent<BoatVariableManager>();
+
+        if (sailControler == null)
             sailControler = GetComponent<SailingForceControler>();
     }
 
@@ -37,15 +42,18 @@ public class SailRopeControler : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+
         float deltaTime = Time.fixedDeltaTime * 50;
-        
-        float clamedInputValue = inputValue;
+
+        ropeLength = sailControler.mainsailRopeLength;
+
+        float clamedInputValue = inputValue * sailControlFlag;
         if (ropeLength >= maxRopeLength)
             clamedInputValue = Mathf.Min(clamedInputValue, 0);
 
         if (ropeLength <= minRopeLength)
             clamedInputValue = Mathf.Max(clamedInputValue, 0);
-
 
 
 
