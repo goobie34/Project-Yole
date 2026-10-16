@@ -8,7 +8,7 @@ public class SailingController : MonoBehaviour
     public float sailAngle;
     public float sailAngularVelocity;
 
-    private float sailWindDot = 0;
+    public float sailWindDot = 0;
 
     public float windAngle;
     public float maxAngle;
@@ -47,15 +47,24 @@ public class SailingController : MonoBehaviour
 
     public float sailInertia = 1f;
 
+    
+
     private Rigidbody rb;
+    private BoatStateMachine stateMachine;
 
     public BoatRotationManager rotator;
     public Vector2 windLeanStrength;
 
+    public float closeSailLerp = 1; // 0 = closed, 1 = open
+
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(stateMachine == null)
+            stateMachine = GetComponent<BoatStateMachine>();
+
         rb = GetComponent<Rigidbody>();
 
         if (rotator == null)
@@ -67,43 +76,73 @@ public class SailingController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        ropeL += inputValue * ropeInputSpeed * Time.deltaTime;
-
-        ropeL = Mathf.Clamp(ropeL, ropeMin, ropeMax);
+        var state = GetCurrentState();
 
         GetWind();
-        UpdateAngles();
-
-        sailWindDot = AngleDot(windAngle * Mathf.Deg2Rad, (sailAngle + 90) * Mathf.Deg2Rad);
-
+        SailingStateUpdate(Time.fixedDeltaTime);
         
 
-        sailAngularVelocity += (sailWindDot * sailRotationAcceleration * windMagnitude) / sailInertia + angularWorldDelta * Time.deltaTime * 60;
+    }
+
+    private BoatState GetCurrentState()
+    {
+        if (stateMachine == null)
+            return BoatState.Sailing_Control;
+
+        return stateMachine.currentState;
+    }
+
+    private void SailingStateUpdate(float deltaTime)
+    {
+        UpdateRope(deltaTime);
+
+        UpdateAngles();
+
+        ApplyWindToSail();
+
+        sailAngularVelocity += angularWorldDelta * deltaTime * 60;
 
         ClampSail();
+
         UpdatePysics();
 
-        var  newWorldSailAngle = transform.rotation.eulerAngles.y + sailAngle;
+        var newWorldSailAngle = transform.rotation.eulerAngles.y + sailAngle;
 
         angularWorldDelta = Mathf.DeltaAngle(newWorldSailAngle, worldSailAngle);
         worldSailAngle = newWorldSailAngle;
 
+
+
         sailRotator.localRotation = Quaternion.Euler(0, sailAngle, 0);
 
-        float sailAcceleration = Mathf.Pow(Mathf.Abs(appliedAcceleration), sailAccelerationPow) * (appliedAcceleration < 0? -1 : 1);
+
+        ApplySailForce();
+    }
+
+    
+
+    private void UpdateRope(float deltaTime)
+    {
+        ropeL += inputValue * ropeInputSpeed * deltaTime;
+
+        ropeL = Mathf.Clamp(ropeL, ropeMin, ropeMax);
+    }
+
+    private void ApplyWindToSail()
+    {
+        sailWindDot = AngleDot(windAngle * Mathf.Deg2Rad, (sailAngle + 90) * Mathf.Deg2Rad);
+
+
+
+        sailAngularVelocity += (sailWindDot * sailRotationAcceleration * windMagnitude) / sailInertia;
+    }
+
+    private void ApplySailForce()
+    {
+        float sailAcceleration = Mathf.Pow(Mathf.Abs(appliedAcceleration), sailAccelerationPow) * (appliedAcceleration < 0 ? -1 : 1);
 
         var force = sailRotator.TransformDirection(1, 0, 0) * sailAcceleration * windMagnitude;
         rb.AddForce(force * Time.fixedDeltaTime * 60, ForceMode.Acceleration);
-
-
-        var leaningPitch = -Vector3.Dot(transform.forward, force);
-
-        var leaningRoll = -Vector3.Dot(transform.right, force);
-        
-
-        rotator?.ApplyLocalAngularAcceleration(new Vector2(leaningPitch, leaningRoll) * windLeanStrength);
-
-
     }
 
     private float AngleDot(float a, float b)

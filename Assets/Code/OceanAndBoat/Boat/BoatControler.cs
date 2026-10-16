@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 public class BoatControler : MonoBehaviour
 {
     public Rigidbody rb;
+    public BoatVariableManager fuzzyFlags;
+    private float boatMovementFlag => fuzzyFlags != null ? fuzzyFlags.Get_ControlBoat : 1;
 
-  
+
 
     public float rotationSpeed = 1;
     public float f_movementSpeed = 10;
@@ -33,6 +35,7 @@ public class BoatControler : MonoBehaviour
     void Start()
     {
         if(rb == null) rb = GetComponent<Rigidbody>();
+        if(fuzzyFlags == null) fuzzyFlags = GetComponentInParent<BoatVariableManager>();
 
 
         if (rudder == null) rudder = transform;
@@ -43,9 +46,11 @@ public class BoatControler : MonoBehaviour
     {
         float deltaScaledLerp = inputLerp * (Time.fixedDeltaTime * 60);
 
-        currentInput = Vector2.Lerp(currentInput,movementVector, deltaScaledLerp);
+        this.currentInput = Vector2.Lerp(this.currentInput,movementVector, deltaScaledLerp);
 
-        if(WindServiceLocator.Instance.TryGet(out var windService))
+        var currentInput = this.currentInput * boatMovementFlag;
+
+        if (WindServiceLocator.Instance.TryGet(out var windService))
         {
             windService.EvaluateWind(transform.position, Time.fixedTime, out _windDirection, out _windMagnitude);
         }
