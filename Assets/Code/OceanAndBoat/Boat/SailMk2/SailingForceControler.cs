@@ -121,18 +121,16 @@ public class SailingForceControler : MonoBehaviour
     {
         if(sailAngle <= 0)
         {
-            sailAngularVelocity = Mathf.Min(Mathf.Max(sailAngularVelocity, (-maxAngle - sailAngle) * ropeClampVelocityMult), maxAngle - sailAngle);
-            sailAngularVelocity = Mathf.Min(sailAngularVelocity, ropeClampMaxVelocity);
+            
 
             if (sailAngle <= -maxAngle)
             {
-                //sailAngle = -maxAngle;
 
                 pushAmount = sailWindDot;
 
-                
+                sailAngularVelocity = Mathf.Min(Mathf.Max(sailAngularVelocity, (-maxAngle - sailAngle) * ropeClampVelocityMult), maxAngle - sailAngle);
+                sailAngularVelocity = Mathf.Min(sailAngularVelocity, ropeClampMaxVelocity);
 
-                //Mathf.Clamp(sailAngularVelocity, 0, -maxAngle - sailAngle);// Mathf.Max(-maxAngle - sailAngle, maxAngle));
 
                 angularAcceleration = Mathf.Clamp(angularAcceleration, 0, maxAngle);
 
@@ -143,8 +141,7 @@ public class SailingForceControler : MonoBehaviour
 
         if (sailAngle >= 0)
         {
-            sailAngularVelocity = Mathf.Max(Mathf.Min(sailAngularVelocity, (maxAngle - sailAngle) * ropeClampVelocityMult), -maxAngle - sailAngle);
-            sailAngularVelocity = Mathf.Max(sailAngularVelocity, -ropeClampMaxVelocity);
+            
 
             if (sailAngle >= maxAngle)
             {
@@ -153,10 +150,10 @@ public class SailingForceControler : MonoBehaviour
 
                 pushAmount = sailWindDot;
 
-                //sailAngularVelocity = Mathf.Clamp(sailAngularVelocity, -maxAngle, 0);
-                
-                //Mathf.Clamp(sailAngularVelocity, -maxAngle - sailAngle,0);// Mathf.Min(maxAngle - sailAngle, -maxAngle), 0);
 
+               
+                sailAngularVelocity = Mathf.Max(Mathf.Min(sailAngularVelocity, (maxAngle - sailAngle) * ropeClampVelocityMult), -maxAngle - sailAngle);
+                sailAngularVelocity = Mathf.Max(sailAngularVelocity, -ropeClampMaxVelocity);
 
                 angularAcceleration = Mathf.Clamp(angularAcceleration, -maxAngle, 0);
 

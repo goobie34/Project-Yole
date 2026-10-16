@@ -24,12 +24,16 @@ public class BoatVariableManager : MonoBehaviour
     // master variable for player controll
     public FuzzyFlagSetter Set_ControlBoat;
     public float Get_ControlBoat => Set_ControlBoat.Get()
-        * Get_FreeMovement;
+        * Get_FreeMovement
+        * (1 - Get_Stunned)
+        * (1 - Get_Docked);
+
 
 
     // if the bloat is free to move, or locked in place
     public FuzzyFlagSetter Set_FreeMovement;
-    public float Get_FreeMovement => Set_FreeMovement.Get();
+    public float Get_FreeMovement => Set_FreeMovement.Get()
+        * (1 - Get_Docked);
 
     
 
@@ -38,6 +42,14 @@ public class BoatVariableManager : MonoBehaviour
     public float Get_MovedByWaves => Set_MovedByWaves.Get()
         * Get_FreeMovement;
 
+    
+    // if stunned
+    public FuzzyFlagSetter Set_Stunned;
+    public float Get_Stunned => Set_Stunned.Get();
+
+
+    public FuzzyFlagSetter Set_Docked;
+    public float Get_Docked => Set_Docked.Get();
 
 
     [Header("Sail Variables")]
@@ -50,12 +62,14 @@ public class BoatVariableManager : MonoBehaviour
     public FuzzyFlagSetter Set_SailForce;
     public float Get_SailForce => Set_SailForce.Get()
         * Get_FreeMovement
-        * Get_SailRaised;
+        * Get_SailRaised
+        * (1 - Get_Stunned);
 
 
     // if the mainsail rope is free to change, or locked in the center
     public FuzzyFlagSetter Set_FreeMainsailRope;
-    public float Get_FreeMainsailRope => Set_FreeMainsailRope.Get();
+    public float Get_FreeMainsailRope => Set_FreeMainsailRope.Get()
+        * Get_SailRaised;
 
     
     // if the player can controll the mainsail rope.

@@ -13,6 +13,9 @@ public class SailRopeControler : MonoBehaviour
     public float minExtendLerp = 0.5f;
     public float minPullInLerp = 0.5f;
 
+    public float inputLerp = 0.5f;
+   
+
 
     [Header("Dependencies")]
     public SailingForceControler sailControler;
@@ -21,7 +24,8 @@ public class SailRopeControler : MonoBehaviour
     private float sailControlFlag => boatFlags != null ? boatFlags.Get_ControlMainsailRope : 1;
 
     [Header("Data")]
-    public float inputValue;
+    public float targetInputValue;
+    public float currentInputValue;
 
     public float ropeLength;
 
@@ -36,7 +40,7 @@ public class SailRopeControler : MonoBehaviour
 
     private void OnExtendSail(InputValue input)
     {
-        inputValue = input.Get<float>();
+        targetInputValue = input.Get<float>();
 
     }
 
@@ -46,9 +50,11 @@ public class SailRopeControler : MonoBehaviour
 
         float deltaTime = Time.fixedDeltaTime * 50;
 
+        currentInputValue = Mathf.Lerp(currentInputValue, targetInputValue, inputLerp);
+
         ropeLength = sailControler.mainsailRopeLength;
 
-        float clamedInputValue = inputValue * sailControlFlag;
+        float clamedInputValue = currentInputValue * sailControlFlag;
         if (ropeLength >= maxRopeLength)
             clamedInputValue = Mathf.Min(clamedInputValue, 0);
 

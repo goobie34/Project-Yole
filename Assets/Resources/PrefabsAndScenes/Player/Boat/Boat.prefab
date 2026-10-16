@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8228180133650774383}
   - component: {fileID: 4569623145186282597}
   - component: {fileID: 5871083788774766902}
+  - component: {fileID: 3158371829853179200}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -61,6 +62,10 @@ MonoBehaviour:
     value: 1
   Set_MovedByWaves:
     value: 1
+  Set_Stunned:
+    value: 0
+  Set_Docked:
+    value: 0
   Set_SailRaised:
     value: 1
   Set_SailForce:
@@ -191,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatControler
   rb: {fileID: 0}
+  fuzzyFlags: {fileID: 0}
   rotationSpeed: 1
   f_movementSpeed: 1.4
   r_movementSpeed: 1
@@ -278,12 +284,33 @@ MonoBehaviour:
   maxRopeLength: 6
   extendSpeed: 0.4
   pullInSpeed: 0.3
-  minExtendLerp: 0.5
-  minPullInLerp: 0.4
+  minExtendLerp: 0.7
+  minPullInLerp: 0.5
+  inputLerp: 0.5
   sailControler: {fileID: 0}
   boatFlags: {fileID: 0}
-  inputValue: 0
+  targetInputValue: 0
+  currentInputValue: 0
   ropeLength: 0
+--- !u!114 &3158371829853179200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1eda9b14017f8a4d82ba695937cdbf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatCollision
+  minCollisionSpeed: 8
+  minMovementToExitStunned: 0.5
+  stunnedTimer: 2
+  stunnedExitTimer: 2
+  fuzzyFlags: {fileID: 0}
+  stunned: 0
+  stunnedAwaitingInput: 0
 --- !u!1 &2835776110408742043
 GameObject:
   m_ObjectHideFlags: 0
