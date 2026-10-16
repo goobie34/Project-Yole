@@ -16,9 +16,13 @@ public class LifetimeTimer : MonoBehaviour
 
     public void OnDestroy()
     {
-        
-        for( int i = 0; i < transform.childCount; i++)
+        if (!transform.parent.gameObject.activeInHierarchy)
+            return;
+
+        for ( int i = 0; i < transform.childCount; i++)
         {
+            
+
             transform.GetChild(i).SetParent(transform.parent);
         }
         
