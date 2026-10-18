@@ -114,7 +114,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 1
     - _AlphaClip: 1
+    - _AlphaClipThreshold: 0.5
     - _AlphaToMask: 1
     - _Ambiant_Oppacity: 1
     - _Amplitude: 0
@@ -131,11 +133,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DffuseToon: 0.4
     - _DiffuseToonMin: 0
+    - _Dither: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 1
     - _Edge_Far_Lerp: 0.5
     - _EnvironmentReflections: 1
+    - _FogOppacity: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -145,6 +149,7 @@ Material:
     - _MAIN_LIGHT_SHADOWS_SCREEN: 0
     - _Metalic: 0.3
     - _Metallic: 0
+    - _NightOppacity: 0.95
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0

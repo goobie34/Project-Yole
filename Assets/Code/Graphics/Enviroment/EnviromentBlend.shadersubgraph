@@ -110,6 +110,12 @@
         },
         {
             "m_Id": "1dfcba5c1ca044dd8cc54cc19edda058"
+        },
+        {
+            "m_Id": "cf88f8bfe4f541178d5b239403918c05"
+        },
+        {
+            "m_Id": "506a06e40b474d3aa9333790568cbc96"
         }
     ],
     "m_GroupDatas": [
@@ -920,6 +926,31 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "205371be54be41999fc1273919a71aa8",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "2134a07e56444530b94e3cec2f8aa4f1",
     "m_Id": 2,
@@ -1643,6 +1674,50 @@
         "w": 0.0
     },
     "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.ColorNode",
+    "m_ObjectId": "506a06e40b474d3aa9333790568cbc96",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Color",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2768.7998046875,
+            "y": -987.199951171875,
+            "width": 208.0,
+            "height": 124.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "205371be54be41999fc1273919a71aa8"
+        }
+    ],
+    "synonyms": [
+        "rgba"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Color": {
+        "color": {
+            "r": 0.1939019411802292,
+            "g": 0.40581566095352175,
+            "b": 0.5686274766921997,
+            "a": 0.0
+        },
+        "mode": 0
+    }
 }
 
 {
@@ -2418,8 +2493,8 @@
     "m_ObjectId": "90c86bf8e6b04f9ba297c13b8e5fbda8",
     "m_Title": "fog",
     "m_Position": {
-        "x": -763.999755859375,
-        "y": -74.39990234375
+        "x": -763.9996337890625,
+        "y": -74.4000015258789
     }
 }
 
@@ -2446,6 +2521,31 @@
         "w": 0.0
     },
     "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "957cb4487dc84f55b04b653796eda70d",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -3206,6 +3306,50 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.ColorNode",
+    "m_ObjectId": "cf88f8bfe4f541178d5b239403918c05",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Color",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2765.599853515625,
+            "y": -841.5999145507813,
+            "width": 208.0,
+            "height": 124.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "957cb4487dc84f55b04b653796eda70d"
+        }
+    ],
+    "synonyms": [
+        "rgba"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Color": {
+        "color": {
+            "r": 0.15580953657627107,
+            "g": 0.2596825361251831,
+            "b": 0.4090000092983246,
+            "a": 0.0
+        },
+        "mode": 0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
     "m_ObjectId": "d1d090aa5bca4750b3a96aaa4c27e282",
@@ -3536,7 +3680,7 @@
     "m_Title": "nigth",
     "m_Position": {
         "x": -3172.7998046875,
-        "y": -302.39990234375
+        "y": -302.3999938964844
     }
 }
 
@@ -3828,9 +3972,9 @@
     },
     "m_Color": {
         "color": {
-            "r": 0.1939019411802292,
-            "g": 0.40581566095352175,
-            "b": 0.5686274766921997,
+            "r": 0.15480001270771027,
+            "g": 0.3623727560043335,
+            "b": 0.3869999945163727,
             "a": 0.0
         },
         "mode": 0
