@@ -204,7 +204,7 @@ MonoBehaviour:
   windMinRange: -0.5
   movementVector: {x: 0, y: 0}
   currentInput: {x: 0, y: 0}
-  inputLerp: 0.06
+  inputLerp: 0.03
   rudder: {fileID: 6577592587229642210}
   _maxRudderAngle: -26
   _windFraction: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SailingForceControler
   hitchPointLength: 5
   mainsailRopeLength: 1
-  sailAngularSpeedMult: 0.3
+  sailAngularSpeedMult: 0.5
   ropeClampMaxVelocity: 100
   ropeClampVelocityMult: 1
   effectiveAnglePow: 3
