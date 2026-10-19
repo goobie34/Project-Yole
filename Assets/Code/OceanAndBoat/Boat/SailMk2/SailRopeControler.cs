@@ -8,13 +8,18 @@ public class SailRopeControler : MonoBehaviour
     public float maxRopeLength;
 
     public float extendSpeed = 0.1f;
-    public float pullInSpeed = 0.1f;
+    public float retractSpeed = 0.1f;
 
     public float minExtendLerp = 0.5f;
-    public float minPullInLerp = 0.5f;
+    public float minRetractLerp = 0.5f;
 
-    public float inputLerp = 0.5f;
-   
+
+    public float accelTime = 1f;
+    public float decelTime = 1f;
+
+
+    //public float inputLerp = 0.5f;
+
 
 
     [Header("Dependencies")]
@@ -50,7 +55,7 @@ public class SailRopeControler : MonoBehaviour
 
         float deltaTime = Time.fixedDeltaTime * 50;
 
-        currentInputValue = Mathf.Lerp(currentInputValue, targetInputValue, inputLerp);
+        LerpHelper.InputSpeedAccelerationDriver(ref currentInputValue, accelTime, decelTime, targetInputValue, Time.fixedDeltaTime);
 
         ropeLength = sailControler.mainsailRopeLength;
 
@@ -99,9 +104,9 @@ public class SailRopeControler : MonoBehaviour
 
         float sailForce = Mathf.Abs(sailControler != null ? sailControler.appliedAcceleration : 1);
 
-        sailForce = Mathf.Lerp(1, minPullInLerp, sailForce);
+        sailForce = Mathf.Lerp(1, minRetractLerp, sailForce);
 
-        float ropeForce = pullInSpeed * sailForce * scaledDeltaTime * inputSpeed;
+        float ropeForce = retractSpeed * sailForce * scaledDeltaTime * inputSpeed;
 
         ropeLength -= ropeForce;
     }
