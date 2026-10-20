@@ -3106,11 +3106,10 @@ MonoBehaviour:
   wakesMat: {fileID: 2100000, guid: a3c58f380fbd0ed4485ee70f40fd3408, type: 2}
   WakesRT: {fileID: 8600000, guid: 2c78194c4659d444189ee4f992fd5e66, type: 2}
   wakesCamera: {fileID: 1445501718}
-  wakesMesh: {fileID: 1690088155}
+  wakesMeshTransform: {fileID: 1690088155}
+  cameraTransform: {fileID: 780403712}
   targetObject: {fileID: 1470887874}
   steppScale: 10
-  delta: {x: 0, y: 0, z: 0, w: 0}
-  worldDelta: {x: 0, y: 0, z: 0, w: 0}
   scale: 2
 --- !u!1001 &728093384
 PrefabInstance:

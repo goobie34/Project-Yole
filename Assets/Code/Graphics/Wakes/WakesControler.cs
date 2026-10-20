@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 public class WakesControler : MonoBehaviour
 {
-   
+    [Header("Wake Shader Objects")]
 
     public Material wakesMat;
 
@@ -11,18 +11,28 @@ public class WakesControler : MonoBehaviour
 
     public Camera wakesCamera;
 
-    public Transform wakesMesh;
+    [Header("Game World Transforms")]
+
+    public Transform wakesMeshTransform;
+
+    public Transform cameraTransform;
 
     public Transform targetObject;
+
+    
+
+    [Header("Delta Variables")]
     public float steppScale;
-
-    private Vector2 lastPos;
-    private Vector2 currentPos => new Vector2( wakesCamera.transform.position.x, wakesCamera.transform.position.z);
-
-    public Vector4 delta;
-    public Vector4 worldDelta;
-
     public float scale = 2;
+
+
+    [Header("Delta Data")]
+    private Vector2 lastPos;
+    private Vector2 currentPos; //=> new Vector2( wakesCamera.transform.position.x, wakesCamera.transform.position.z);
+
+    private Vector4 delta;
+    private Vector4 worldDelta;
+
 
 
 
@@ -36,10 +46,7 @@ public class WakesControler : MonoBehaviour
         //RenderPipelineManager.beginCameraRendering -= OnRender; 
     }
 
-    private void Start()
-    {
-        wakesMesh.transform.parent = null;
-    }
+   
 
     private void OnRender(ScriptableRenderContext a, Camera c)
     {
@@ -51,8 +58,7 @@ public class WakesControler : MonoBehaviour
 
     private void Update()
     {
-        wakesMesh.position = transform.position;
-
+        UpdateMeshPos();
 
 
     }
@@ -60,6 +66,8 @@ public class WakesControler : MonoBehaviour
     private void LateUpdate()
     {
         UpdateFollow();
+        UpdateCameraPos();
+
         UpdateDelta();
         UpdateRenderTarget();
     }
@@ -70,14 +78,14 @@ public class WakesControler : MonoBehaviour
             return;
         if(steppScale == 0)
         {
-            transform.position = targetObject.position;
+            currentPos = new Vector2(targetObject.position.x,targetObject.position.z);
 
             return;
         }
 
-        var steppedPos = new Vector2(Mathf.Round(targetObject.position.x / steppScale) * steppScale, Mathf.Round(targetObject.position.z / steppScale) * steppScale);
+        currentPos = new Vector2(Mathf.Round(targetObject.position.x / steppScale) * steppScale, Mathf.Round(targetObject.position.z / steppScale) * steppScale);
 
-        transform.position = new Vector3(steppedPos.x, 0, steppedPos.y);
+        //transform.position = new Vector3(steppedPos.x, 0, steppedPos.y);
 
     }
 
@@ -100,6 +108,22 @@ public class WakesControler : MonoBehaviour
 
         wakesMat.SetVector("_Delta", delta);
 
+    }
+
+    private void UpdateMeshPos()
+    {
+        if (wakesMeshTransform == null)
+            return;
+
+        wakesMeshTransform.position = new Vector3(currentPos.x,0,currentPos.y);
+
+    }
+    private void UpdateCameraPos()
+    {
+        if (cameraTransform == null)
+            return;
+
+        cameraTransform.position = new Vector3(currentPos.x, 0, currentPos.y);
     }
 }
 
