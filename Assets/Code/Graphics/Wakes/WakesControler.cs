@@ -3,6 +3,8 @@ using UnityEngine.Rendering;
 
 public class WakesControler : MonoBehaviour
 {
+   
+
     public Material wakesMat;
 
     public CustomRenderTexture WakesRT;
@@ -11,6 +13,9 @@ public class WakesControler : MonoBehaviour
 
     public Transform wakesMesh;
 
+    public Transform targetObject;
+    public float steppScale;
+
     private Vector2 lastPos;
     private Vector2 currentPos => new Vector2( wakesCamera.transform.position.x, wakesCamera.transform.position.z);
 
@@ -18,6 +23,7 @@ public class WakesControler : MonoBehaviour
     public Vector4 worldDelta;
 
     public float scale = 2;
+
 
 
     private void OnEnable()
@@ -32,6 +38,7 @@ public class WakesControler : MonoBehaviour
 
     private void Start()
     {
+        wakesMesh.transform.parent = null;
     }
 
     private void OnRender(ScriptableRenderContext a, Camera c)
@@ -39,13 +46,39 @@ public class WakesControler : MonoBehaviour
         if (c != wakesCamera)
             return;
 
-        UpdateDelta();
+        //UpdateDelta();
+    }
+
+    private void Update()
+    {
+        wakesMesh.position = transform.position;
+
+
+
     }
 
     private void LateUpdate()
     {
+        UpdateFollow();
         UpdateDelta();
         UpdateRenderTarget();
+    }
+
+    private void UpdateFollow()
+    {
+        if (targetObject == null)
+            return;
+        if(steppScale == 0)
+        {
+            transform.position = targetObject.position;
+
+            return;
+        }
+
+        var steppedPos = new Vector2(Mathf.Round(targetObject.position.x / steppScale) * steppScale, Mathf.Round(targetObject.position.z / steppScale) * steppScale);
+
+        transform.position = new Vector3(steppedPos.x, 0, steppedPos.y);
+
     }
 
     private void UpdateRenderTarget()
@@ -54,7 +87,6 @@ public class WakesControler : MonoBehaviour
         wakesCamera.Render();
         WakesRT.Update();
 
-
     }
 
     private void UpdateDelta()
@@ -62,7 +94,7 @@ public class WakesControler : MonoBehaviour
         
         worldDelta = currentPos - lastPos;
 
-        delta = worldDelta / (wakesCamera.orthographicSize * scale);
+        delta = worldDelta / (wakesCamera.orthographicSize * scale) ;
 
         lastPos = currentPos;
 
