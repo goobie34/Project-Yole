@@ -19,7 +19,14 @@ public class BoatControler : MonoBehaviour
 
     public Vector2 movementVector = Vector2.zero;
     public Vector2 currentInput = Vector2.zero;
+
     public float inputLerp = 0.5f;
+
+    //public float turnAccelTime = 1;
+    //public float turnDecelTime = 1;
+
+    //public float driveAccelTime = 1;
+    //public float driveDecelTime = 1;
 
 
     public Transform rudder;
@@ -46,7 +53,17 @@ public class BoatControler : MonoBehaviour
     {
         float deltaScaledLerp = inputLerp * (Time.fixedDeltaTime * 60);
 
-        this.currentInput = Vector2.Lerp(this.currentInput,movementVector, deltaScaledLerp);
+       this.currentInput = Vector2.Lerp(this.currentInput,movementVector, deltaScaledLerp);
+
+        //float turn = this.currentInput.x;
+        //float drive = this.currentInput.y;
+
+        //LerpHelper.InputSpeedAccelerationDriver(ref turn,   turnAccelTime,  turnDecelTime,  movementVector.x, Time.fixedDeltaTime);
+        //LerpHelper.InputSpeedAccelerationDriver(ref drive,  driveDecelTime, driveDecelTime, movementVector.y, Time.fixedDeltaTime);
+
+
+        //this.currentInput.x = turn;
+        //this.currentInput.y = drive;
 
         var currentInput = this.currentInput * boatMovementFlag;
 
@@ -54,6 +71,9 @@ public class BoatControler : MonoBehaviour
         {
             windService.EvaluateWind(transform.position, Time.fixedTime, out _windDirection, out _windMagnitude);
         }
+
+       
+        
 
         transform.RotateAround(rudder.position, Vector3.up, currentInput.x * rotationSpeed);
         if(rudder != null) rudder.localRotation = Quaternion.Euler(0, currentInput.x * _maxRudderAngle, 0);
