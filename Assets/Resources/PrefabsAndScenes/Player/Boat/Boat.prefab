@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4569623145186282597}
   - component: {fileID: 5871083788774766902}
   - component: {fileID: 3158371829853179200}
+  - component: {fileID: 5357058852177151173}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -57,13 +58,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b72b6cfef0010418b04fd434c7324d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatVariableManager
-  Set_ControlBoat:
+  Set_ControlBoatInput:
     value: 1
   Set_FreeMovement:
     value: 1
   Set_MovedByWaves:
     value: 1
   Set_Stunned:
+    value: 0
+  Set_UnStunnable:
     value: 0
   Set_Docked:
     value: 0
@@ -258,6 +261,8 @@ MonoBehaviour:
   ropeClampMaxVelocity: 100
   ropeClampVelocityMult: 1
   effectiveAnglePow: 1
+  sailMomentumForceMult: 10
+  Epsion: 0.1
   windManager: {fileID: 0}
   sailSimulator: {fileID: 0}
   rb: {fileID: 0}
@@ -265,7 +270,10 @@ MonoBehaviour:
   maxAngle: 0
   sailWindDot: 0
   pushAmount: 0
+  sailMomentumPush: 0
   appliedAcceleration: 0
+  appliedForce: 0
+  appliedSurge: 0
   localWindDirection: {x: 0, y: 0, z: 0}
   localWindMagnitude: 0
   localWindAngle: 0
@@ -313,6 +321,20 @@ MonoBehaviour:
   fuzzyFlags: {fileID: 0}
   stunned: 0
   stunnedAwaitingInput: 0
+--- !u!114 &5357058852177151173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97e05b5bac2ab345861cd4f6df98786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatMiscUpdator
+  rb: {fileID: 0}
+  variableManager: {fileID: 0}
 --- !u!1 &2835776110408742043
 GameObject:
   m_ObjectHideFlags: 0

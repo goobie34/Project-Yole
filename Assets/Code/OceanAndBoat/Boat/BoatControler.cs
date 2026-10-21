@@ -5,7 +5,7 @@ public class BoatControler : MonoBehaviour
 {
     public Rigidbody rb;
     public BoatVariableManager fuzzyFlags;
-    private float boatMovementFlag => fuzzyFlags != null ? fuzzyFlags.Get_ControlBoat : 1;
+    private float boatMovementFlag => fuzzyFlags != null ? fuzzyFlags.Get_ControlBoatInput : 1;
 
 
 
