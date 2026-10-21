@@ -22,13 +22,13 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public void Select()
     {
-        //Debug.Log("Selected " + gameObject.name);
+        Debug.Log("Selected " + gameObject.name);
         OnSelect?.Invoke();
     }
 
     public void Deselect()
     {
-        //Debug.Log("Deselected " + gameObject.name);
+        Debug.Log("Deselected " + gameObject.name);
         OnDeselect?.Invoke();
     }
 }

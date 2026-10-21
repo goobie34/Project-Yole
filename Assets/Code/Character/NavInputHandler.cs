@@ -36,7 +36,7 @@ public class NavInputHandler : MonoBehaviour
 
         if (movementVector.sqrMagnitude > 0.01f)
         {
-            Debug.Log("Input: " + movementVector);
+            //Debug.Log("Input: " + movementVector);
         }
 
         character.Move(movementVector);
