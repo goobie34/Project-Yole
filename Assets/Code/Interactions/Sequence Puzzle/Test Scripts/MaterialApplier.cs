@@ -8,9 +8,16 @@ public class MaterialApplier : MonoBehaviour
     [SerializeField] private Material greenMaterial;
 
     [SerializeField] private SequencePlayer sequencePlayer;
+    [SerializeField] private Interactable interactable;
 
     private void Start()
     {
+        if (interactable != null)
+        {
+            interactable.OnSelect.AddListener(ApplyYellow);
+            interactable.OnDeselect.AddListener(ApplyDefault);
+        }
+
         if (sequencePlayer != null)
         {
             sequencePlayer.OnSequenceDeselect.AddListener(ApplyDefault);
@@ -47,5 +54,11 @@ public class MaterialApplier : MonoBehaviour
     public void ApplyDefault()
     {
         GetComponent<Renderer>().material = originalMaterial;
+    }
+
+    private void OnDisable()
+    {
+        interactable?.Deselect();
+        interactable = null;
     }
 }
