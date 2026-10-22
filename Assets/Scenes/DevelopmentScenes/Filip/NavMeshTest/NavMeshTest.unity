@@ -365,8 +365,8 @@ MonoBehaviour:
   axisToAffect: 2
   animationDuration: 0.25
   canBeOverwritten: 0
-  playOnStart: 1
-  playsEveryTime: 1
+  playOnStart: 0
+  playsEveryTime: 0
   chanceToPlay: 100
   initialScale: 1
   maximumScale: 1.3
@@ -405,8 +405,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  looping: 1
+  looping: 0
   loopingDelay: 0.5
+--- !u!114 &548728437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548728435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22365729c1f37f4ab095ec3cdc92f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSquashStretch
+  character: {fileID: 548728440}
+  squashStretch: {fileID: 548728436}
+  movementThreshold: 0.1
+  animationInterval: 0.3
+--- !u!114 &548728440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4337116593319770146, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+  m_PrefabInstance: {fileID: 1496541597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548728435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee8d6bb9e6189c4c96570196c037967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NavCharController
 --- !u!1 &642486489
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +970,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.046666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 763e2bb5ac5204249ba3e2c3850c431e, type: 2}
   m_BuildHeightMesh: 0
@@ -1109,6 +1136,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       insertIndex: -1
       addedObject: {fileID: 548728436}
+    - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 548728437}
   m_SourcePrefab: {fileID: 100100000, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
