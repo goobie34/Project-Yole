@@ -190,7 +190,7 @@ public class SquashStrech : MonoBehaviour
         {
             StopCoroutine(squashAndStretchCoroutine);
             if (playsEveryTime && resetToInitialScaleAfterAnimation)
-                transform.localScale = initialScaleVector;
+                transformToAffect.localScale = initialScaleVector;
         }
 
         squashAndStretchCoroutine = StartCoroutine(SquashAndStretchEffect());

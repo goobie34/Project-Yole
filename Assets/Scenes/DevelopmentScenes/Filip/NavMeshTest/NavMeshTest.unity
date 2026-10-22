@@ -385,8 +385,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.25
-      value: 1
+      time: 0.29999542
+      value: 0.604229
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -434,6 +434,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee8d6bb9e6189c4c96570196c037967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NavCharController
+--- !u!114 &548728445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548728435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dbf1b79cc2695459e7196e0521212a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterTilt
+  character: {fileID: 548728440}
+  visualTransform: {fileID: 1244351838}
+  forwardTilt: 25
+  sidewaysTilt: 25
+  tiltSmoothness: 8
+  movementThreshold: 0.1
+  maxMovementSpeed: 10
+  turnSensitivity: 0.03
+  forwardTiltAxis: {x: 1, y: 0, z: 0}
+  sidewaysTiltAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &642486489
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +595,7 @@ GameObject:
   - component: {fileID: 687446402}
   - component: {fileID: 687446401}
   - component: {fileID: 687446400}
+  - component: {fileID: 687446403}
   m_Layer: 0
   m_Name: Object (1)
   m_TagString: Untagged
@@ -673,6 +696,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687446398}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &687446403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687446398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0c222392cbb9148a8ea84e0723d7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquashStrech
+  notes: 
+  transformToAffect: {fileID: 687446399}
+  axisToAffect: 2
+  animationDuration: 0.25
+  canBeOverwritten: 0
+  playOnStart: 1
+  playsEveryTime: 1
+  chanceToPlay: 100
+  initialScale: 1
+  maximumScale: 1.3
+  resetToInitialScaleAfterAnimation: 1
+  resverseAnimationCurveAfterPlaying: 0
+  squashAndStretchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.25
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  looping: 1
+  loopingDelay: 0.5
 --- !u!1 &1018876756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1167,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 815107148389826048, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 815107148389826048, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 815107148389826048, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1129,6 +1223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 4337116593319770146, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 1177769442}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1139,6 +1237,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       insertIndex: -1
       addedObject: {fileID: 548728437}
+    - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 548728445}
   m_SourcePrefab: {fileID: 100100000, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
