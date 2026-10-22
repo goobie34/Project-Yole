@@ -1,29 +1,27 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] private ObjectSelector objectSelector;
 
-    private IInteractable selectedInteractable;
-
     private void Start()
     {
         if (objectSelector == null)
         {
-            gameObject.GetComponent<ObjectSelector>();
+            objectSelector = gameObject.GetComponent<ObjectSelector>();
         }
     }
 
-    private void Update()
+    private void OnInteract(InputValue input)
     {
-        if (objectSelector != null)
+        if (!input.isPressed || objectSelector == null) return;
+
+        IInteractable selectedInteractable = objectSelector.SelectedInteractable;
+
+        if (selectedInteractable != null)
         {
-            selectedInteractable = objectSelector.SelectedInteractable;
+            selectedInteractable.Interact();
         }
-    }
-
-    private void Interact()
-    {
-        // Behöver implementera något sätt att interagera med objektet som är selected. I min hjärna blir det väl genom ett knapptryck, typ F eller E.
     }
 }
