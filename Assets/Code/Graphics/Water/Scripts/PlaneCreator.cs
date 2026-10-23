@@ -87,4 +87,11 @@ public class PlaneCreator : MonoBehaviour
         }
     }
 
+
+    private void OnDrawGizmosSelected()
+    {
+        var size = new Vector3(PlaneLength, 0, PlaneLength);
+
+        Gizmos.DrawWireCube(transform.position, size);
+    }
 }

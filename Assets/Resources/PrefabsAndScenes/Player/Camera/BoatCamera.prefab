@@ -106,12 +106,12 @@ MonoBehaviour:
   Orbits:
     Top:
       Radius: 10
-      Height: 60
+      Height: 90
     Center:
-      Radius: 50
-      Height: 39
+      Radius: 70
+      Height: 60
     Bottom:
-      Radius: 35
+      Radius: 45
       Height: 10
     SplineCurvature: 0.215
   RecenteringTarget: 2
@@ -237,8 +237,8 @@ MonoBehaviour:
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
-        AccelTime: 1
-        DecelTime: 0.1
+        AccelTime: 2
+        DecelTime: 0.2
     - Name: Look Orbit Y
       Owner: {fileID: 2165786210894184460}
       Enabled: 1
@@ -248,8 +248,8 @@ MonoBehaviour:
         CancelDeltaTime: 0
       InputValue: -0
       Driver:
-        AccelTime: 1
-        DecelTime: 0.1
+        AccelTime: 2
+        DecelTime: 0.2
     - Name: Orbit Scale
       Owner: {fileID: 2165786210894184460}
       Enabled: 1

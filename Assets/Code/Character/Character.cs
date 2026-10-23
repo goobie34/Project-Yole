@@ -6,16 +6,40 @@ public class Character : MonoBehaviour
     private CharacterController characterController;
     private EdgeDetection edgeDetection;
 
-    [SerializeField]
-    public float movementSpeed = 10f;
-    [SerializeField]
-    public float rotationSpeed = 5f;
-    [SerializeField]
-    public float gravity = -38f;
+    [Header("Movement")]
+    [SerializeField] 
+    private float movementSpeed = 10f;
 
-    private float rotationY;
+    [SerializeField]
+    private float acceleration = 15f;
+
+    [SerializeField]
+    private float deceleration = 20f;
+
+    [SerializeField]
+    private Transform cameraTransform;
+
+    [Header("Gravity")]
+    [SerializeField]
+    public float gravity = -22.5f;
+
+    
     private float verticalVelocity;
     private Vector2 movementInput;
+    private Vector3 currentVelocity;
+
+    public Vector3 CurrentVelocity => currentVelocity;
+
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+        edgeDetection = GetComponent<EdgeDetection>();
+
+        if (cameraTransform == null && Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+        }
+    }
 
     void Start()
     {
@@ -24,8 +48,14 @@ public class Character : MonoBehaviour
     }
 
     void Update()
-    {      
-        if (characterController.isGrounded && verticalVelocity < 0)
+    {
+        ApplyGravity();
+        ApplyMovement();
+    }
+
+    private void ApplyGravity()
+    {
+        if (characterController.isGrounded && verticalVelocity < 0f)
         {
             verticalVelocity = -2f;
         }
@@ -33,36 +63,49 @@ public class Character : MonoBehaviour
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
+    }
 
-        Vector3 move = transform.forward * movementInput.y + transform.right * movementInput.x;
+    private void ApplyMovement()
+    {
+        if (cameraTransform == null)
+            return;
 
-        move = Vector3.ClampMagnitude(move, 1f);
+        Vector3 cameraForward = cameraTransform.forward;
+        Vector3 cameraRight = cameraTransform.right;
 
-        Vector3 horizontalMovement = move * movementSpeed * Time.deltaTime;
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        
+        cameraForward.Normalize();
+        cameraRight.Normalize();
 
-        if (characterController.isGrounded && horizontalMovement.sqrMagnitude > 0.0000001f && !edgeDetection.IsGroundAhead(horizontalMovement))
+        Vector3 moveDirection = cameraForward * movementInput.y + cameraRight * movementInput.x;
+
+        moveDirection = Vector3.ClampMagnitude(moveDirection, 1f);
+
+        Vector3 targetVelocity = moveDirection * movementSpeed;
+
+        float currentAcceleration = movementInput.sqrMagnitude > 0.001f ? acceleration : deceleration;
+
+        currentVelocity = Vector3.MoveTowards(currentVelocity, targetVelocity, currentAcceleration * Time.deltaTime);
+
+        //Edge detection
+        Vector3 horizontalMovement = currentVelocity * Time.deltaTime;
+
+        if (edgeDetection != null && characterController.isGrounded && horizontalMovement.sqrMagnitude > 0.0000001f && !edgeDetection.IsGroundAhead(horizontalMovement))
         {
-            move = Vector3.zero;
-        }       
+            currentVelocity = Vector3.zero;
+        }
 
-        move *= movementSpeed;
+        //Combine horizontal movement and gravity
+        Vector3 finalMovement = currentVelocity;
+        finalMovement.y = verticalVelocity;
 
-        move.y = verticalVelocity;
-
-        characterController.Move(move * Time.deltaTime);
+        characterController.Move(finalMovement * Time.deltaTime);       
     }
 
     public void Move(Vector2 movementVector)
-    {
-        //Vector3 move = transform.forward * movementVector.y + transform.right * movementVector.x;
-        //move = move * movementSpeed * Time.deltaTime;
-        //characterController.Move(move);
-        movementInput = movementVector;
-    }
-
-    public void Rotate(Vector2 rotationVector)
-    {
-        rotationY += rotationVector.x * rotationSpeed * Time.deltaTime;
-        transform.localRotation = Quaternion.Euler(0, rotationY, 0);
-    }
+    {      
+        movementInput = Vector2.ClampMagnitude(movementVector, 1f);
+    }   
 }

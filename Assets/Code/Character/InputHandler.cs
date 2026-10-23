@@ -3,27 +3,28 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    public Character CharacterController;
+    [SerializeField] private Character character;
 
-    private InputAction moveAction;
-    private InputAction lookAction;
+    public InputAction moveAction;
 
-    
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
-        lookAction = InputSystem.actions.FindAction("Look");
-
-        Cursor.visible = false;
+        
+        if (moveAction == null)
+        {
+            Debug.LogError("Move Input Action not found!");
+        }
     }
 
     
     void Update()
     {
-        Vector2 movementVector = moveAction.ReadValue<Vector2>();
-        CharacterController.Move(movementVector);
+        if (moveAction == null || character == null)
+            return;
 
-        Vector2 lookVector = lookAction.ReadValue<Vector2>();
-        CharacterController.Rotate(lookVector);
+        Vector2 movementVector = moveAction.ReadValue<Vector2>();
+
+        character.Move(movementVector);
     }
 }

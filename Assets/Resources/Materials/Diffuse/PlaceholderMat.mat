@@ -24,14 +24,15 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -113,8 +114,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
+    - _Alpha: 1
+    - _AlphaClip: 1
+    - _AlphaClipThreshold: 0.5
+    - _AlphaToMask: 1
     - _Ambiant_Oppacity: 0.5
     - _Amplitude: 0
     - _Blend: 0
@@ -129,11 +132,14 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DffuseToon: 0.2
+    - _DiffuseToonMin: 0
+    - _Dither: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 0.6
     - _Edge_Far_Lerp: 0.5
     - _EnvironmentReflections: 1
+    - _FogOppacity: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -143,6 +149,7 @@ Material:
     - _MAIN_LIGHT_SHADOWS_SCREEN: 0
     - _Metalic: 0.3
     - _Metallic: 0
+    - _NightOppacity: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
