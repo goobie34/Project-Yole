@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 261629244}
   - component: {fileID: 261629243}
   - component: {fileID: 261629245}
+  - component: {fileID: 261629246}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -369,6 +370,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &261629246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261629242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f191a9ddcffa3124faf192283dbc5667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyIfInAuxScene
 --- !u!1 &472104288
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +640,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8600000, guid: fae434d0bb7241f4493958436e528a75, type: 2}
   m_TargetDisplay: 0
