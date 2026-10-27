@@ -22,11 +22,12 @@ public class BoatVariableManager : MonoBehaviour
 
     [Header("Generic Variables")]
     // master variable for player controll
-    public FuzzyFlagSetter Set_ControlBoat;
-    public float Get_ControlBoat => Set_ControlBoat.Get()
+    public FuzzyFlagSetter Set_ControlBoatInput;
+    public float Get_ControlBoatInput => Set_ControlBoatInput.Get()
         * Get_FreeMovement
         * (1 - Get_Stunned)
         * (1 - Get_Docked);
+
 
 
 
@@ -47,7 +48,14 @@ public class BoatVariableManager : MonoBehaviour
     public FuzzyFlagSetter Set_Stunned;
     public float Get_Stunned => Set_Stunned.Get();
 
+    // if boat can be stunned
+    public FuzzyFlagSetter Set_UnStunnable;
+    public float Get_UnStunnable => Set_UnStunnable.Get()
+        * ((Get_Stunned > 0)? 1 : 0)
+        * (1 - Get_Docked);
 
+
+    // interpelation to dock
     public FuzzyFlagSetter Set_Docked;
     public float Get_Docked => Set_Docked.Get();
 
@@ -77,7 +85,7 @@ public class BoatVariableManager : MonoBehaviour
     public float Get_ControlMainsailRope => Set_ControlMainsailRope.Get()
         * Get_FreeMainsailRope 
         * Get_SailRaised
-        * Get_ControlBoat;
+        * Get_ControlBoatInput;
 
 
 
