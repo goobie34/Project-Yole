@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 5871083788774766902}
   - component: {fileID: 3158371829853179200}
   - component: {fileID: 5357058852177151173}
+  - component: {fileID: 3577698740940003234}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -335,6 +336,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatMiscUpdator
   rb: {fileID: 0}
   variableManager: {fileID: 0}
+--- !u!114 &3577698740940003234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da71ec11bfb44f44ea873c4f60c7482d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatSoundController
+  eventReference:
+    Guid:
+      Data1: -1658411966
+      Data2: 1333041465
+      Data3: -745548358
+      Data4: -1191301033
+    Path: event:/SFX/sfx_boat_travel
+  velocityParameterString: velocity
+  submersionParameterString: submersion
+  maxVelocity: 22
+  minSubmersion: 0
+  maxSubmersion: 1
+  debugFMODParameterValues: 0
 --- !u!1 &2835776110408742043
 GameObject:
   m_ObjectHideFlags: 0
