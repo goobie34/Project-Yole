@@ -44,6 +44,7 @@ public class SailingForceControler : MonoBehaviour
 
     public Vector3 localWindDirection;
     public float localWindMagnitude;
+    public float windMagnitude;
     public float localWindAngle;
 
 
@@ -98,6 +99,8 @@ public class SailingForceControler : MonoBehaviour
             return;
 
         localWindDirection = windManager.GetLocalWindDirection();
+
+        windMagnitude = localWindDirection.magnitude;
 
         Vector3 linearVelocity = rb != null ? rb.linearVelocity : Vector3.zero;
 
@@ -205,7 +208,7 @@ public class SailingForceControler : MonoBehaviour
         sailWindDot = AngleDot(localWindAngle * Mathf.Deg2Rad, (sailSimulator.sailAngle + 90) * Mathf.Deg2Rad);
 
 
-        float angularAcc = Mathf.Clamp(sailWindDot * sailAngularSpeedMult * localWindMagnitude, -maxAngle - sailSimulator.sailAngle, maxAngle - sailSimulator.sailAngle);
+        float angularAcc = Mathf.Clamp(sailWindDot * sailAngularSpeedMult * windMagnitude, -maxAngle - sailSimulator.sailAngle, maxAngle - sailSimulator.sailAngle);
 
         sailSimulator.ApplyAngularAccelerationToSail(angularAcc * deltaTime);
     }
