@@ -130,12 +130,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DffuseToon: 0
-    - _DiffuseToonMin: 0.25
+    - _DffuseToon: 0.1
+    - _DiffuseToonMin: 0
     - _Dither: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EdgeScale: 0.4
+    - _EdgeScale: 1
     - _Edge_Far_Lerp: 0.5
     - _EnvironmentReflections: 1
     - _FogOppacity: 1
@@ -171,9 +171,9 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Ambiant_Color: {r: 0.2581249, g: 0.19522074, b: 0.38679248, a: 1}
+    - _Ambiant_Color: {r: 0.015330188, g: 0.011943837, b: 0.011208393, a: 1}
     - _BaseColor: {r: 0.29746228, g: 0.29746228, b: 0.29746228, a: 1}
-    - _Color: {r: 0.11320752, g: 0.08602307, b: 0.04218582, a: 1}
+    - _Color: {r: 0.0754717, g: 0.05535778, b: 0.035243858, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.3372549}
     - _Inner_Edge_Color: {r: 0.8792453, g: 0.7321879, b: 0.6486507, a: 1}
