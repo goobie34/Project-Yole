@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine;
@@ -9,11 +8,28 @@ using FMOD;
 public class AudioManager : SingletonPersistent<AudioManager>
 {
     [SerializeField] private MusicManager musicManager;
+    [SerializeField] private bool debug;
+
     protected override void Awake()
     {
         base.Awake();
     }
 
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        //this appears to be necessary for WebGL
+        if (hasFocus)
+        {
+            if (debug) UnityEngine.Debug.Log("Game got focus.");
+            FMODUnity.RuntimeManager.CoreSystem.mixerResume();
+        }
+        else
+        {
+            if (debug) UnityEngine.Debug.Log("Game lost focus.");
+            FMODUnity.RuntimeManager.CoreSystem.mixerSuspend();
+        }
+    }
+    #region Utility
     public static void CleanUp(EventInstance instance) { instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); instance.release(); }
     public static bool CompareGUID(EventInstance instance, EventReference reference)
     {
@@ -51,8 +67,8 @@ public class AudioManager : SingletonPersistent<AudioManager>
         eventDescription.getParameterDescriptionByName(parameterName, out parameterDescription);
         return parameterDescription.id;
     }
-
-
+    #endregion
+    #region Unsused Code
     //    [SerializeField] bool debug = true;    
 
     //    Dictionary<EventReference, EventInstance> eventInstances;
@@ -149,4 +165,5 @@ public class AudioManager : SingletonPersistent<AudioManager>
     //{
     //    if (debug) Debug.Log(message);
     //}
+    #endregion
 }
