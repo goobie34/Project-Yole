@@ -26,7 +26,7 @@ public class SequenceManager : MonoBehaviour
     {
         currentState = SequenceState.NotBegun;
 
-        sequenceStarter.OnInteract.AddListener(StartSequence);
+        sequenceStarter?.OnInteract.AddListener(StartSequence);
 
         for (int i = 0; i < interactableObjects.Length; i++)
         {

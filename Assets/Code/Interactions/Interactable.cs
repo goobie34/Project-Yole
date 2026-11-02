@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public interface IInteractable
 {
+    bool IsCurrentlyInteractable { get; }
     void Interact();
     void Select();
     void Deselect();
@@ -10,9 +11,16 @@ public interface IInteractable
 
 public class Interactable : MonoBehaviour, IInteractable
 {
+    private bool isCurrentlyInteractable;
+
     public UnityEvent OnInteract = new UnityEvent();
     public UnityEvent OnSelect = new UnityEvent();
     public UnityEvent OnDeselect = new UnityEvent();
+
+    public bool IsCurrentlyInteractable
+    {
+        get { return isCurrentlyInteractable; }
+    }
 
     public void Interact()
     {
