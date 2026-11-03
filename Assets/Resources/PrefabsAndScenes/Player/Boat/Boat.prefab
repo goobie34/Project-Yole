@@ -321,6 +321,7 @@ MonoBehaviour:
   stunnedTimer: 2
   stunnedExitTimer: 2
   fuzzyFlags: {fileID: 0}
+  boat_animator: {fileID: 0}
   stunned: 0
   stunnedAwaitingInput: 0
 --- !u!114 &5357058852177151173
@@ -372,6 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520043086799656160}
   - component: {fileID: 5784330721100925085}
+  - component: {fileID: 8965627808127042842}
   m_Layer: 0
   m_Name: Rotator2
   m_TagString: Untagged
@@ -415,6 +417,28 @@ MonoBehaviour:
   dampening: {x: 0.1, y: 0.1}
   inertia: {x: 600, y: 500}
   uppForceStrength: 1
+--- !u!95 &8965627808127042842
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835776110408742043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a1258175762fc04cbf922166b78013e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5350312510942824846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2132311502532514232, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4571197986254173541, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
       propertyPath: m_LocalScale.z
       value: 9.610896
@@ -1083,6 +1111,18 @@ PrefabInstance:
     - target: {fileID: 4571197986254173541, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624298508089524594, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
+      propertyPath: FlashColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624298508089524594, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
+      propertyPath: FlashColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624298508089524594, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
+      propertyPath: FlashColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
