@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class SequenceManager : MonoBehaviour
 {
-    [SerializeField] private Interactable sequenceStarter; // TEMPORÄR, SKA TAS BORT!
+    [SerializeField] private Interactable sequenceStarter; // TEMPORÄR, SKA TAS BORT! eller?
     [SerializeField] private Interactable[] interactableObjects;
     [SerializeField] private SequencePlayer[] sequence;
+
+    [SerializeField] private SequenceType type;
     
+    private enum SequenceType
+    {
+        SimonSays,
+        Addition,
+    }
+
+    //[SerializeField] private bool allowRepeats = false; Yet to be implemented, might not be needed, but could be a fun feature to add later on.
+
     private int currentIndex = 0;
     private int currentStep = 1;
     
@@ -40,7 +50,11 @@ public class SequenceManager : MonoBehaviour
         if (currentState != SequenceState.NotBegun)
             return;
 
-        StartCoroutine(PlaySequence());
+        if (type == SequenceType.SimonSays)
+            StartCoroutine(PlaySequence());
+        else if (type == SequenceType.Addition)
+            StartCoroutine(PlayAdditionSequence());
+        else Debug.LogError("Sequence type not implemented!");
     }
 
     private IEnumerator PlaySequence()
@@ -71,6 +85,29 @@ public class SequenceManager : MonoBehaviour
         currentState = SequenceState.Waiting;
     }
     
+    private IEnumerator PlayAdditionSequence()
+    {
+        Debug.Log("Addition sequence started!");
+        currentState = SequenceState.Playing;
+        HideSequence();
+        yield return new WaitForSeconds(1f);
+        currentIndex = 0;
+
+        sequence[currentStep - 1].SequenceSelect();
+        yield return new WaitForSeconds(sequenceLengthPerObject);
+
+        //for (int i = 0; i < currentStep; i++)
+        //{
+        //    HideSequence();
+        //    sequence[i].SequenceSelect();
+        //    yield return new WaitForSeconds(sequenceLengthPerObject);
+        //}
+
+        HideSequence();
+        Debug.Log("Addition step finished!");
+        currentState = SequenceState.Waiting;
+    }
+
     private void HideSequence()
     {
         for (int i = 0; i < sequence.Length; i++)
@@ -81,20 +118,20 @@ public class SequenceManager : MonoBehaviour
 
     public void OnInteraction(int index)
     {
-        if (currentState != SequenceState.Waiting)
+        if (currentState != SequenceState.Waiting) // Cannot interact right now, sequence is either playing or not begun yet
         {
             return;
         }
 
-        if (sequence[currentIndex].CheckInput(index))
+        if (sequence[currentIndex].CheckInput(index)) // Correct input
         {
             sequence[currentIndex].CorrectInput();
 
             currentIndex++;
 
-            if (currentIndex >= currentStep)
+            if (currentIndex >= currentStep) // All inputs for this step have been completed
             {
-                if (currentStep >= sequence.Length)
+                if (currentStep >= sequence.Length) // All steps have been completed and the sequence is therefore completed
                 {
                     Debug.Log("Sequence completed!");
 
@@ -105,6 +142,7 @@ public class SequenceManager : MonoBehaviour
 
                     return;
                 }
+
                 currentStep++;
 
                 Debug.Log("Next step loading!");
