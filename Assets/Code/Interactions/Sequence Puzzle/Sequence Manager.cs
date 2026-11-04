@@ -36,7 +36,7 @@ public class SequenceManager : MonoBehaviour
     {
         currentState = SequenceState.NotBegun;
 
-        sequenceStarter?.OnInteract.AddListener(StartSequence);
+        sequenceStarter?.OnInteract.AddListener(() => { if (currentState == SequenceState.NotBegun) StartCoroutine(InitializeSequence()); });
 
         for (int i = 0; i < interactableObjects.Length; i++)
         {
@@ -45,11 +45,19 @@ public class SequenceManager : MonoBehaviour
         }
     }
 
-    public void StartSequence()
+    public IEnumerator InitializeSequence()
     {
-        if (currentState != SequenceState.NotBegun)
-            return;
+        yield return new WaitForSeconds(1f);
 
+        yield return StartCoroutine(ShowAllBorders());
+
+        StartCoroutine(StartSequence());
+    }
+
+    public IEnumerator StartSequence()
+    {
+        yield return null;
+        //yield return StartCoroutine(ShowAllBorders());
         if (type == SequenceType.SimonSays)
             StartCoroutine(PlaySequence());
         else if (type == SequenceType.Addition)
@@ -57,11 +65,30 @@ public class SequenceManager : MonoBehaviour
         else Debug.LogError("Sequence type not implemented!");
     }
 
+    private IEnumerator ShowAllBorders()
+    {
+        for (int i = 0; i < interactableObjects.Length; ++i)
+        {
+            interactableObjects[i].GetComponent<SequencePlayer>().SequenceSelect();
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        for (int i = 0; i < interactableObjects.Length; ++i)
+        {
+            interactableObjects[i].GetComponent<SequencePlayer>().SequenceDeselect();
+
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
     private IEnumerator PlaySequence()
     {
         Debug.Log("Sequence started!");
 
         currentState = SequenceState.Playing;
+
+
 
         HideSequence();
 
@@ -165,14 +192,14 @@ public class SequenceManager : MonoBehaviour
             currentState = SequenceState.NotBegun;
 
             ShuffleSequence();
-            StartCoroutine(RestartSequence());
+            StartCoroutine(InitializeSequence());
         }
     }
 
     private IEnumerator RestartSequence()
     {
         yield return new WaitForSeconds(1f);
-        StartSequence();
+        StartCoroutine(StartSequence());
     }
 
     private void ShuffleSequence()
