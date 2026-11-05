@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class DockingManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Prefabs")]
+    public GameObject PlayerBoatPrefab;
+    public GameObject DockedBoatPrefab;
+
+
+    [Header("Dock Variables")]
+    public Transform[] dockingPositions;
+
+    
+
+    [Header("Docked Boat Data")]
+    public int dockIndex;
+    public bool reversed;
+
+    private void SpawnPlayerBoat()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SpawnDockedBoat()
     {
-        
+
     }
+
+    private void SpawnPlayer()
+    {
+
+    }
+
 }
