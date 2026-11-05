@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine
 {
     public readonly State Root;
     public readonly TransitionSequencer Sequencer;

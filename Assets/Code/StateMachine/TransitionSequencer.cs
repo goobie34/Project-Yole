@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System;
-public class TransitionSequencer : MonoBehaviour
+public class TransitionSequencer
 {
     public readonly StateMachine Machine;
 
@@ -67,7 +67,7 @@ public class TransitionSequencer : MonoBehaviour
         return new List<State>(stack);
     }
 
-    CancellationTokenSource cts;
+    CancellationTokenSource cts = new CancellationTokenSource();
     public readonly bool UseSequential = true; // Set false to use parallel
 
     void BeginTransition(State from, State to)

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System;
 using static Activities;
 
-public abstract class State : MonoBehaviour
+public abstract class State
 {
-    public readonly StateMachine Machine;
+    public StateMachine Machine;
     public readonly State Parent;
     public State ActiveChild;
     readonly List<IActivity> activities = new List<IActivity>();
@@ -44,6 +44,8 @@ public abstract class State : MonoBehaviour
         if (ActiveChild != null) ActiveChild.Exit();
         ActiveChild = null;
         OnExit();
+
+        if (Parent != null && Parent.ActiveChild == this) Parent.ActiveChild = null;
     }
 
     internal void Update(float deltaTime)

@@ -3,7 +3,7 @@ using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class StateMachineBuilder : MonoBehaviour
+public class StateMachineBuilder
 {
     readonly State root;
 

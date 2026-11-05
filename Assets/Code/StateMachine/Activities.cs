@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-public class Activities : MonoBehaviour
+public class Activities
 {
     public enum ActivityMode { Inactive, Activating, Active, Deactivating }
 
