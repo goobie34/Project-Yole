@@ -52,7 +52,7 @@ public class EnterCameraOnGamestate : MonoBehaviour
 
     private void OnEvent_ChangeGameState(GameStateChangeData data)
     {
-        if (data.nextState == targetGameState)
+        if (data.nextState != targetGameState)
         {
             return;
 

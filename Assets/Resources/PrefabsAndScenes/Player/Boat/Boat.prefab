@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 3158371829853179200}
   - component: {fileID: 5357058852177151173}
   - component: {fileID: 3577698740940003234}
+  - component: {fileID: 8618758049637909223}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -363,6 +364,19 @@ MonoBehaviour:
   minSubmersion: 0
   maxSubmersion: 1
   debugFMODParameterValues: 0
+--- !u!114 &8618758049637909223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecc1b3fd764ebe4885566c3cad1cc03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBoatInstanceHandeler
+  player: {fileID: 376179927878851857}
 --- !u!1 &2231576154536728877
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4877075943526635291}
+  - component: {fileID: 4857814055234466693}
   m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
@@ -502,6 +517,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3720717429902052107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4857814055234466693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350312510942824846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082815d2473fe2b4185c3e3fdcfacd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatCameraTargetSingleton
 --- !u!1 &6407733142316580686
 GameObject:
   m_ObjectHideFlags: 0

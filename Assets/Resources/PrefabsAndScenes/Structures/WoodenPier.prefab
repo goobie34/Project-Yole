@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6682ce0d669dc8428981a8d6d247894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DockingManager
-  IslandPlayerPrefab: {fileID: 6392896818117805273, guid: c700142f30f55164b96070c7812d1cd9, type: 3}
-  PlayerBoatPrefab: {fileID: 1653053418466464375, guid: 20942d7085a6000469a2705e3381eaa1, type: 3}
+  IslandPlayerPrefab: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+  PlayerBoatPrefab: {fileID: 376179927878851857, guid: 32416c68cfb9cf64a90393e3b321501f, type: 3}
   DockedBoatPrefab: {fileID: 352367889997296751, guid: 6e8036e4cc3ce16419a5121a7c1760a4, type: 3}
   DockedBoat: {fileID: 0}
   dockingPositions:
@@ -294,13 +294,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4558588097713833187}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7586301488533233376}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4756474655978943827
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,13 +325,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4756474655978943827}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7586301488533233376}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &5104037571549407366
 GameObject:
   m_ObjectHideFlags: 0
