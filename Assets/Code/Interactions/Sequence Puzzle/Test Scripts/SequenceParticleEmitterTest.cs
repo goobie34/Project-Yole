@@ -8,6 +8,8 @@ public class SequenceParticleEmitterTest : MonoBehaviour
 
     [SerializeField] private SequencePlayer sequencePlayer;
 
+    private Animator anim;
+
     [SerializeField] private float flashTime;
 
     private readonly Color trans = new Color(0, 0, 0, 0);
@@ -16,6 +18,9 @@ public class SequenceParticleEmitterTest : MonoBehaviour
 
     private void Start()
     {
+        if (anim == null)
+            anim = GetComponent<Animator>();
+
         if (particleSystem == null)
         {
             particleSystem = GetComponent<ParticleSystem>();
@@ -33,7 +38,25 @@ public class SequenceParticleEmitterTest : MonoBehaviour
         if (sequencePlayer != null)
         {
             sequencePlayer.OnCorrectInput.AddListener(() => StartCoroutine(ShowGreenBorder()));
-            sequencePlayer.OnSequenceSelect.AddListener(() => StartCoroutine(ShowYellowBorder()));
+
+            //sequencePlayer.OnSequenceSelect.AddListener(() => anim?.SetTrigger("StoneSelection"));
+
+            sequencePlayer.OnSequenceSelect.AddListener(() =>
+            {
+                Debug.Log("StoneSelection event triggered!");
+
+                if (anim != null)
+                {
+                    anim.SetTrigger("StoneSelection");
+                    Debug.Log("Animation trigger activated!");
+                }
+                else
+                {
+                    Debug.LogWarning("Animator is missing!");
+                }
+            });
+
+            //sequencePlayer.OnSequenceSelect.AddListener(() => StartCoroutine(ShowYellowBorder()));
             sequencePlayer.OnSequenceDeselect.AddListener(DisableBorderColor);
             sequencePlayer.OnWrongInput.AddListener(() => StartCoroutine(ShowRedBorder()));
         }
