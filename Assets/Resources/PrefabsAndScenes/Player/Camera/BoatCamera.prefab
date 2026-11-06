@@ -56,7 +56,7 @@ MonoBehaviour:
     Enabled: 1
     m_Value: 0
   OutputChannel: 1
-  StandbyUpdate: 2
+  StandbyUpdate: 1
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
@@ -82,7 +82,7 @@ MonoBehaviour:
       Curvature: {x: 2, y: 11}
       BarrelClipping: 0.25
       Anamorphism: 0
-  BlendHint: 0
+  BlendHint: 25
 --- !u!114 &2165786210894184460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,19 +122,19 @@ MonoBehaviour:
     Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
-      Enabled: 0
+      Enabled: 1
       Wait: 1
-      Time: 2
+      Time: 5
     Restrictions: 0
   VerticalAxis:
-    Value: 0
+    Value: 17.5
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
     Recentering:
-      Enabled: 0
+      Enabled: 1
       Wait: 1
-      Time: 2
+      Time: 5
     Restrictions: 0
   RadialAxis:
     Value: 1

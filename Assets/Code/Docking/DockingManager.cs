@@ -71,8 +71,10 @@ public class DockingManager : MonoBehaviour
         gameStates.EnterState("BOAT");
 
         playerManager.SetIslandPlayer(null);
-        DockedBoat.SetActive(false);
 
+        if (DockedBoat != null)
+            Destroy(DockedBoat);
+        
         SpawnPlayerBoat();
 
         
@@ -88,8 +90,7 @@ public class DockingManager : MonoBehaviour
 
     private void SpawnDockedBoat()
     {
-        DockedBoat.SetActive(true);
-        DockedBoat.transform.parent = GetCurrentDockPos;
+        DockedBoat = Instantiate(DockedBoatPrefab, GetCurrentDockPos);
         DockedBoat.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
     }
 

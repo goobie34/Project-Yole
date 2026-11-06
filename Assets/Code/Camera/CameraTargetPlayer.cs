@@ -40,5 +40,7 @@ public class CameraTargetPlayer : MonoBehaviour
         }
 
         cam.Target.TrackingTarget = player.transform;
+        cam.Target.LookAtTarget = player.transform;
+
     }
 }
