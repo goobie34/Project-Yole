@@ -51,6 +51,8 @@ public class SequenceManager : MonoBehaviour
 
         yield return StartCoroutine(ShowAllBorders());
 
+        Debug.Log("Hej");
+
         StartCoroutine(StartSequence());
     }
 
@@ -74,12 +76,12 @@ public class SequenceManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        for (int i = 0; i < interactableObjects.Length; ++i)
-        {
-            interactableObjects[i].GetComponent<SequencePlayer>().SequenceDeselect();
+        //for (int i = 0; i < interactableObjects.Length; ++i)
+        //{
+        //    interactableObjects[i].GetComponent<SequencePlayer>().SequenceDeselect();
 
-            yield return new WaitForSeconds(0.1f);
-        }
+        //    yield return new WaitForSeconds(0.1f);
+        //}
     }
 
     private IEnumerator PlaySequence()
@@ -137,10 +139,10 @@ public class SequenceManager : MonoBehaviour
 
     private void HideSequence()
     {
-        for (int i = 0; i < sequence.Length; i++)
-        {
-            sequence[i].SequenceDeselect();
-        }
+        //for (int i = 0; i < sequence.Length; i++)
+        //{
+        //    sequence[i].SequenceDeselect();
+        //}
     }
 
     public void OnInteraction(int index)
