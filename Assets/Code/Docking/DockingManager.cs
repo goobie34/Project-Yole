@@ -25,6 +25,8 @@ public class DockingManager : MonoBehaviour
     public bool testBtn;
     private bool toggle;
 
+    private Quaternion GetFlipper => reversed ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+
     private void Start()
     {
         DockedBoat = GameObject.Instantiate(DockedBoatPrefab);
@@ -84,14 +86,17 @@ public class DockingManager : MonoBehaviour
     {
         var newPlayer = GameObject.Instantiate(PlayerBoatPrefab);
 
-        newPlayer.transform.position = DockedBoat.transform.position;
-        newPlayer.transform.rotation = DockedBoat.transform.rotation;
+        newPlayer.transform.position = GetCurrentDockPos.position;
+        newPlayer.transform.rotation = GetFlipper * GetCurrentDockPos.rotation;
+
+        if (WaveServiceLocator.Instance == null)
+            return;
     }
 
     private void SpawnDockedBoat()
     {
         DockedBoat = Instantiate(DockedBoatPrefab, GetCurrentDockPos);
-        DockedBoat.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        DockedBoat.transform.SetLocalPositionAndRotation(Vector3.zero, GetFlipper);
     }
 
     private void SpawnPlayer()
@@ -103,8 +108,11 @@ public class DockingManager : MonoBehaviour
 
     }
 
+    
+
     private void FixedUpdate()
     {
+
         if (testBtn)
         {
             testBtn = false;
