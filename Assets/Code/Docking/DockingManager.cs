@@ -12,6 +12,14 @@ public class DockingManager : MonoBehaviour
 
     [Header("Dock Variables")]
     public Transform[] dockingPositions;
+
+    public Transform GetTransformAtIndex(int index)
+    {
+        index = Mathf.Clamp(index, 0, dockingPositions.Length);
+
+        return dockingPositions[index];
+    }
+
     public Transform GetCurrentDockPos => dockingPositions != null ? dockingPositions[dockIndex] : transform;
 
     public Transform playerSpawPos;
@@ -37,7 +45,7 @@ public class DockingManager : MonoBehaviour
         DockedBoat.SetActive(false);
     }
 
-    private void StartIslandState()
+    public void StartIslandState()
     {
 
         if (GameStatesLocator.Instance == null) return;
@@ -47,6 +55,8 @@ public class DockingManager : MonoBehaviour
         if (PlayerManagerServiceLocator.Instance == null) return;
 
         if (!PlayerManagerServiceLocator.Instance.TryGet(out var playerManager)) return;
+
+        toggle = false;
 
         gameStates.EnterState("ISLAND");
 
@@ -60,7 +70,7 @@ public class DockingManager : MonoBehaviour
 
     }
 
-    private void EndIslandState()
+    public void EndIslandState()
     {
         if (GameStatesLocator.Instance == null) return;
 
@@ -69,6 +79,9 @@ public class DockingManager : MonoBehaviour
         if (PlayerManagerServiceLocator.Instance == null) return;
 
         if (!PlayerManagerServiceLocator.Instance.TryGet(out var playerManager)) return;
+
+        toggle = true;
+
 
         gameStates.EnterState("BOAT");
 
@@ -95,7 +108,14 @@ public class DockingManager : MonoBehaviour
 
     private void SpawnDockedBoat()
     {
+        if(DockedBoat != null)
+        {
+            Destroy(DockedBoat);
+        }
+
         DockedBoat = Instantiate(DockedBoatPrefab, GetCurrentDockPos);
+
+
         DockedBoat.transform.SetLocalPositionAndRotation(Vector3.zero, GetFlipper);
     }
 
@@ -109,6 +129,32 @@ public class DockingManager : MonoBehaviour
     }
 
     
+    public void GetClosestDockingIndex(Transform target, out int index)
+    {
+        index = -1;
+        
+
+        if(dockingPositions == null)
+            return ;
+
+        if (dockingPositions.Length == 0)
+            return;
+
+        int min = 0;
+        float minDist = Vector3.Distance(target.position, dockingPositions[0].position);
+
+        for(int i = 1; i < dockingPositions.Length; i++)
+        {
+            var linearDist = Vector3.Distance( target.position, dockingPositions[i].position);
+
+            if (linearDist < minDist)
+            {
+                min = i;
+                minDist = linearDist;
+            }
+        }
+        index = min;
+    }
 
     private void FixedUpdate()
     {
@@ -126,7 +172,6 @@ public class DockingManager : MonoBehaviour
                 EndIslandState();
             }
 
-            toggle = !toggle;
 
         }
     }
