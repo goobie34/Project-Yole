@@ -82,7 +82,7 @@ MonoBehaviour:
       Curvature: {x: 2, y: 11}
       BarrelClipping: 0.25
       Anamorphism: 0
-  BlendHint: 25
+  BlendHint: 24
 --- !u!114 &2165786210894184460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
     Wrap: 1
     Recentering:
       Enabled: 1
-      Wait: 1
+      Wait: 3
       Time: 5
     Restrictions: 0
   VerticalAxis:
@@ -133,7 +133,7 @@ MonoBehaviour:
     Wrap: 0
     Recentering:
       Enabled: 1
-      Wait: 1
+      Wait: 3
       Time: 5
     Restrictions: 0
   RadialAxis:
