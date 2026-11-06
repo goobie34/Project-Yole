@@ -29,6 +29,9 @@ public class BoatCollision : MonoBehaviour
 
         if(boat_animator == null )
             boat_animator = GetComponentInChildren<Animator>();
+
+        StartCoroutine(CoroutineStunnedTimer(0));
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,11 +48,12 @@ public class BoatCollision : MonoBehaviour
             TriggerCollision(directionalSpeed);
     }
 
-    private void TriggerCollision(float relativeSpeed)
+    private void TriggerCollision(float relativeSpeed, bool triggerFlash = true)
     {
         Debug.Log($"Collision, speed: {relativeSpeed}");
 
-        boat_animator?.SetTrigger("Flash_Stunn");
+        if(triggerFlash )
+            boat_animator?.SetTrigger("Flash_Stunn");
 
         StartCoroutine(CoroutineStunnedTimer(stunnedTimer));
     }

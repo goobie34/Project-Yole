@@ -28,7 +28,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -91,6 +91,15 @@
                     "name": "ExtendSail",
                     "type": "Value",
                     "id": "d9a84487-20f5-4bb6-b860-e0a876ceaed9",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Dock",
+                    "type": "Value",
+                    "id": "74e28a81-e5a1-48dd-a866-5248dc15ea1f",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
@@ -500,7 +509,7 @@
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "ExtendSail",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -544,10 +553,32 @@
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "ExtendSail",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "bbddbdf1-cbfc-441d-8a02-c6ea49f649f2",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Dock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3539f00f-0fcf-4526-8749-ce8c95cbdb06",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Dock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
