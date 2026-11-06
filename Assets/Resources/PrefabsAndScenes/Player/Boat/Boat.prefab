@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 3158371829853179200}
   - component: {fileID: 5357058852177151173}
   - component: {fileID: 3577698740940003234}
+  - component: {fileID: 8618758049637909223}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -261,9 +262,10 @@ MonoBehaviour:
   sailAngularSpeedMult: 0.2
   ropeClampMaxVelocity: 100
   ropeClampVelocityMult: 1
-  effectiveAnglePow: 3
+  effectiveAnglePow: 1.7
   sailMomentumForceMult: 8
   Epsion: 0.1
+  maxSailMomentumPush: 4
   windManager: {fileID: 0}
   sailSimulator: {fileID: 0}
   rb: {fileID: 0}
@@ -363,6 +365,51 @@ MonoBehaviour:
   minSubmersion: 0
   maxSubmersion: 1
   debugFMODParameterValues: 0
+--- !u!114 &8618758049637909223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecc1b3fd764ebe4885566c3cad1cc03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBoatInstanceHandeler
+  player: {fileID: 376179927878851857}
+--- !u!1 &2231576154536728877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3555375514229280322}
+  m_Layer: 0
+  m_Name: Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3555375514229280322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2231576154536728877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3053307740948710923}
+  m_Father: {fileID: 5707172403382489588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2835776110408742043
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4877075943526635291}
+  - component: {fileID: 4857814055234466693}
   m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
@@ -470,6 +518,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3720717429902052107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4857814055234466693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350312510942824846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082815d2473fe2b4185c3e3fdcfacd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatCameraTargetSingleton
 --- !u!1 &6407733142316580686
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +561,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5520043086799656160}
+  - {fileID: 3555375514229280322}
   m_Father: {fileID: 3720717429902052107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3362615881404684064
@@ -521,6 +582,60 @@ MonoBehaviour:
   dampening: {x: 0.2, y: 0.2}
   inertia: {x: 100, y: 100}
   uppForceStrength: 0
+--- !u!1 &7183387619831251048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3053307740948710923}
+  - component: {fileID: 3649056386633328692}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3053307740948710923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183387619831251048}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071067, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 2.059266, z: 0}
+  m_LocalScale: {x: 200, y: 199.99997, z: 260.5199}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3555375514229280322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3649056386633328692
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183387619831251048}
+  m_Material: {fileID: 13400000, guid: 36ae6e9445256434da1e9d3293afc3e9, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5453187493515902519, guid: acd6b1e2aae582143a3f67274dffaf3f, type: 3}
 --- !u!1 &9020007034700832919
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class SailingForceControler : MonoBehaviour
 
     public float Epsion = 0.1f;
 
+    public float maxSailMomentumPush = 4f;
+
     [Header("Dependencies")]
     public SailWindManager windManager;
     public SailPhysics sailSimulator;
@@ -215,8 +217,9 @@ public class SailingForceControler : MonoBehaviour
 
     private void ApplySailForceToBoat(float deltaTime)
     {
+
         appliedAcceleration = (Mathf.Pow(Mathf.Abs(pushAmount), effectiveAnglePow) 
-            + Mathf.Abs(sailMomentumPush) * sailMomentumForceMult)
+            + Mathf.Min(Mathf.Abs( sailMomentumPush), maxSailMomentumPush) * sailMomentumForceMult)
             * (pushAmount < 0 ? -1 : 1);
 
 

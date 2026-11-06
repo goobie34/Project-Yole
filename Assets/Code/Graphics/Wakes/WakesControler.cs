@@ -39,6 +39,7 @@ public class WakesControler : MonoBehaviour
     private void OnEnable()
     {
         //RenderPipelineManager.beginCameraRendering += OnRender; 
+        GeTargetPosition();
     }
 
     private void OnDisable()
@@ -56,8 +57,13 @@ public class WakesControler : MonoBehaviour
         //UpdateDelta();
     }
 
+
+
     private void Update()
     {
+        
+
+
         UpdateMeshPos();
 
 
@@ -124,6 +130,11 @@ public class WakesControler : MonoBehaviour
             return;
 
         cameraTransform.position = new Vector3(currentPos.x, 0, currentPos.y);
+    }
+
+    private void GeTargetPosition()
+    {
+        targetObject = Camera.main.transform;
     }
 }
 
