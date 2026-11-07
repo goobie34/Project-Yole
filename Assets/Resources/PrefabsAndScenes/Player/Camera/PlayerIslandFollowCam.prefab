@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7369197196414230719
+--- !u!1 &4753003729020394688
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9113558191758937531}
-  - component: {fileID: 5204469393991582289}
-  - component: {fileID: 1862330651256431726}
-  - component: {fileID: 1204015660594310598}
-  - component: {fileID: 8473077095079183991}
-  - component: {fileID: 6032001504925698319}
+  - component: {fileID: 567792042616716749}
+  - component: {fileID: 5696004668547722028}
+  - component: {fileID: 3832968374420564755}
+  - component: {fileID: 1564172769293242057}
+  - component: {fileID: 1701430051553094669}
+  - component: {fileID: 3819369161013724715}
   m_Layer: 0
   m_Name: PlayerIslandFollowCam
   m_TagString: Untagged
@@ -21,28 +21,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9113558191758937531
+--- !u!4 &567792042616716749
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369197196414230719}
+  m_GameObject: {fileID: 4753003729020394688}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -30, y: 42.426414, z: -30}
+  m_LocalRotation: {x: 0.3484578, y: 0.3544203, z: -0.14433596, w: 0.85564625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 9113558191758937531}
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
---- !u!114 &5204469393991582289
+--- !u!114 &5696004668547722028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369197196414230719}
+  m_GameObject: {fileID: 4753003729020394688}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
@@ -79,13 +79,13 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 8
---- !u!114 &1862330651256431726
+--- !u!114 &3832968374420564755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369197196414230719}
+  m_GameObject: {fileID: 4753003729020394688}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
@@ -111,16 +111,16 @@ MonoBehaviour:
       Radius: 2.5
       Height: 0.1
     SplineCurvature: 0.5
-  RecenteringTarget: 2
+  RecenteringTarget: 1
   HorizontalAxis:
     Value: 45
-    Center: 45
-    Range: {x: 45, y: 45}
+    Center: 0
+    Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
-      Enabled: 0
-      Wait: 1
-      Time: 2
+      Enabled: 1
+      Wait: 0
+      Time: 1
     Restrictions: 0
   VerticalAxis:
     Value: 45
@@ -142,26 +142,26 @@ MonoBehaviour:
       Wait: 1
       Time: 2
     Restrictions: 0
---- !u!114 &1204015660594310598
+--- !u!114 &1564172769293242057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369197196414230719}
+  m_GameObject: {fileID: 4753003729020394688}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLookAt
   LookAtOffset: {x: 0, y: 1, z: 0}
---- !u!114 &8473077095079183991
+--- !u!114 &1701430051553094669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369197196414230719}
+  m_GameObject: {fileID: 4753003729020394688}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dcf2010394ed15418c1a6fe07f93742, type: 3}
@@ -169,13 +169,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnterCameraOnGamestate
   targetGameState: ISLAND
   cameraState: {fileID: 0}
---- !u!114 &6032001504925698319
+--- !u!114 &3819369161013724715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369197196414230719}
+  m_GameObject: {fileID: 4753003729020394688}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e3c44b38cae5974e9352893cf9ace6d, type: 3}
@@ -184,3 +184,35 @@ MonoBehaviour:
   boatOrIsland: 0
   player: {fileID: 0}
   cam: {fileID: 0}
+--- !u!1 &7369197196414230719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9113558191758937531}
+  m_Layer: 0
+  m_Name: PlayerIslandFollowCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9113558191758937531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369197196414230719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 188.05742, y: 50.70522, z: -158.28406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 567792042616716749}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
