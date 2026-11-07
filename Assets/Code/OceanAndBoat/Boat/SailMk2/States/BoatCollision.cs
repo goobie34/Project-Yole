@@ -11,6 +11,7 @@ public class BoatCollision : MonoBehaviour
     public float stunnedExitTimer = 1f;
 
     public BoatVariableManager fuzzyFlags;
+    public Animator boat_animator;
 
     public bool stunned = false;
     public bool stunnedAwaitingInput = false;
@@ -25,6 +26,12 @@ public class BoatCollision : MonoBehaviour
     {
         if(fuzzyFlags == null)
             fuzzyFlags = GetComponent<BoatVariableManager>();
+
+        if(boat_animator == null )
+            boat_animator = GetComponentInChildren<Animator>();
+
+        StartCoroutine(CoroutineStunnedTimer(0));
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,10 +48,12 @@ public class BoatCollision : MonoBehaviour
             TriggerCollision(directionalSpeed);
     }
 
-    private void TriggerCollision(float relativeSpeed)
+    private void TriggerCollision(float relativeSpeed, bool triggerFlash = true)
     {
         Debug.Log($"Collision, speed: {relativeSpeed}");
 
+        if(triggerFlash )
+            boat_animator?.SetTrigger("Flash_Stunn");
 
         StartCoroutine(CoroutineStunnedTimer(stunnedTimer));
     }

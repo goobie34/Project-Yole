@@ -18,16 +18,16 @@ public class EventClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        interactable.Interact();
+        interactable?.Interact();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        interactable.Select();
+        interactable?.Select();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        interactable.Deselect();
+        interactable?.Deselect();
     }
 }

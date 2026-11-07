@@ -279,6 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132311502532514232}
+  - component: {fileID: 7624298508089524594}
   m_Layer: 0
   m_Name: BoatVisuals
   m_TagString: Player
@@ -304,6 +305,20 @@ Transform:
   - {fileID: 7206567853524593065}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7624298508089524594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352367889997296751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 10.753007, g: 6.120811, b: 0, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &384886859245863582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,7 +2416,6 @@ GameObject:
   - component: {fileID: 3858351506578783369}
   - component: {fileID: 3694410170654830831}
   - component: {fileID: 7920135134067321322}
-  - component: {fileID: 606387830073941213}
   m_Layer: 0
   m_Name: Boat_body
   m_TagString: Player
@@ -2481,28 +2495,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &606387830073941213
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8672039516073957277}
-  m_Material: {fileID: 13400000, guid: 36ae6e9445256434da1e9d3293afc3e9, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5453187493515902519, guid: acd6b1e2aae582143a3f67274dffaf3f, type: 3}
 --- !u!1 &8811258431441353288
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class SequenceManager : MonoBehaviour
 {
-    [SerializeField] private Interactable sequenceStarter; // TEMPORÄR, SKA TAS BORT!
+    [SerializeField] private Interactable sequenceStarter; // TEMPORÄR, SKA TAS BORT! eller?
     [SerializeField] private Interactable[] interactableObjects;
     [SerializeField] private SequencePlayer[] sequence;
+
+    [SerializeField] private SequenceType type;
     
+    private enum SequenceType
+    {
+        SimonSays,
+        Addition,
+    }
+
+    //[SerializeField] private bool allowRepeats = false; Yet to be implemented, might not be needed, but could be a fun feature to add later on.
+
     private int currentIndex = 0;
     private int currentStep = 1;
     
@@ -26,7 +36,7 @@ public class SequenceManager : MonoBehaviour
     {
         currentState = SequenceState.NotBegun;
 
-        sequenceStarter.OnInteract.AddListener(StartSequence);
+        sequenceStarter?.OnInteract.AddListener(() => { if (currentState == SequenceState.NotBegun) StartCoroutine(InitializeSequence()); });
 
         for (int i = 0; i < interactableObjects.Length; i++)
         {
@@ -35,12 +45,43 @@ public class SequenceManager : MonoBehaviour
         }
     }
 
-    public void StartSequence()
+    public IEnumerator InitializeSequence()
     {
-        if (currentState != SequenceState.NotBegun)
-            return;
+        yield return new WaitForSeconds(1f);
 
-        StartCoroutine(PlaySequence());
+        yield return StartCoroutine(ShowAllBorders());
+
+        Debug.Log("Hej");
+
+        StartCoroutine(StartSequence());
+    }
+
+    public IEnumerator StartSequence()
+    {
+        yield return null;
+        //yield return StartCoroutine(ShowAllBorders());
+        if (type == SequenceType.SimonSays)
+            StartCoroutine(PlaySequence());
+        else if (type == SequenceType.Addition)
+            StartCoroutine(PlayAdditionSequence());
+        else Debug.LogError("Sequence type not implemented!");
+    }
+
+    private IEnumerator ShowAllBorders()
+    {
+        for (int i = 0; i < interactableObjects.Length; ++i)
+        {
+            interactableObjects[i].GetComponent<SequencePlayer>().SequenceSelect();
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        //for (int i = 0; i < interactableObjects.Length; ++i)
+        //{
+        //    interactableObjects[i].GetComponent<SequencePlayer>().SequenceDeselect();
+
+        //    yield return new WaitForSeconds(0.1f);
+        //}
     }
 
     private IEnumerator PlaySequence()
@@ -48,6 +89,8 @@ public class SequenceManager : MonoBehaviour
         Debug.Log("Sequence started!");
 
         currentState = SequenceState.Playing;
+
+
 
         HideSequence();
 
@@ -71,30 +114,53 @@ public class SequenceManager : MonoBehaviour
         currentState = SequenceState.Waiting;
     }
     
+    private IEnumerator PlayAdditionSequence()
+    {
+        Debug.Log("Addition sequence started!");
+        currentState = SequenceState.Playing;
+        HideSequence();
+        yield return new WaitForSeconds(1f);
+        currentIndex = 0;
+
+        sequence[currentStep - 1].SequenceSelect();
+        yield return new WaitForSeconds(sequenceLengthPerObject);
+
+        //for (int i = 0; i < currentStep; i++)
+        //{
+        //    HideSequence();
+        //    sequence[i].SequenceSelect();
+        //    yield return new WaitForSeconds(sequenceLengthPerObject);
+        //}
+
+        HideSequence();
+        Debug.Log("Addition step finished!");
+        currentState = SequenceState.Waiting;
+    }
+
     private void HideSequence()
     {
-        for (int i = 0; i < sequence.Length; i++)
-        {
-            sequence[i].SequenceDeselect();
-        }
+        //for (int i = 0; i < sequence.Length; i++)
+        //{
+        //    sequence[i].SequenceDeselect();
+        //}
     }
 
     public void OnInteraction(int index)
     {
-        if (currentState != SequenceState.Waiting)
+        if (currentState != SequenceState.Waiting) // Cannot interact right now, sequence is either playing or not begun yet
         {
             return;
         }
 
-        if (sequence[currentIndex].CheckInput(index))
+        if (sequence[currentIndex].CheckInput(index)) // Correct input
         {
             sequence[currentIndex].CorrectInput();
 
             currentIndex++;
 
-            if (currentIndex >= currentStep)
+            if (currentIndex >= currentStep) // All inputs for this step have been completed
             {
-                if (currentStep >= sequence.Length)
+                if (currentStep >= sequence.Length) // All steps have been completed and the sequence is therefore completed
                 {
                     Debug.Log("Sequence completed!");
 
@@ -105,6 +171,7 @@ public class SequenceManager : MonoBehaviour
 
                     return;
                 }
+
                 currentStep++;
 
                 Debug.Log("Next step loading!");
@@ -127,14 +194,14 @@ public class SequenceManager : MonoBehaviour
             currentState = SequenceState.NotBegun;
 
             ShuffleSequence();
-            StartCoroutine(RestartSequence());
+            StartCoroutine(InitializeSequence());
         }
     }
 
     private IEnumerator RestartSequence()
     {
         yield return new WaitForSeconds(1f);
-        StartSequence();
+        StartCoroutine(StartSequence());
     }
 
     private void ShuffleSequence()
