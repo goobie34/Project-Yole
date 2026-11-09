@@ -479,39 +479,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &307625352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307625350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12dba5a4f1f4a5498ce5a899c43ba27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
-  objectSelector: {fileID: 307625353}
---- !u!114 &307625353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307625350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9877ba79f6b9db546a5d9baf3c35323b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectSelector
-  range: 3
-  coneAngle: 60
-  rotationSpeed: 3.5
-  mouseSensitivity: 0.2
-  pointerTransform: {fileID: 1911139155}
-  returnDelay: 0.5
-  pointer: {fileID: 993233655}
-  fadeSpeed: 5
 --- !u!114 &317557071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,11 +2018,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
   OutlineColor: {r: 1, g: 1, b: 1, a: 0}
   FlashColor: {r: 1, g: 1, b: 1, a: 0}
---- !u!23 &993233655 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6065839609396073773, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-  m_PrefabInstance: {fileID: 1801505681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039167372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,16 +5277,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7562851504090595409, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      propertyPath: objectSelector
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 307625353}
-    - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 307625352}
     - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       insertIndex: -1
       addedObject: {fileID: 307625351}
@@ -5644,11 +5604,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878986306}
   m_Mesh: {fileID: -4176081454134000184, guid: bde906fa298960049bc58ebed4b8f41b, type: 3}
---- !u!4 &1911139155 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1939688807565622159, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-  m_PrefabInstance: {fileID: 1801505681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2002464459
 GameObject:
   m_ObjectHideFlags: 0

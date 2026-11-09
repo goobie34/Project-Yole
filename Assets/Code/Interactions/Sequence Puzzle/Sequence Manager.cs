@@ -41,6 +41,7 @@ public class SequenceManager : MonoBehaviour
         for (int i = 0; i < interactableObjects.Length; i++)
         {
             int index = i;
+
             interactableObjects[i].OnInteract.AddListener(() => OnInteraction(index));
         }
     }

@@ -92,11 +92,11 @@ GameObject:
   - component: {fileID: 907564903488855527}
   - component: {fileID: 3434145828177280616}
   - component: {fileID: 7562851504090595409}
-  - component: {fileID: 7300690159119362040}
   - component: {fileID: 5973139982472982046}
   - component: {fileID: 1219489605732269777}
   - component: {fileID: 4275550092875247261}
   - component: {fileID: 7697333707909890756}
+  - component: {fileID: 6425881316717531141}
   - component: {fileID: 3759868322431811343}
   m_Layer: 0
   m_Name: PlayerController
@@ -278,26 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12dba5a4f1f4a5498ce5a899c43ba27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
-  objectSelector: {fileID: 7300690159119362040}
---- !u!114 &7300690159119362040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877784033745720223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9877ba79f6b9db546a5d9baf3c35323b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectSelector
-  range: 3
-  coneAngle: 30
-  rotationSpeed: 10
-  pointerTransform: {fileID: 1939688807565622159}
-  returnDelay: 0.5
-  pointer: {fileID: 6065839609396073773}
-  fadeSpeed: 5
+  objectSelector: {fileID: 0}
 --- !u!114 &5973139982472982046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +395,26 @@ MonoBehaviour:
   turnSensitivity: 0.03
   forwardTiltAxis: {x: 1, y: 0, z: 0}
   sidewaysTiltAxis: {x: 0, y: 0, z: 1}
+--- !u!114 &6425881316717531141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877784033745720223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9877ba79f6b9db546a5d9baf3c35323b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectSelector
+  range: 3
+  coneAngle: 60
+  rotationSpeed: 3.5
+  mouseSensitivity: 0.2
+  pointerTransform: {fileID: 1939688807565622159}
+  returnDelay: 0.5
+  pointer: {fileID: 6065839609396073773}
+  fadeSpeed: 5
 --- !u!114 &3759868322431811343
 MonoBehaviour:
   m_ObjectHideFlags: 0
