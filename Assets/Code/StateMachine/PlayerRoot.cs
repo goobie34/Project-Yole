@@ -1,5 +1,37 @@
 using UnityEngine;
 
+public class Carrying : State
+{
+    readonly PlayerContext ctx;
+
+    public Carrying(StateMachine m, State parent, PlayerContext ctx) : base(m, parent)
+    {
+        this.ctx = ctx;
+    }
+
+    protected override void OnEnter()
+    {
+        Debug.Log("Entered Carrying");
+    }
+
+    protected override State GetTranstion()
+    {
+        if (ctx.dropPressed)
+        {
+            ctx.dropPressed = false;
+
+            if (ctx.carryController.TryDrop()) return ((PlayerRoot)Parent).Grounded;
+        }
+
+        return !ctx.carryController.IsCarrying ? ((PlayerRoot)Parent).Grounded : null;
+    }
+
+    protected override void OnUpdate(float deltaTime)
+    {
+        ctx.character.Move(ctx.movementInput);
+    }
+}
+
 public class Move : State
 {
     readonly PlayerContext ctx;
@@ -70,13 +102,24 @@ public class Grounded : State
 public class PlayerRoot : State
 {
     public readonly Grounded Grounded;
+    public readonly Carrying Carrying;
     readonly PlayerContext ctx;
 
     public PlayerRoot(StateMachine m, PlayerContext ctx) : base(m, null)
     {
         this.ctx = ctx;
         Grounded = new Grounded(m, this, ctx);
+        Carrying = new Carrying(m, this, ctx);
     }
 
     protected override State GetInitialState() => Grounded;
+
+    protected override State GetTranstion()
+    {
+        if (ctx.carryController == null) return null;
+
+        if (ctx.carryController.IsCarrying && ActiveChild == Grounded) return Carrying;
+
+        return null;
+    }
 }

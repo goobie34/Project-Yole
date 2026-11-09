@@ -6,15 +6,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using System;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 public class PlayerStateDriver : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] 
-    //private NavCharController1 character;
     private NavCharController character;
+    [SerializeField]
+    private PlayerCarryController carryController;
 
     public PlayerContext ctx = new PlayerContext();
+    private InputAction dropAction;
 
     string lastPath;
     StateMachine machine;
@@ -26,14 +29,34 @@ public class PlayerStateDriver : MonoBehaviour
 
         ctx.character = character;
 
+        if (carryController == null) carryController = GetComponent<PlayerCarryController>();
+
+        ctx.carryController = carryController;
+
+        dropAction = InputSystem.actions?.FindAction("Player/Drop");
+
+        if (dropAction == null) Debug.LogError("Drop Input Action not found!");
+
         // Initialize StateMachine
         root = new PlayerRoot(null, ctx);
         var builder = new StateMachineBuilder(root);
         machine = builder.Build();
     }
 
+    private void OnEnable()
+    {
+        dropAction?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        dropAction?.Disable();
+    }
+
     private void Update()
     {
+        if (dropAction != null && dropAction.WasPressedThisFrame()) ctx.dropPressed = true;
+
         if (machine == null) return;
 
         machine.Tick(Time.deltaTime);
@@ -63,4 +86,7 @@ public class PlayerContext
 {
     public NavCharController character;
     public Vector2 movementInput;
+
+    public PlayerCarryController carryController;
+    public bool dropPressed;
 }

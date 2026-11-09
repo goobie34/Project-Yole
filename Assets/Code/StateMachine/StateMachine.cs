@@ -42,7 +42,12 @@ public class StateMachine
         State lca = TransitionSequencer.Lca(from, to);
 
         // Exit current branch up to (but not including) LCA
-        for (State s = from; s != lca; s = s.Parent) s.Exit();
+        State exitRoot = from;
+        while (exitRoot.Parent != null && exitRoot.Parent != lca) exitRoot = exitRoot.Parent;
+
+        exitRoot.Exit();
+
+        
 
         // Enter target branch from LCA down to target
         var stack = new Stack<State>();
