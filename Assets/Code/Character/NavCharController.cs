@@ -138,8 +138,12 @@ public class NavCharController : MonoBehaviour
             {
                 //Push backwards, opposite to movement
                 edgePushDirection = -velocity.normalized;
+
+
                 edgePushDirection.y = 0f;
                 edgePushDirection.Normalize();
+
+                
 
                 edgePushTimer = edgePushDuration;
             }

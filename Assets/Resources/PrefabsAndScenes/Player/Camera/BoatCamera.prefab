@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 2165786210894184460}
   - component: {fileID: 4599325820633300057}
   - component: {fileID: 2856241186129229270}
-  - component: {fileID: 6672838950893166036}
   - component: {fileID: 8077287165775798351}
   - component: {fileID: 9206598008232123505}
   - component: {fileID: 5724200277896835962}
+  - component: {fileID: 2122323476051764559}
+  - component: {fileID: 909733515912272734}
   m_Layer: 0
   m_Name: BoatCamera
   m_TagString: Untagged
@@ -55,7 +56,7 @@ MonoBehaviour:
     Enabled: 1
     m_Value: 0
   OutputChannel: 1
-  StandbyUpdate: 2
+  StandbyUpdate: 1
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
@@ -81,7 +82,7 @@ MonoBehaviour:
       Curvature: {x: 2, y: 11}
       BarrelClipping: 0.25
       Anamorphism: 0
-  BlendHint: 0
+  BlendHint: 24
 --- !u!114 &2165786210894184460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,24 +117,24 @@ MonoBehaviour:
     SplineCurvature: 0.215
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: -140.62881
+    Value: 0
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
-      Enabled: 0
-      Wait: 1
-      Time: 2
+      Enabled: 1
+      Wait: 3
+      Time: 5
     Restrictions: 0
   VerticalAxis:
-    Value: 7.779704
-    Center: 17.5
+    Value: 10
+    Center: 10
     Range: {x: -10, y: 45}
     Wrap: 0
     Recentering:
-      Enabled: 0
-      Wait: 1
-      Time: 2
+      Enabled: 1
+      Wait: 3
+      Time: 5
     Restrictions: 0
   RadialAxis:
     Value: 1
@@ -197,20 +198,6 @@ MonoBehaviour:
     NearLimit: 5
     FarLimit: 30
     MaxQualityBoost: 0.2
---- !u!114 &6672838950893166036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8387709091898316485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 950ef0bae7687494abd57fb4146586ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraState
-  TestBtn: 1
-  _stateCamera: {fileID: 0}
 --- !u!114 &8077287165775798351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,3 +298,32 @@ MonoBehaviour:
       m_Bits: 1
     MaximumRaycast: 20
     Damping: 5
+--- !u!114 &2122323476051764559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387709091898316485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcf2010394ed15418c1a6fe07f93742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnterCameraOnGamestate
+  targetGameState: BOAT
+  cameraState: {fileID: 0}
+--- !u!114 &909733515912272734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387709091898316485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3c44b38cae5974e9352893cf9ace6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraTargetPlayer
+  boatOrIsland: 1
+  player: {fileID: 0}
+  cam: {fileID: 0}
