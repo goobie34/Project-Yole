@@ -19,8 +19,9 @@ public class Carrying : State
         if (ctx.dropPressed)
         {
             ctx.dropPressed = false;
+            ctx.carryController.TryDrop();
 
-            if (ctx.carryController.TryDrop()) return ((PlayerRoot)Parent).Grounded;
+            //if (ctx.carryController.TryDrop()) return ((PlayerRoot)Parent).Grounded;
         }
 
         return !ctx.carryController.IsCarrying ? ((PlayerRoot)Parent).Grounded : null;
@@ -28,7 +29,7 @@ public class Carrying : State
 
     protected override void OnUpdate(float deltaTime)
     {
-        ctx.character.Move(ctx.movementInput);
+        ctx.character.Move(ctx.carryController.IsDropping ? Vector2.zero : ctx.movementInput);
     }
 }
 
