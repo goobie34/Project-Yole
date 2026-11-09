@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &75516890855015989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6463289492771878983}
+  m_Layer: 0
+  m_Name: AnimatedCarryPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6463289492771878983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75516890855015989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8673903201305671882}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287399867728360033
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +93,7 @@ GameObject:
   - component: {fileID: 3434145828177280616}
   - component: {fileID: 7562851504090595409}
   - component: {fileID: 7300690159119362040}
+  - component: {fileID: 5973139982472982046}
   - component: {fileID: 1219489605732269777}
   - component: {fileID: 4275550092875247261}
   - component: {fileID: 7697333707909890756}
@@ -93,6 +125,7 @@ Transform:
   - {fileID: 1939688807565622159}
   - {fileID: 7572728970808851888}
   - {fileID: 8168932900573154002}
+  - {fileID: 8673903201305671882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7595938484111887179
@@ -218,6 +251,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCarryController
   carryPoint: {fileID: 8168932900573154002}
+  carryAnimation: {fileID: 5973139982472982046}
+  playerTransform: {fileID: 1447196945742916578}
+  playerRadius: 0.4
+  pushPadding: 0.2
+  navMeshSearchRadius: 1
   dropDistance: 1.5
   groundCheckHeight: 3
   groundCheckDistance: 6
@@ -260,6 +298,25 @@ MonoBehaviour:
   returnDelay: 0.5
   pointer: {fileID: 6065839609396073773}
   fadeSpeed: 5
+--- !u!114 &5973139982472982046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877784033745720223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c075507a64197c48acbf20a5174351e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarryAnimationController
+  animator: {fileID: 4054790994053091333}
+  animatedCarryPoint: {fileID: 6463289492771878983}
+  carryPoint: {fileID: 8168932900573154002}
+  pickupState: Pickup
+  pickupDuration: 0.5
+  dropState: Drop
+  dropDuration: 0.5
 --- !u!114 &1219489605732269777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +444,61 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &2983942610157453874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8673903201305671882}
+  - component: {fileID: 4054790994053091333}
+  m_Layer: 0
+  m_Name: CarryAnimationRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8673903201305671882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983942610157453874}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6463289492771878983}
+  m_Father: {fileID: 1447196945742916578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4054790994053091333
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983942610157453874}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 46c8153b707653947aee171fa960af20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7373251317800427985
 GameObject:
   m_ObjectHideFlags: 0
