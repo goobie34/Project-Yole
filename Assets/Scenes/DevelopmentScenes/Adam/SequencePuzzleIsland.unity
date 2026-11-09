@@ -507,6 +507,7 @@ MonoBehaviour:
   range: 3
   coneAngle: 60
   rotationSpeed: 3.5
+  mouseSensitivity: 0.2
   pointerTransform: {fileID: 1911139155}
   returnDelay: 0.5
   pointer: {fileID: 993233655}
@@ -1137,6 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -1487,6 +1489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -1627,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -1870,6 +1874,8 @@ GameObject:
   - component: {fileID: 958700456}
   - component: {fileID: 958700455}
   - component: {fileID: 958700454}
+  - component: {fileID: 958700460}
+  - component: {fileID: 958700461}
   m_Layer: 0
   m_Name: RuneStone08
   m_TagString: Untagged
@@ -2007,6 +2013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2016,6 +2023,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &958700460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958700452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 958700459}
+  anim: {fileID: 0}
+--- !u!114 &958700461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958700452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!23 &993233655 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6065839609396073773, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
@@ -2143,6 +2178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2797,6 +2833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3032,6 +3069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3622,6 +3660,8 @@ GameObject:
   - component: {fileID: 1377970913}
   - component: {fileID: 1377970912}
   - component: {fileID: 1377970911}
+  - component: {fileID: 1377970917}
+  - component: {fileID: 1377970918}
   m_Layer: 0
   m_Name: RuneStone02
   m_TagString: Untagged
@@ -3759,6 +3799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3768,6 +3809,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1377970917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377970909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1377970916}
+  anim: {fileID: 0}
+--- !u!114 &1377970918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377970909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1387439804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,6 +3852,8 @@ GameObject:
   - component: {fileID: 1387439808}
   - component: {fileID: 1387439807}
   - component: {fileID: 1387439806}
+  - component: {fileID: 1387439812}
+  - component: {fileID: 1387439813}
   m_Layer: 0
   m_Name: RuneStone01
   m_TagString: Untagged
@@ -3920,6 +3991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3929,6 +4001,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1387439812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387439804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1387439811}
+  anim: {fileID: 0}
+--- !u!114 &1387439813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387439804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1402617590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1620382998962157354, guid: bdaf8e388a3a76142ab140d9d08c3cc0, type: 3}
@@ -3946,6 +4046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4189,6 +4290,8 @@ GameObject:
   - component: {fileID: 1453602651}
   - component: {fileID: 1453602650}
   - component: {fileID: 1453602649}
+  - component: {fileID: 1453602655}
+  - component: {fileID: 1453602656}
   m_Layer: 0
   m_Name: RuneStone03
   m_TagString: Untagged
@@ -4326,6 +4429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4335,6 +4439,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1453602655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453602647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1453602654}
+  anim: {fileID: 0}
+--- !u!114 &1453602656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453602647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1462007669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4455,6 +4587,8 @@ GameObject:
   - component: {fileID: 1478945878}
   - component: {fileID: 1478945877}
   - component: {fileID: 1478945876}
+  - component: {fileID: 1478945882}
+  - component: {fileID: 1478945883}
   m_Layer: 0
   m_Name: RuneStone06
   m_TagString: Untagged
@@ -4592,6 +4726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4601,6 +4736,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1478945882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478945874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1478945881}
+  anim: {fileID: 0}
+--- !u!114 &1478945883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478945874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!4 &1545227805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4877075943526635291, guid: 32416c68cfb9cf64a90393e3b321501f, type: 3}
@@ -4623,6 +4786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4671,6 +4835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5104,7 +5269,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115.08
+      value: 114.37
       objectReference: {fileID: 0}
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5112,7 +5277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.28
+      value: 18.64
       objectReference: {fileID: 0}
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5499,6 +5664,8 @@ GameObject:
   - component: {fileID: 2002464463}
   - component: {fileID: 2002464462}
   - component: {fileID: 2002464461}
+  - component: {fileID: 2002464467}
+  - component: {fileID: 2002464468}
   m_Layer: 0
   m_Name: RuneStone04
   m_TagString: Untagged
@@ -5636,6 +5803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5645,6 +5813,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2002464467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002464459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 2002464466}
+  anim: {fileID: 0}
+--- !u!114 &2002464468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002464459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &2015847406
 GameObject:
   m_ObjectHideFlags: 0
@@ -5765,6 +5961,8 @@ GameObject:
   - component: {fileID: 2084830221}
   - component: {fileID: 2084830220}
   - component: {fileID: 2084830219}
+  - component: {fileID: 2084830225}
+  - component: {fileID: 2084830226}
   m_Layer: 0
   m_Name: RuneStone05
   m_TagString: Untagged
@@ -5902,6 +6100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5911,6 +6110,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2084830225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084830217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 2084830224}
+  anim: {fileID: 0}
+--- !u!114 &2084830226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084830217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &2105802114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4831101106336336691, guid: bdaf8e388a3a76142ab140d9d08c3cc0, type: 3}
@@ -5928,6 +6155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -6204,6 +6432,8 @@ GameObject:
   - component: {fileID: 1248896878}
   - component: {fileID: 1248896876}
   - component: {fileID: 1248896875}
+  - component: {fileID: 919132149211155124}
+  - component: {fileID: 919132149211155125}
   m_Layer: 0
   m_Name: RuneStone07
   m_TagString: Untagged
@@ -6211,6 +6441,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132149211155124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149211155123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1248896881}
+  anim: {fileID: 0}
+--- !u!114 &919132149211155125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149211155123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!23 &1212441474306526782
 MeshRenderer:
   m_ObjectHideFlags: 0
