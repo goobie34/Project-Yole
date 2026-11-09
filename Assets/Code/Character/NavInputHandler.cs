@@ -5,14 +5,14 @@ using UnityEngine.InputSystem;
 public class NavInputHandler : MonoBehaviour
 {
     [SerializeField]
-    private NavCharController character;
+    private PlayerStateDriver stateDriver;
 
     private InputAction moveAction;
 
     private void Awake()
     {
-        if (character == null)
-            character = GetComponent<NavCharController>();
+        if (stateDriver == null)
+            stateDriver = GetComponent<PlayerStateDriver>();
 
         moveAction = InputSystem.actions?.FindAction("Player/Move");
 
@@ -29,7 +29,7 @@ public class NavInputHandler : MonoBehaviour
 
     private void Update()
     {
-        if (moveAction == null || character == null)
+        if (moveAction == null || stateDriver == null)
             return;
 
         Vector2 movementVector = moveAction.ReadValue<Vector2>();
@@ -39,13 +39,13 @@ public class NavInputHandler : MonoBehaviour
             //Debug.Log("Input: " + movementVector);
         }
 
-        character.Move(movementVector);
+        stateDriver.SetMovementInput(movementVector);
     }
 
     private void OnDisable()
     {
-        if (character != null)
-            character.Move(Vector2.zero);
+        if (stateDriver != null)
+            stateDriver.SetMovementInput(Vector2.zero);
 
         moveAction?.Disable();
     }
