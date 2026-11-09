@@ -66,6 +66,8 @@ public class SequenceManager : MonoBehaviour
         else if (type == SequenceType.Addition)
             StartCoroutine(PlayAdditionSequence());
         else Debug.LogError("Sequence type not implemented!");
+
+        DisableInteraction();
     }
 
     private IEnumerator ShowAllBorders()
@@ -113,6 +115,7 @@ public class SequenceManager : MonoBehaviour
         Debug.Log("Step finished!");
 
         currentState = SequenceState.Waiting;
+        EnableInteraction();
     }
     
     private IEnumerator PlayAdditionSequence()
@@ -136,6 +139,24 @@ public class SequenceManager : MonoBehaviour
         HideSequence();
         Debug.Log("Addition step finished!");
         currentState = SequenceState.Waiting;
+
+        EnableInteraction();
+    }
+
+    private void EnableInteraction()
+    {
+        for (int i = 0; i < interactableObjects.Length; i++)
+        {
+            interactableObjects[i].isCurrentlyInteractable = true;
+        }
+    }
+
+    private void DisableInteraction()
+    {
+        for (int i = 0; i < interactableObjects.Length; i++)
+        {
+            interactableObjects[i].isCurrentlyInteractable = false;
+        }
     }
 
     private void HideSequence()
