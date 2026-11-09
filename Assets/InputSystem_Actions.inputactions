@@ -25,6 +25,24 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "MouseLook",
+                    "type": "Value",
+                    "id": "f058d88f-57af-49ff-b204-18c1d82f2081",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GamePadLook",
+                    "type": "Value",
+                    "id": "a1589b4c-6fe1-4737-8dd5-6529a36e36f1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
@@ -608,6 +626,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Drop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "57af0c23-340c-4cbe-8686-48ed0a2fac59",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "DeltaTimeScale,ScaleVector2(x=0.01666667,y=0.01666667)",
+                    "groups": ";Touch;Keyboard&Mouse",
+                    "action": "MouseLook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d436b5ae-d0b3-4233-b5ee-ba8f897c5f3a",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=60,y=60)",
+                    "groups": ";Gamepad",
+                    "action": "GamePadLook",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
