@@ -29,6 +29,13 @@ public class CameraState : MonoBehaviour, ICameraState
         }
     }
 
+    public void EnterState()
+    {
+        if (!CameraStateMachineLocator.Instance.TryGet(out var camera)) return;
+        
+        camera.SetNextState(this);
+    }
+
     public virtual void OnEnterState()
     {
         if(_stateCamera == null)

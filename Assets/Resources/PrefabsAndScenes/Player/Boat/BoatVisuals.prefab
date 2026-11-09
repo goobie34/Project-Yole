@@ -2416,7 +2416,6 @@ GameObject:
   - component: {fileID: 3858351506578783369}
   - component: {fileID: 3694410170654830831}
   - component: {fileID: 7920135134067321322}
-  - component: {fileID: 606387830073941213}
   m_Layer: 0
   m_Name: Boat_body
   m_TagString: Player
@@ -2496,28 +2495,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &606387830073941213
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8672039516073957277}
-  m_Material: {fileID: 13400000, guid: 36ae6e9445256434da1e9d3293afc3e9, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5453187493515902519, guid: acd6b1e2aae582143a3f67274dffaf3f, type: 3}
 --- !u!1 &8811258431441353288
 GameObject:
   m_ObjectHideFlags: 0
