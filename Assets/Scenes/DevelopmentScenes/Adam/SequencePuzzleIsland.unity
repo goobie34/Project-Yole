@@ -506,6 +506,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSelector
   range: 3
   coneAngle: 60
+  rotationSpeed: 3.5
+  pointerTransform: {fileID: 1911139155}
+  returnDelay: 0.5
+  pointer: {fileID: 993233655}
+  fadeSpeed: 5
 --- !u!114 &317557071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,6 +2016,11 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!23 &993233655 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6065839609396073773, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+  m_PrefabInstance: {fileID: 1801505681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039167372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,6 +5479,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878986306}
   m_Mesh: {fileID: -4176081454134000184, guid: bde906fa298960049bc58ebed4b8f41b, type: 3}
+--- !u!4 &1911139155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1939688807565622159, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+  m_PrefabInstance: {fileID: 1801505681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2002464459
 GameObject:
   m_ObjectHideFlags: 0

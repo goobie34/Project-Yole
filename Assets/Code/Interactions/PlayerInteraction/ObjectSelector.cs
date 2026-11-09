@@ -1,13 +1,57 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ObjectSelector : MonoBehaviour
 {
     [SerializeField] private float range = 3f;
     [SerializeField] private float coneAngle = 30f;
 
+    private Vector3 searchDirection = Vector3.forward;
+    private Vector3 targetDirection = Vector3.forward;
+    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private Transform pointerTransform;
+    [SerializeField] private float returnDelay = 0.5f;
+    private float lastLookTime = 0f;
+
+    [SerializeField] private MeshRenderer pointer;
+    [SerializeField] private float fadeSpeed = 5f;
+
+    private MaterialPropertyBlock propertyBlock;
+    private float currentAlpha = 0f;
+    private float targetAlpha = 0f;
+    private Color pointerColor;
+
     private IInteractable currentInteractable;
 
     public IInteractable SelectedInteractable {  get { return currentInteractable; } }
+
+    private void Start()
+    {
+        propertyBlock = new MaterialPropertyBlock();
+        pointerColor = pointer.sharedMaterial.GetColor("_BaseColor");
+        UpdatePointerMaterial();
+    }
+
+    private void UpdatePointerFade()
+    {
+        currentAlpha = Mathf.MoveTowards(
+            currentAlpha,
+            targetAlpha,
+            fadeSpeed * Time.deltaTime
+        );
+
+        UpdatePointerMaterial();
+    }
+
+    private void UpdatePointerMaterial()
+    {
+        Color color = pointerColor;
+        color.a *= currentAlpha;
+
+        pointer.GetPropertyBlock(propertyBlock);
+        propertyBlock.SetColor("_BaseColor", color);
+        pointer.SetPropertyBlock(propertyBlock);
+    }
 
     private void Update()
     {
@@ -24,6 +68,42 @@ public class ObjectSelector : MonoBehaviour
         currentInteractable?.Select();
     }
 
+    private void LateUpdate()
+    {
+        UpdateInteractionPointer();
+    }
+
+    private void OnLook(InputValue input)
+    {
+        Vector2 lookInput = input.Get<Vector2>();
+
+        if (lookInput.sqrMagnitude < 0.04f) return;
+
+        targetDirection = new Vector3(lookInput.x, 0f, lookInput.y).normalized;
+
+        lastLookTime = Time.time;
+        targetAlpha = 1f;
+    }
+
+    private void UpdateInteractionPointer()
+    {
+        Vector3 defaultDirection = transform.forward;
+        defaultDirection.y = 0f;
+        defaultDirection.Normalize();
+
+        if (Time.time - lastLookTime >= returnDelay)
+        {
+            targetDirection = defaultDirection;
+            targetAlpha = 0f;
+        }
+
+        searchDirection = Vector3.Slerp(searchDirection, targetDirection, rotationSpeed * Time.deltaTime).normalized;
+
+        pointerTransform.rotation = Quaternion.LookRotation(searchDirection, Vector3.up);
+
+        UpdatePointerFade();
+    }
+
     private IInteractable FindBestInteractable()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, range);
@@ -31,8 +111,6 @@ public class ObjectSelector : MonoBehaviour
         IInteractable bestInteractable = null;
         //float bestAngle = float.MaxValue;
         float bestScore = float.MaxValue;
-
-        Vector3 forward = transform.forward;
 
         foreach (Collider c in hits)
         {
@@ -51,7 +129,7 @@ public class ObjectSelector : MonoBehaviour
 
             float allowedAngle = Mathf.Lerp(120f, coneAngle, distanceFactor);
 
-            float angle = Vector3.Angle(forward, direction);
+            float angle = Vector3.Angle(searchDirection, direction);
 
             if (angle > allowedAngle) continue;
 
