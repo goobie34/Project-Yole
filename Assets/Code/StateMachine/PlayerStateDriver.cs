@@ -11,7 +11,8 @@ public class PlayerStateDriver : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] 
-    private NavCharController1 character;
+    //private NavCharController1 character;
+    private NavCharController character;
 
     public PlayerContext ctx = new PlayerContext();
 
@@ -21,7 +22,7 @@ public class PlayerStateDriver : MonoBehaviour
 
     private void Awake()
     {
-        if (character == null) character = GetComponent<NavCharController1>();
+        if (character == null) character = GetComponent<NavCharController>();
 
         ctx.character = character;
 
@@ -60,6 +61,6 @@ public class PlayerStateDriver : MonoBehaviour
 [Serializable]
 public class PlayerContext
 {
-    public NavCharController1 character;
+    public NavCharController character;
     public Vector2 movementInput;
 }
