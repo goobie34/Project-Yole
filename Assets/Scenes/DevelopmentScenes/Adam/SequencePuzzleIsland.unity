@@ -537,6 +537,17 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &307625352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3434145828177280616, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+  m_PrefabInstance: {fileID: 1801505681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307625350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f60266e26f344d408790eb28cb8d605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCarryController
 --- !u!114 &317557071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,13 +814,89 @@ MonoBehaviour:
   isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359223594}
+        m_TargetAssemblyTypeName: PickupObject, Assembly-CSharp
+        m_MethodName: Pickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnSelect:
     m_PersistentCalls:
       m_Calls: []
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &359223594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359223590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df33c24143696174fa219d71f8ec664c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupObject
+  carryController: {fileID: 307625352}
+--- !u!136 &359223596
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359223590}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.62
+  m_Height: 1.55
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.77, z: 0}
+--- !u!114 &359223597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359223590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 359223593}
+  anim: {fileID: 359223591}
+--- !u!114 &359223599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359223590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &370345151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1186,6 +1273,18 @@ PrefabInstance:
     - target: {fileID: 710990463040379878, guid: 21bf6a822a4154c4caba0897cf7550d0, type: 3}
       propertyPath: m_Name
       value: Island02
+      objectReference: {fileID: 0}
+    - target: {fileID: 710990463040379878, guid: 21bf6a822a4154c4caba0897cf7550d0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 731195467862963944, guid: 21bf6a822a4154c4caba0897cf7550d0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336086475660894483, guid: 21bf6a822a4154c4caba0897cf7550d0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3464,11 +3563,6 @@ MonoBehaviour:
   - {fileID: 2084830223}
   - {fileID: 2002464465}
   - {fileID: 958700458}
-  - {fileID: 1453602653}
-  - {fileID: 1387439810}
-  - {fileID: 1248896880}
-  - {fileID: 1377970915}
-  - {fileID: 1478945880}
   type: 0
   reward: {fileID: 359223590}
   sequenceLengthPerObject: 0.4
@@ -4964,6 +5058,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7482332055067955646, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1228301977159360922, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -4977,8 +5075,16 @@ PrefabInstance:
       value: OilBarrel
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961383294796583698, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4990,6 +5096,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 359223593}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359223594}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359223596}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359223597}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359223599}
   m_SourcePrefab: {fileID: 100100000, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
 --- !u!4 &1545227805 stripped
 Transform:
