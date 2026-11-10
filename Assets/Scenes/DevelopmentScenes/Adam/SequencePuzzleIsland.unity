@@ -229,11 +229,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127274755}
   m_Mesh: {fileID: -4176081454134000184, guid: bde906fa298960049bc58ebed4b8f41b, type: 3}
---- !u!4 &156749414 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 310315833798750921, guid: 905d5754b1025164f99e2c37da269032, type: 3}
-  m_PrefabInstance: {fileID: 4223824411585118084}
+--- !u!1 &185928217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+  m_PrefabInstance: {fileID: 912519110}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &185928218
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185928217}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.94
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &185928219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185928217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4f7bcae17fc36449199d3f1cf8a86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
+  interactable: {fileID: 185928220}
+  moveDistance: 0.2
+  moveSpeed: 0.5
+--- !u!114 &185928220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185928217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeselect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &199074709
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,38 +537,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &307625352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307625350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12dba5a4f1f4a5498ce5a899c43ba27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
-  objectSelector: {fileID: 307625353}
---- !u!114 &307625353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307625350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9877ba79f6b9db546a5d9baf3c35323b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectSelector
-  range: 3
-  coneAngle: 60
-  rotationSpeed: 3.5
-  pointerTransform: {fileID: 1911139155}
-  returnDelay: 0.5
-  pointer: {fileID: 993233655}
-  fadeSpeed: 5
 --- !u!114 &317557071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +761,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345717733}
   m_Mesh: {fileID: 1283141647506346069, guid: bde906fa298960049bc58ebed4b8f41b, type: 3}
+--- !u!1 &359223590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+  m_PrefabInstance: {fileID: 1511824519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &359223591
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359223590}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54356dbbf9aba564591fb335e4a2c011, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &359223593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359223590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeselect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &370345151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1137,6 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -1487,6 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -1627,6 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -1855,6 +1933,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
   OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   FlashColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1001 &912519110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 119.02813
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 49.283
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 31.71372
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3379937201611316976, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b26a8a4abb9cfb48bc9414c5d8e25e6, type: 2}
+    - target: {fileID: 919132149155446097, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: m_Name
+      value: PressurePlate_Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142509573106925669, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b26a8a4abb9cfb48bc9414c5d8e25e6, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 185928220}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 185928219}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 185928218}
+  m_SourcePrefab: {fileID: 100100000, guid: 76bdea6a31ac0c945a039d97cc9c85c0, type: 3}
 --- !u!1 &958700452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +2022,8 @@ GameObject:
   - component: {fileID: 958700456}
   - component: {fileID: 958700455}
   - component: {fileID: 958700454}
+  - component: {fileID: 958700460}
+  - component: {fileID: 958700461}
   m_Layer: 0
   m_Name: RuneStone08
   m_TagString: Untagged
@@ -2007,6 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2016,11 +2171,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
---- !u!23 &993233655 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6065839609396073773, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-  m_PrefabInstance: {fileID: 1801505681}
+--- !u!114 &958700460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958700452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 958700459}
+  anim: {fileID: 0}
+--- !u!114 &958700461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958700452}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1039167372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2797,6 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3032,6 +3212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3096,6 +3277,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 73aaa477451533846b1f32e35fe2ead6, type: 3}
       propertyPath: m_Name
       value: SequenceStarter
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 73aaa477451533846b1f32e35fe2ead6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3246,12 +3431,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326848455}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 156749414}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1326848457
 MonoBehaviour:
@@ -3265,7 +3450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f9e070b49917348a3fd65a25e19f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SequenceManager
-  sequenceStarter: {fileID: 1612426713}
+  sequenceStarter: {fileID: 185928220}
   interactableObjects:
   - {fileID: 1387439811}
   - {fileID: 1377970916}
@@ -3279,13 +3464,14 @@ MonoBehaviour:
   - {fileID: 2084830223}
   - {fileID: 2002464465}
   - {fileID: 958700458}
-  - {fileID: 1387439810}
   - {fileID: 1453602653}
+  - {fileID: 1387439810}
   - {fileID: 1248896880}
   - {fileID: 1377970915}
   - {fileID: 1478945880}
   type: 0
-  sequenceLengthPerObject: 1
+  reward: {fileID: 359223590}
+  sequenceLengthPerObject: 0.4
 --- !u!1001 &1373238888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3622,6 +3808,8 @@ GameObject:
   - component: {fileID: 1377970913}
   - component: {fileID: 1377970912}
   - component: {fileID: 1377970911}
+  - component: {fileID: 1377970917}
+  - component: {fileID: 1377970918}
   m_Layer: 0
   m_Name: RuneStone02
   m_TagString: Untagged
@@ -3759,6 +3947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3768,6 +3957,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1377970917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377970909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1377970916}
+  anim: {fileID: 0}
+--- !u!114 &1377970918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377970909}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1387439804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,6 +4000,8 @@ GameObject:
   - component: {fileID: 1387439808}
   - component: {fileID: 1387439807}
   - component: {fileID: 1387439806}
+  - component: {fileID: 1387439812}
+  - component: {fileID: 1387439813}
   m_Layer: 0
   m_Name: RuneStone01
   m_TagString: Untagged
@@ -3920,6 +4139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -3929,6 +4149,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1387439812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387439804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1387439811}
+  anim: {fileID: 0}
+--- !u!114 &1387439813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387439804}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1402617590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1620382998962157354, guid: bdaf8e388a3a76142ab140d9d08c3cc0, type: 3}
@@ -3946,6 +4194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4189,6 +4438,8 @@ GameObject:
   - component: {fileID: 1453602651}
   - component: {fileID: 1453602650}
   - component: {fileID: 1453602649}
+  - component: {fileID: 1453602655}
+  - component: {fileID: 1453602656}
   m_Layer: 0
   m_Name: RuneStone03
   m_TagString: Untagged
@@ -4326,6 +4577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4335,6 +4587,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1453602655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453602647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1453602654}
+  anim: {fileID: 0}
+--- !u!114 &1453602656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453602647}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1462007669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4455,6 +4735,8 @@ GameObject:
   - component: {fileID: 1478945878}
   - component: {fileID: 1478945877}
   - component: {fileID: 1478945876}
+  - component: {fileID: 1478945882}
+  - component: {fileID: 1478945883}
   m_Layer: 0
   m_Name: RuneStone06
   m_TagString: Untagged
@@ -4592,6 +4874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4601,6 +4884,113 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1478945882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478945874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1478945881}
+  anim: {fileID: 0}
+--- !u!114 &1478945883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478945874}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
+--- !u!1001 &1511824519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 110.2291
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 49.30971
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.03148
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1228301977159360922, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e37ea79032e5af040b479da53aed1902, type: 2}
+    - target: {fileID: 177172553178992049, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 96a6146ea7e92d247a980cfa67e73235, type: 2}
+    - target: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_Name
+      value: OilBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359223591}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359223593}
+  m_SourcePrefab: {fileID: 100100000, guid: bf5745a55b5ed804db221111b9a3b4f8, type: 3}
 --- !u!4 &1545227805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4877075943526635291, guid: 32416c68cfb9cf64a90393e3b321501f, type: 3}
@@ -4623,6 +5013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4671,6 +5062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5104,7 +5496,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115.08
+      value: 114.37
       objectReference: {fileID: 0}
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5112,7 +5504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.28
+      value: 18.64
       objectReference: {fileID: 0}
     - target: {fileID: 1447196945742916578, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5150,16 +5542,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562851504090595409, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
+      propertyPath: objectSelector
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 307625353}
-    - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 307625352}
     - targetCorrespondingSourceObject: {fileID: 1877784033745720223, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
       insertIndex: -1
       addedObject: {fileID: 307625351}
@@ -5479,11 +5873,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878986306}
   m_Mesh: {fileID: -4176081454134000184, guid: bde906fa298960049bc58ebed4b8f41b, type: 3}
---- !u!4 &1911139155 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1939688807565622159, guid: 98558460e868b7e468b39d1e4143a044, type: 3}
-  m_PrefabInstance: {fileID: 1801505681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2002464459
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,6 +5888,8 @@ GameObject:
   - component: {fileID: 2002464463}
   - component: {fileID: 2002464462}
   - component: {fileID: 2002464461}
+  - component: {fileID: 2002464467}
+  - component: {fileID: 2002464468}
   m_Layer: 0
   m_Name: RuneStone04
   m_TagString: Untagged
@@ -5636,6 +6027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5645,6 +6037,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2002464467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002464459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 2002464466}
+  anim: {fileID: 0}
+--- !u!114 &2002464468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002464459}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &2015847406
 GameObject:
   m_ObjectHideFlags: 0
@@ -5765,6 +6185,8 @@ GameObject:
   - component: {fileID: 2084830221}
   - component: {fileID: 2084830220}
   - component: {fileID: 2084830219}
+  - component: {fileID: 2084830225}
+  - component: {fileID: 2084830226}
   m_Layer: 0
   m_Name: RuneStone05
   m_TagString: Untagged
@@ -5902,6 +6324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5911,6 +6334,34 @@ MonoBehaviour:
   OnDeselect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2084830225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084830217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 2084830224}
+  anim: {fileID: 0}
+--- !u!114 &2084830226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084830217}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &2105802114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4831101106336336691, guid: bdaf8e388a3a76142ab140d9d08c3cc0, type: 3}
@@ -5928,6 +6379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -6204,6 +6656,8 @@ GameObject:
   - component: {fileID: 1248896878}
   - component: {fileID: 1248896876}
   - component: {fileID: 1248896875}
+  - component: {fileID: 919132149211155124}
+  - component: {fileID: 919132149211155125}
   m_Layer: 0
   m_Name: RuneStone07
   m_TagString: Untagged
@@ -6211,6 +6665,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132149211155124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149211155123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf3fed0c01c4724ca741a23e39749e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionOutline
+  interactable: {fileID: 1248896881}
+  anim: {fileID: 0}
+--- !u!114 &919132149211155125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149211155123}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549938757a8f610478c2cade51cb0176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectMaterialInterface
+  OutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  FlashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!23 &1212441474306526782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6485,10 +6967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 310315833798750921, guid: 905d5754b1025164f99e2c37da269032, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1326848456}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905d5754b1025164f99e2c37da269032, type: 3}
 --- !u!33 &4490432555536903896
@@ -6766,3 +7245,6 @@ SceneRoots:
   - {fileID: 1801505681}
   - {fileID: 456463161}
   - {fileID: 1278969138}
+  - {fileID: 1326848456}
+  - {fileID: 1511824519}
+  - {fileID: 912519110}

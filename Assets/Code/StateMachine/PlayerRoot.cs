@@ -49,7 +49,7 @@ public class Move : State
 
     protected override void OnEnter()
     {
-        Debug.Log("Entered Move");
+        //Debug.Log("Entered Move");
     }
 
     protected override void OnUpdate(float deltaTime)
@@ -74,7 +74,7 @@ public class Idle : State
 
     protected override void OnEnter()
     {
-        Debug.Log("Entered Idle");
+        //Debug.Log("Entered Idle");
     }
 
     protected override void OnUpdate(float deltaTime)

@@ -8,9 +8,10 @@ public class ObjectSelector : MonoBehaviour
 
     private Vector3 searchDirection = Vector3.forward;
     private Vector3 targetDirection = Vector3.forward;
-    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float rotationSpeed = 3.5f;
+    [SerializeField] private float mouseSensitivity = 0.2f;
     [SerializeField] private Transform pointerTransform;
-    [SerializeField] private float returnDelay = 0.5f;
+    [SerializeField] private float returnDelay = 1f;
     private float lastLookTime = 0f;
 
     [SerializeField] private MeshRenderer pointer;
@@ -73,13 +74,38 @@ public class ObjectSelector : MonoBehaviour
         UpdateInteractionPointer();
     }
 
-    private void OnLook(InputValue input)
+    private void OnGamePadLook(InputValue input)
     {
         Vector2 lookInput = input.Get<Vector2>();
 
-        if (lookInput.sqrMagnitude < 0.04f) return;
+        if (lookInput.sqrMagnitude < 0.1f) return;
 
         targetDirection = new Vector3(lookInput.x, 0f, lookInput.y).normalized;
+
+        lastLookTime = Time.time;
+        targetAlpha = 1f;
+    }
+
+    private void OnMouseLook(InputValue input)
+    {
+        if (!Mouse.current.leftButton.isPressed) return;
+
+        Vector2 lookInput = input.Get<Vector2>();
+
+        if (lookInput.sqrMagnitude < 0.1f) return;
+
+        if (Time.time - lastLookTime >= returnDelay)
+        {
+            targetDirection = searchDirection;
+        }
+
+        Vector3 mouseMovement = new Vector3(lookInput.x, 0f, lookInput.y);
+
+        float rotationAmount = Vector3.Cross(targetDirection, mouseMovement).y;
+
+        targetDirection = Quaternion.Euler(0f, rotationAmount * mouseSensitivity, 0f) * targetDirection;
+
+        targetDirection.Normalize();
 
         lastLookTime = Time.time;
         targetAlpha = 1f;
@@ -91,7 +117,7 @@ public class ObjectSelector : MonoBehaviour
         defaultDirection.y = 0f;
         defaultDirection.Normalize();
 
-        if (Time.time - lastLookTime >= returnDelay)
+        if (Time.time - lastLookTime >= returnDelay && !Mouse.current.leftButton.isPressed)
         {
             targetDirection = defaultDirection;
             targetAlpha = 0f;
@@ -117,6 +143,8 @@ public class ObjectSelector : MonoBehaviour
             IInteractable interactable = c.GetComponentInParent<IInteractable>();
             
             if (interactable == null) continue;
+
+            if (interactable.IsCurrentlyInteractable == false) continue;
 
             Vector3 direction = c.ClosestPoint(transform.position) - transform.position;
 

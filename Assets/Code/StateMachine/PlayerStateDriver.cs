@@ -65,7 +65,7 @@ public class PlayerStateDriver : MonoBehaviour
 
         if (path != lastPath)
         {
-            Debug.Log("State" + path);
+            //Debug.Log("State" + path);
             lastPath = path;
         }
     }
