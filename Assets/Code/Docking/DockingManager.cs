@@ -12,6 +12,7 @@ public class DockingManager : MonoBehaviour
 
     [Header("Dock Variables")]
     public Transform[] dockingPositions;
+    public bool HoldsBoat { get; private set; }
 
     public Transform GetTransformAtIndex(int index)
     {
@@ -35,14 +36,17 @@ public class DockingManager : MonoBehaviour
 
     private Quaternion GetFlipper => reversed ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
-    private void Start()
+    public void DockBoat()
     {
-        DockedBoat = GameObject.Instantiate(DockedBoatPrefab);
+        StartIslandState();
+    }
 
-        DockedBoat.transform.parent = GetCurrentDockPos;
-        DockedBoat.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+    public void TryUndockBoat()
+    {
+        if(!HoldsBoat)
+            return;
 
-        DockedBoat.SetActive(false);
+        EndIslandState();
     }
 
     public void StartIslandState()
@@ -56,7 +60,6 @@ public class DockingManager : MonoBehaviour
 
         if (!PlayerManagerServiceLocator.Instance.TryGet(out var playerManager)) return;
 
-        toggle = false;
 
         gameStates.EnterState("ISLAND");
 
@@ -64,6 +67,7 @@ public class DockingManager : MonoBehaviour
         playerManager.SetBoatPlayer(null);
 
         SpawnDockedBoat();
+
 
         SpawnPlayer();
 
@@ -80,16 +84,14 @@ public class DockingManager : MonoBehaviour
 
         if (!PlayerManagerServiceLocator.Instance.TryGet(out var playerManager)) return;
 
-        toggle = true;
-
 
         gameStates.EnterState("BOAT");
 
         playerManager.SetIslandPlayer(null);
 
-        if (DockedBoat != null)
-            Destroy(DockedBoat);
-        
+        DestroyDockedBoat();
+
+
         SpawnPlayerBoat();
 
         
@@ -106,8 +108,10 @@ public class DockingManager : MonoBehaviour
             return;
     }
 
-    private void SpawnDockedBoat()
+    public void SpawnDockedBoat()
     {
+        HoldsBoat = true;
+
         if(DockedBoat != null)
         {
             Destroy(DockedBoat);
@@ -117,6 +121,13 @@ public class DockingManager : MonoBehaviour
 
 
         DockedBoat.transform.SetLocalPositionAndRotation(Vector3.zero, GetFlipper);
+    }
+
+    public void DestroyDockedBoat()
+    {
+        HoldsBoat = false;
+
+        if(DockedBoat == null) return;
     }
 
     private void SpawnPlayer()
@@ -163,7 +174,7 @@ public class DockingManager : MonoBehaviour
         {
             testBtn = false;
 
-            if(toggle)
+            if(!HoldsBoat)
             {
                 StartIslandState();
             }
@@ -174,6 +185,18 @@ public class DockingManager : MonoBehaviour
 
 
         }
+
+        if (HoldsBoat)
+        {
+            if (DockedBoat == null)
+                SpawnDockedBoat();
+        }
+        else
+        {
+            if(DockedBoat != null)
+                Destroy(DockedBoat);
+        }
+
     }
 
     private void OnDrawGizmos()
