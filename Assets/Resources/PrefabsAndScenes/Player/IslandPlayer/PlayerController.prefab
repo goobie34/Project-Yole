@@ -97,10 +97,10 @@ GameObject:
   - component: {fileID: 4275550092875247261}
   - component: {fileID: 7697333707909890756}
   - component: {fileID: 6425881316717531141}
-  - component: {fileID: 3759868322431811343}
+  - component: {fileID: 3940926278850402394}
   m_Layer: 0
   m_Name: PlayerController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,11 +312,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SquashStrech
   notes: 
-  transformToAffect: {fileID: 815107148389826048}
+  transformToAffect: {fileID: 3972774483444275420}
   axisToAffect: 2
   animationDuration: 0.25
   canBeOverwritten: 0
-  playOnStart: 0
+  playOnStart: 1
   playsEveryTime: 0
   chanceToPlay: 100
   initialScale: 1
@@ -336,8 +336,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.29999542
-      value: 0.604229
+      time: 0.5089569
+      value: -0.18490982
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -387,14 +387,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterTilt
   character: {fileID: 4337116593319770146}
-  visualTransform: {fileID: 815107148389826048}
-  forwardTilt: 25
-  sidewaysTilt: 25
+  visualTransform: {fileID: 3972774483444275420}
+  forwardTilt: 15
+  sidewaysTilt: 50
   tiltSmoothness: 8
   movementThreshold: 0.1
   maxMovementSpeed: 10
   turnSensitivity: 0.03
-  forwardTiltAxis: {x: 1, y: 0, z: 0}
+  forwardTiltAxis: {x: -1, y: 0, z: 0}
   sidewaysTiltAxis: {x: 0, y: 0, z: 1}
 --- !u!114 &6425881316717531141
 MonoBehaviour:
@@ -416,7 +416,7 @@ MonoBehaviour:
   returnDelay: 0.5
   pointer: {fileID: 6065839609396073773}
   fadeSpeed: 5
---- !u!114 &3759868322431811343
+--- !u!114 &3940926278850402394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -442,7 +442,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
