@@ -16,6 +16,8 @@ public class BoatDockingControler : MonoBehaviour
 
     public float LerpTimer = 3f;
 
+    public float turnAroundThreshold = 4f;
+
     public BoatVariableManager fuzzyFlags;
     public Rigidbody rb;
 
@@ -74,7 +76,22 @@ public class BoatDockingControler : MonoBehaviour
         FindClosestDockingManager(out var closestDock, out var dockIndex);
 
         closestDock.dockIndex = dockIndex;
-        closestDock.reversed = Vector3.Dot(transform.forward, closestDock.GetTransformAtIndex(dockIndex).forward) < 0;
+        //closestDock.reversed = Vector3.Dot(transform.forward, closestDock.GetTransformAtIndex(dockIndex).forward) < 0;
+
+        var dockPos = closestDock.GetTransformAtIndex(dockIndex).position;
+        var dockToBoatD = (transform.position - dockPos).normalized;
+        var dockFWD = closestDock.GetTransformAtIndex(dockIndex).forward;
+
+        if(Vector3.Distance(transform.position, dockPos) < turnAroundThreshold)
+        {
+            closestDock.reversed = Vector3.Dot(transform.forward, dockFWD) < 0;
+        } 
+        else
+        {
+            closestDock.reversed = Vector3.Dot(dockToBoatD, dockFWD) > 0;
+
+        }
+
 
 
 
