@@ -56,8 +56,6 @@ public class SequenceManager : MonoBehaviour
 
         yield return StartCoroutine(ShowAllBorders(false));
 
-        Debug.Log("Hej");
-
         StartCoroutine(StartSequence());
     }
 
@@ -223,7 +221,7 @@ public class SequenceManager : MonoBehaviour
         StartCoroutine(StartSequence());
     }
 
-    private void ShuffleSequence()
+    private void ShuffleSequence() // should probably revisit this one
     {
         int n = sequence.Length;
         SequencePlayer[] tempSequence = sequence;
