@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island02
       objectReference: {fileID: 0}
+    - target: {fileID: 2699883353601460132, guid: 1cd6d38dfb874334e8f52db866464d6e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3845897464959896053, guid: 1cd6d38dfb874334e8f52db866464d6e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -70,6 +74,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1096945065569521759, guid: 1cd6d38dfb874334e8f52db866464d6e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4384187624845621570}
+    - targetCorrespondingSourceObject: {fileID: 1096945065569521759, guid: 1cd6d38dfb874334e8f52db866464d6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8320075266031079696}
     - targetCorrespondingSourceObject: {fileID: 2699883353601460132, guid: 1cd6d38dfb874334e8f52db866464d6e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 298688888166193595}
@@ -128,6 +135,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5310339163545920791, guid: 1cd6d38dfb874334e8f52db866464d6e, type: 3}
+--- !u!114 &8320075266031079696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731195467862963944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2336086475660894483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2699883353601460132, guid: 1cd6d38dfb874334e8f52db866464d6e, type: 3}

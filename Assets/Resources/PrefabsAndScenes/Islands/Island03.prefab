@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2798441576835897487, guid: fc564e05125b33245b3380b6ae9199ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -2352470744525957269, guid: fc564e05125b33245b3380b6ae9199ac, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -67,6 +71,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 462865549440089256, guid: fc564e05125b33245b3380b6ae9199ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1449314541069118554}
+    - targetCorrespondingSourceObject: {fileID: 462865549440089256, guid: fc564e05125b33245b3380b6ae9199ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6168125362476612724}
     - targetCorrespondingSourceObject: {fileID: -2798441576835897487, guid: fc564e05125b33245b3380b6ae9199ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 314103428747665979}
@@ -125,3 +132,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4741605118521796602, guid: fc564e05125b33245b3380b6ae9199ac, type: 3}
+--- !u!114 &6168125362476612724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466096179969597267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff

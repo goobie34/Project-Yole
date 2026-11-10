@@ -28,7 +28,7 @@ public class NavCharController : MonoBehaviour
 
     [Header("Edge Push")]
     [SerializeField]
-    private float edgePushSpeed = 2;
+    private float edgePushSpeed = 0.5f;
     [SerializeField]
     private float edgePushDuration = 0.15f;
 
@@ -36,7 +36,7 @@ public class NavCharController : MonoBehaviour
     private float edgeBounceThreshold = 2f;
 
     private Vector3 edgePushDirection;
-    private float edgePushTimer;
+    public float edgePushTimer { get; private set; }
 
     private Vector2 movementInput;
     public Vector3 currentVelocity;
@@ -86,11 +86,13 @@ public class NavCharController : MonoBehaviour
         {
             edgePushTimer -= Time.deltaTime;
 
-            Vector3 pushVelocity = edgePushDirection * edgePushSpeed;
+            //Vector3 pushVelocity = edgePushDirection * edgePushSpeed;
 
-            MoveOnNavMesh(pushVelocity, false);
+            //MoveOnNavMesh(pushVelocity, false);
 
-            return;
+            //return;
+
+            movementInput = Vector3.zero;
         }
 
         //Get camera directions
@@ -202,20 +204,27 @@ public class NavCharController : MonoBehaviour
 
         var bounceComposant = Vector3.Dot(velocity, normal);
 
+
+
         if (Mathf.Abs(bounceComposant) > edgeBounceThreshold)
         {
-            //Push backwards, opposite to movement
-            edgePushDirection = -velocity.normalized;// Vector3.Reflect(velocity.normalized, normal); ;
-            edgePushDirection.y = 0f;
-            edgePushDirection.Normalize();
+            ////Push backwards, opposite to movement
+            //edgePushDirection = Vector3.Reflect(velocity.normalized, normal); ;
+            //edgePushDirection.y = 0f;
+            //edgePushDirection.Normalize();
+
+            //edgePushTimer = edgePushDuration;
+            velocity -= normal * bounceComposant * edgePushSpeed;
 
             edgePushTimer = edgePushDuration;
-            return;
+            
         }
 
         velocity -= normal * bounceComposant;
 
+
         currentVelocity = velocity;
+
 
     }
 
