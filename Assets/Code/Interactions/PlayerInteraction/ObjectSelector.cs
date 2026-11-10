@@ -89,6 +89,8 @@ public class ObjectSelector : MonoBehaviour
 
     private void OnMouseLook(InputValue input)
     {
+        if (!Mouse.current.leftButton.isPressed) return;
+
         Vector2 lookInput = input.Get<Vector2>();
 
         if (lookInput.sqrMagnitude < 0.1f) return;
@@ -116,7 +118,7 @@ public class ObjectSelector : MonoBehaviour
         defaultDirection.y = 0f;
         defaultDirection.Normalize();
 
-        if (Time.time - lastLookTime >= returnDelay)
+        if (Time.time - lastLookTime >= returnDelay && !Mouse.current.leftButton.isPressed)
         {
             targetDirection = defaultDirection;
             targetAlpha = 0f;
