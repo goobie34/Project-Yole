@@ -18,6 +18,8 @@ public class NavCharController : MonoBehaviour
     [SerializeField]
     private Transform cameraTransform;
 
+    
+
     [Header("NavMesh")]
     [SerializeField]
     private float sampleDistance = 0.3f;
@@ -26,9 +28,12 @@ public class NavCharController : MonoBehaviour
 
     [Header("Edge Push")]
     [SerializeField]
-    private float edgePushSpeed = 2f;
+    private float edgePushSpeed = 2;
     [SerializeField]
     private float edgePushDuration = 0.15f;
+
+    [SerializeField]
+    private float edgeBounceThreshold = 2f;
 
     private Vector3 edgePushDirection;
     private float edgePushTimer;
@@ -40,6 +45,8 @@ public class NavCharController : MonoBehaviour
 
     private void Start()
     {
+      
+
         bool found = NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 5f, NavMesh.AllAreas);
 
         if (found)
@@ -108,9 +115,11 @@ public class NavCharController : MonoBehaviour
         
         currentVelocity = Vector3.MoveTowards(currentVelocity, targetVelocity, currentAcceleration * Time.deltaTime);
 
+
         MoveOnNavMesh(currentVelocity, true);
     }
 
+   
     private void MoveOnNavMesh(Vector3 velocity, bool allowEdgePush)
     {
         if (velocity.sqrMagnitude < 0.0001f)
@@ -134,24 +143,26 @@ public class NavCharController : MonoBehaviour
 
         if (isBlocked)
         {
-            if (allowEdgePush)
-            {
-                //Push backwards, opposite to movement
-                edgePushDirection = -velocity.normalized;
-                edgePushDirection.y = 0f;
-                edgePushDirection.Normalize();                
-
-                edgePushTimer = edgePushDuration;
-            }
-            else
-            {
-                //Stop push if it hits another boundary
-                edgePushTimer = 0f;
-            }
-            
-            currentVelocity = Vector3.zero;
-            return;
+            EdgeBounce(velocity, rayHit.normal, allowEdgePush);
         }
+
+       
+
+        //var reflect = Vector3.Reflect(currentVelocity, rayHit.normal);
+
+        //reflect.y = currentVelocity.y;
+
+        //currentVelocity = reflect;
+
+
+
+           
+                
+                
+        
+        
+            
+        
 
         //Find target position on NavMesh
         bool isValid = NavMesh.SamplePosition(targetPosition, out NavMeshHit targetHit, sampleDistance, NavMesh.AllAreas);
@@ -174,6 +185,38 @@ public class NavCharController : MonoBehaviour
 
         //Move player onto NavMesh
         transform.position = targetHit.position;
+    }
+
+
+    private void EdgeBounce(Vector3 velocity, Vector3 normal, bool allowEdgePush)
+    {
+        if (!allowEdgePush)
+        {
+
+
+            //Stop push if it hits another boundary
+            edgePushTimer = 0f;
+            currentVelocity = Vector3.zero;
+            return;
+        }
+
+        var bounceComposant = Vector3.Dot(velocity, normal);
+
+        if (Mathf.Abs(bounceComposant) > edgeBounceThreshold)
+        {
+            //Push backwards, opposite to movement
+            edgePushDirection = -velocity.normalized;// Vector3.Reflect(velocity.normalized, normal); ;
+            edgePushDirection.y = 0f;
+            edgePushDirection.Normalize();
+
+            edgePushTimer = edgePushDuration;
+            return;
+        }
+
+        velocity -= normal * bounceComposant;
+
+        currentVelocity = velocity;
+
     }
 
     public void Move(Vector2 movementVector)
