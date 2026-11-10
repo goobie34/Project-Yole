@@ -18,13 +18,13 @@ public class SelectionOutline : MonoBehaviour
 
     private void EnableOutline()
     {
-        //Debug.Log("Enabling outline for " + gameObject?.name);
+        Debug.Log("Enabling outline for " + gameObject?.name);
         anim.SetBool("IsSelected", true);
     }
 
     private void DisableOutline()
     {
-        //Debug.Log("Disabling outline for " + gameObject?.name);
+        Debug.Log("Disabling outline for " + gameObject?.name);
         anim.SetBool("IsSelected", false);
     }
 }
