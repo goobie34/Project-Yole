@@ -9,6 +9,10 @@ public class SequenceManager : MonoBehaviour
     [SerializeField] private SequencePlayer[] sequence;
 
     [SerializeField] private SequenceType type;
+
+    [SerializeField] private GameObject reward;
+
+    private bool isSequenceCompleted = false;
     
     private enum SequenceType
     {
@@ -41,6 +45,7 @@ public class SequenceManager : MonoBehaviour
         for (int i = 0; i < interactableObjects.Length; i++)
         {
             int index = i;
+
             interactableObjects[i].OnInteract.AddListener(() => OnInteraction(index));
         }
     }
@@ -49,7 +54,7 @@ public class SequenceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ShowAllBorders());
+        yield return StartCoroutine(ShowAllBorders(false));
 
         Debug.Log("Hej");
 
@@ -65,23 +70,21 @@ public class SequenceManager : MonoBehaviour
         else if (type == SequenceType.Addition)
             StartCoroutine(PlayAdditionSequence());
         else Debug.LogError("Sequence type not implemented!");
+
+        DisableInteraction();
     }
 
-    private IEnumerator ShowAllBorders()
+    private IEnumerator ShowAllBorders(bool isFinished)
     {
         for (int i = 0; i < interactableObjects.Length; ++i)
         {
-            interactableObjects[i].GetComponent<SequencePlayer>().SequenceSelect();
+            if (!isFinished)
+                interactableObjects[i].GetComponent<SequencePlayer>().SequenceSelect();
+            else
+                interactableObjects[i].GetComponent<SequencePlayer>().CorrectInput();
 
             yield return new WaitForSeconds(0.1f);
         }
-
-        //for (int i = 0; i < interactableObjects.Length; ++i)
-        //{
-        //    interactableObjects[i].GetComponent<SequencePlayer>().SequenceDeselect();
-
-        //    yield return new WaitForSeconds(0.1f);
-        //}
     }
 
     private IEnumerator PlaySequence()
@@ -90,35 +93,27 @@ public class SequenceManager : MonoBehaviour
 
         currentState = SequenceState.Playing;
 
-
-
-        HideSequence();
-
         yield return new WaitForSeconds(1f);
 
         currentIndex = 0;
 
         for (int i = 0; i < currentStep; i++)
         {
-            HideSequence();
-
             sequence[i].SequenceSelect();
 
             yield return new WaitForSeconds(sequenceLengthPerObject);
         }
 
-        HideSequence();
-
         Debug.Log("Step finished!");
 
         currentState = SequenceState.Waiting;
+        EnableInteraction();
     }
     
     private IEnumerator PlayAdditionSequence()
     {
         Debug.Log("Addition sequence started!");
         currentState = SequenceState.Playing;
-        HideSequence();
         yield return new WaitForSeconds(1f);
         currentIndex = 0;
 
@@ -131,19 +126,28 @@ public class SequenceManager : MonoBehaviour
         //    sequence[i].SequenceSelect();
         //    yield return new WaitForSeconds(sequenceLengthPerObject);
         //}
-
-        HideSequence();
         Debug.Log("Addition step finished!");
         currentState = SequenceState.Waiting;
+
+        EnableInteraction();
     }
 
-    private void HideSequence()
+    private void EnableInteraction()
     {
-        //for (int i = 0; i < sequence.Length; i++)
-        //{
-        //    sequence[i].SequenceDeselect();
-        //}
+        for (int i = 0; i < interactableObjects.Length; i++)
+        {
+            interactableObjects[i].isCurrentlyInteractable = true;
+        }
     }
+
+    private void DisableInteraction()
+    {
+        for (int i = 0; i < interactableObjects.Length; i++)
+        {
+            interactableObjects[i].isCurrentlyInteractable = false;
+        }
+    }
+
 
     public void OnInteraction(int index)
     {
@@ -162,13 +166,7 @@ public class SequenceManager : MonoBehaviour
             {
                 if (currentStep >= sequence.Length) // All steps have been completed and the sequence is therefore completed
                 {
-                    Debug.Log("Sequence completed!");
-
-                    currentIndex = 0;
-                    currentStep = 1;
-                    
-                    currentState = SequenceState.NotBegun;
-
+                    StartCoroutine(SequenceComplete());
                     return;
                 }
 
@@ -195,6 +193,27 @@ public class SequenceManager : MonoBehaviour
 
             ShuffleSequence();
             StartCoroutine(InitializeSequence());
+        }
+    }
+
+    private IEnumerator SequenceComplete()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Debug.Log("Sequence completed!");
+        
+        currentIndex = 0;
+        currentStep = 1;
+        currentState = SequenceState.NotBegun;
+
+        yield return StartCoroutine(ShowAllBorders(true));
+
+        yield return new WaitForSeconds(1f);
+
+        if (!isSequenceCompleted)
+        {
+            reward?.SetActive(true);
+            isSequenceCompleted = true;
         }
     }
 
