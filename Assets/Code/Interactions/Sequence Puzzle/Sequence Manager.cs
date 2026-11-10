@@ -9,6 +9,10 @@ public class SequenceManager : MonoBehaviour
     [SerializeField] private SequencePlayer[] sequence;
 
     [SerializeField] private SequenceType type;
+
+    [SerializeField] private GameObject reward;
+
+    private bool isSequenceCompleted = false;
     
     private enum SequenceType
     {
@@ -50,7 +54,7 @@ public class SequenceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ShowAllBorders());
+        yield return StartCoroutine(ShowAllBorders(false));
 
         Debug.Log("Hej");
 
@@ -70,21 +74,17 @@ public class SequenceManager : MonoBehaviour
         DisableInteraction();
     }
 
-    private IEnumerator ShowAllBorders()
+    private IEnumerator ShowAllBorders(bool isFinished)
     {
         for (int i = 0; i < interactableObjects.Length; ++i)
         {
-            interactableObjects[i].GetComponent<SequencePlayer>().SequenceSelect();
+            if (!isFinished)
+                interactableObjects[i].GetComponent<SequencePlayer>().SequenceSelect();
+            else
+                interactableObjects[i].GetComponent<SequencePlayer>().CorrectInput();
 
             yield return new WaitForSeconds(0.1f);
         }
-
-        //for (int i = 0; i < interactableObjects.Length; ++i)
-        //{
-        //    interactableObjects[i].GetComponent<SequencePlayer>().SequenceDeselect();
-
-        //    yield return new WaitForSeconds(0.1f);
-        //}
     }
 
     private IEnumerator PlaySequence()
@@ -93,24 +93,16 @@ public class SequenceManager : MonoBehaviour
 
         currentState = SequenceState.Playing;
 
-
-
-        HideSequence();
-
         yield return new WaitForSeconds(1f);
 
         currentIndex = 0;
 
         for (int i = 0; i < currentStep; i++)
         {
-            HideSequence();
-
             sequence[i].SequenceSelect();
 
             yield return new WaitForSeconds(sequenceLengthPerObject);
         }
-
-        HideSequence();
 
         Debug.Log("Step finished!");
 
@@ -122,7 +114,6 @@ public class SequenceManager : MonoBehaviour
     {
         Debug.Log("Addition sequence started!");
         currentState = SequenceState.Playing;
-        HideSequence();
         yield return new WaitForSeconds(1f);
         currentIndex = 0;
 
@@ -135,8 +126,6 @@ public class SequenceManager : MonoBehaviour
         //    sequence[i].SequenceSelect();
         //    yield return new WaitForSeconds(sequenceLengthPerObject);
         //}
-
-        HideSequence();
         Debug.Log("Addition step finished!");
         currentState = SequenceState.Waiting;
 
@@ -159,13 +148,6 @@ public class SequenceManager : MonoBehaviour
         }
     }
 
-    private void HideSequence()
-    {
-        //for (int i = 0; i < sequence.Length; i++)
-        //{
-        //    sequence[i].SequenceDeselect();
-        //}
-    }
 
     public void OnInteraction(int index)
     {
@@ -184,13 +166,7 @@ public class SequenceManager : MonoBehaviour
             {
                 if (currentStep >= sequence.Length) // All steps have been completed and the sequence is therefore completed
                 {
-                    Debug.Log("Sequence completed!");
-
-                    currentIndex = 0;
-                    currentStep = 1;
-                    
-                    currentState = SequenceState.NotBegun;
-
+                    StartCoroutine(SequenceComplete());
                     return;
                 }
 
@@ -217,6 +193,27 @@ public class SequenceManager : MonoBehaviour
 
             ShuffleSequence();
             StartCoroutine(InitializeSequence());
+        }
+    }
+
+    private IEnumerator SequenceComplete()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Debug.Log("Sequence completed!");
+        
+        currentIndex = 0;
+        currentStep = 1;
+        currentState = SequenceState.NotBegun;
+
+        yield return StartCoroutine(ShowAllBorders(true));
+
+        yield return new WaitForSeconds(1f);
+
+        if (!isSequenceCompleted)
+        {
+            reward?.SetActive(true);
+            isSequenceCompleted = true;
         }
     }
 

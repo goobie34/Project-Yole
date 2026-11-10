@@ -10,7 +10,6 @@ public class ObjectSelector : MonoBehaviour
     private Vector3 targetDirection = Vector3.forward;
     [SerializeField] private float rotationSpeed = 3.5f;
     [SerializeField] private float mouseSensitivity = 0.2f;
-    private float mouseAngle = 0f;
     [SerializeField] private Transform pointerTransform;
     [SerializeField] private float returnDelay = 1f;
     private float lastLookTime = 0f;
@@ -122,7 +121,6 @@ public class ObjectSelector : MonoBehaviour
         {
             targetDirection = defaultDirection;
             targetAlpha = 0f;
-            mouseAngle = 0f;
         }
 
         searchDirection = Vector3.Slerp(searchDirection, targetDirection, rotationSpeed * Time.deltaTime).normalized;
