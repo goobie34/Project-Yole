@@ -154,6 +154,8 @@ public class SequenceManager : MonoBehaviour
             return;
         }
 
+        DisableInteraction();
+
         if (sequence[currentIndex].CheckInput(index)) // Correct input
         {
             sequence[currentIndex].CorrectInput();
