@@ -60,8 +60,6 @@ public class ObjectSelector : MonoBehaviour
 
         if (ReferenceEquals(currentInteractable, newInteractable)) return;
 
-        //if (!currentInteractable.IsCurrentlyInteractable) return;
-
         currentInteractable?.Deselect();
 
         currentInteractable = newInteractable;

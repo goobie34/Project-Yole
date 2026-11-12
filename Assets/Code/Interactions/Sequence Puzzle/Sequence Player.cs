@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class SequencePlayer : MonoBehaviour
 {
-    public int stoneIndex; // TEMPORÄR, SKA TAS BORT! Eller kanske inte, kanske bara behöver ett namnbyte(?)
+    public int stoneIndex;
 
     public UnityEvent OnCorrectInput = new UnityEvent();
     public UnityEvent OnWrongInput = new UnityEvent();
@@ -13,7 +13,7 @@ public class SequencePlayer : MonoBehaviour
     public void SequenceSelect()
     {
         OnSequenceSelect?.Invoke();
-        Debug.Log("Stone index: " + stoneIndex);
+        //Debug.Log("Stone index: " + stoneIndex);
     }
 
     public void SequenceDeselect()
@@ -30,13 +30,13 @@ public class SequencePlayer : MonoBehaviour
     {
         OnCorrectInput?.Invoke();
 
-        Debug.Log("Correct input for stone index: " + stoneIndex);
+        //Debug.Log("Correct input for stone index: " + stoneIndex);
     }
 
     public void WrongInput()
     {
         OnWrongInput?.Invoke();
 
-        Debug.Log("Wrong input for stone index: " + stoneIndex);
+        //Debug.Log("Wrong input for stone index: " + stoneIndex);
     }
 }

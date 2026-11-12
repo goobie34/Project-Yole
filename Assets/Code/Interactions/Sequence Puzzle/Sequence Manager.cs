@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SequenceManager : MonoBehaviour
 {
-    [SerializeField] private Interactable sequenceStarter; // TEMPORÄR, SKA TAS BORT! eller?
+    [SerializeField] private Interactable sequenceStarter;
     [SerializeField] private Interactable[] interactableObjects;
     [SerializeField] private SequencePlayer[] sequence;
 

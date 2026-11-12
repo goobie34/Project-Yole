@@ -2,13 +2,11 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class SequenceParticleEmitterTest : MonoBehaviour
+public class SequenceAnimationController : MonoBehaviour
 {
     [SerializeField] private SequencePlayer sequencePlayer;
 
     private Animator anim;
-
-    [SerializeField] private EffectMaterialInterface emi;
 
     private void Start()
     {
