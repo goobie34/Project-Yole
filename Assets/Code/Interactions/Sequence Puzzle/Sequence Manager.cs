@@ -74,6 +74,7 @@ public class SequenceManager : MonoBehaviour
 
     private IEnumerator ShowAllBorders(bool isFinished)
     {
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < interactableObjects.Length; ++i)
         {
             if (!isFinished)
@@ -118,12 +119,6 @@ public class SequenceManager : MonoBehaviour
         sequence[currentStep - 1].SequenceSelect();
         yield return new WaitForSeconds(sequenceLengthPerObject);
 
-        //for (int i = 0; i < currentStep; i++)
-        //{
-        //    HideSequence();
-        //    sequence[i].SequenceSelect();
-        //    yield return new WaitForSeconds(sequenceLengthPerObject);
-        //}
         Debug.Log("Addition step finished!");
         currentState = SequenceState.Waiting;
 
@@ -224,25 +219,14 @@ public class SequenceManager : MonoBehaviour
         StartCoroutine(StartSequence());
     }
 
-    private void ShuffleSequence() // should probably revisit this one
+    private void ShuffleSequence() // Fisher-Yates shuffle algorithm to randomize the sequence array
     {
-        int n = sequence.Length;
-        SequencePlayer[] tempSequence = sequence;
-
-        List<SequencePlayer> sequenceList = new(tempSequence);
-        List<SequencePlayer> shuffledSequence = new();
-
-        for (int i = 0; i < n; i++)
+        for (int i = sequence.Length - 1; i > 0; i--)
         {
-            int randomIndex = Random.Range(0, sequenceList.Count);
-
-            shuffledSequence.Add(sequenceList[randomIndex]);
-            sequenceList.RemoveAt(randomIndex);
-        }
-
-        for (int i = 0; i < shuffledSequence.Count; i++)
-        {
-            sequence[i] = shuffledSequence[i];
+            int j = Random.Range(0, i + 1);
+            SequencePlayer temp = sequence[i];
+            sequence[i] = sequence[j];
+            sequence[j] = temp;
         }
     }
 }
