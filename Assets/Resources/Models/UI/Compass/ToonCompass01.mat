@@ -24,7 +24,8 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ADDITIONAL_LIGHTS
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -112,8 +113,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ADDITIONAL_LIGHTS: 1
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 1
     - _AlphaClip: 0
+    - _AlphaClipThreshold: 0.5
     - _AlphaToMask: 0
     - _Ambiant_Oppacity: 0.3
     - _Amplitude: 0
@@ -130,11 +134,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DffuseToon: 0
     - _DiffuseToonMin: 0
+    - _Dither: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 2
     - _Edge_Far_Lerp: 1
     - _EnvironmentReflections: 1
+    - _FogOppacity: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -144,6 +150,7 @@ Material:
     - _MAIN_LIGHT_SHADOWS_SCREEN: 0
     - _Metalic: 0.3
     - _Metallic: 0
+    - _NightOppacity: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -168,11 +175,13 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.13207549, g: 0.0452596, b: 0.03065147, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlashColor_Interact: {r: 1, g: 1, b: 1, a: 0}
     - _Inner_Crevase_Color: {r: 0.199842, g: 0.04709859, b: 0.3962264, a: 0.3372549}
     - _Inner_Edge_Color: {r: 0.8792453, g: 0.7321879, b: 0.6486507, a: 0}
     - _NightColor: {r: 1, g: 1, b: 1, a: 1}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Outer_Edge_Color: {r: 0, g: 0, b: 0, a: 0.29411766}
+    - _OutlineColor_Interact: {r: 10.75301, g: 6.120811, b: 0, a: 0}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
     - _Rim_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
