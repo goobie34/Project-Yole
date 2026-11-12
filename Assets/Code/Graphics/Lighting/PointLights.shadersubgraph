@@ -191,10 +191,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -755.2000122070313,
-            "y": -72.00000762939453,
-            "width": 118.4000244140625,
-            "height": 33.60001754760742
+            "x": -639.199951171875,
+            "y": -51.20000457763672,
+            "width": 119.199951171875,
+            "height": 33.599998474121097
         }
     },
     "m_Slots": [
@@ -273,10 +273,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 0.7999917268753052,
-            "y": 0.000008588682248955593,
-            "width": 117.60002899169922,
-            "height": 76.80001831054688
+            "x": -93.60004425048828,
+            "y": -84.79999542236328,
+            "width": 103.99996185302735,
+            "height": 76.79999542236328
         }
     },
     "m_Slots": [
@@ -307,10 +307,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -432.79998779296877,
-            "y": -47.199981689453128,
-            "width": 225.6000213623047,
-            "height": 277.60003662109377
+            "x": -444.0,
+            "y": -85.60000610351563,
+            "width": 225.60003662109376,
+            "height": 277.6000061035156
         }
     },
     "m_Slots": [
@@ -336,6 +336,6 @@
     "m_FunctionName": "lightSumGet",
     "m_FunctionSource": "",
     "m_FunctionSourceUsePragmas": true,
-    "m_FunctionBody": "\r\nlightSum = float3(0,0,0);\r\n\r\n#ifndef SHADERGRAPH_PREVIEW\r\n\r\n\tuint pixelLightCount = GetAdditionalLightsCount();\r\n\t\r\n\tLIGHT_LOOP_BEGIN(pixelLightCount)\r\n\t\r\n\tlightIndex = GetPerObjectLightIndex(lightIndex);\r\n\tLight light = GetAdditionalPerObjectLight(lightIndex,positionWS);\r\n\t\r\n\t//lightSum =light.color *  light.distanceAttenuation;;\n\tlightSum = float3(pixelLightCount,0,0);\r\n\t\r\n\tLIGHT_LOOP_END\r\n\t\r\n#endif\r\n"
+    "m_FunctionBody": "\r\nlightSum = float3(0,0,0);\r\n\r\n#ifndef SHADERGRAPH_PREVIEW\r\n\tInputData inputData = (InputData)0;\r\n        inputData.positionWS = positionWS;\t\n\r\n\tuint pixelLightCount = GetAdditionalLightsCount();\r\n\n\t\n\r\n\tLIGHT_LOOP_BEGIN(pixelLightCount)\r\n\t\r\n\tlightIndex = GetPerObjectLightIndex(lightIndex);\r\n\tLight light = GetAdditionalPerObjectLight(lightIndex,positionWS);\r\n\t\r\n\tlightSum += light.color *  light.distanceAttenuation;;\n\t//lightSum = light.color;\r\n\t\r\n\tLIGHT_LOOP_END\r\n\t\r\n#endif\r\n"
 }
 
