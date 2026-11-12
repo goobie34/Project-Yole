@@ -154,8 +154,6 @@ public class SequenceManager : MonoBehaviour
             return;
         }
 
-        DisableInteraction();
-
         if (sequence[currentIndex].CheckInput(index)) // Correct input
         {
             sequence[currentIndex].CorrectInput();
@@ -164,6 +162,8 @@ public class SequenceManager : MonoBehaviour
 
             if (currentIndex >= currentStep) // All inputs for this step have been completed
             {
+                DisableInteraction();
+
                 if (currentStep >= sequence.Length) // All steps have been completed and the sequence is therefore completed
                 {
                     StartCoroutine(SequenceComplete());
@@ -191,6 +191,7 @@ public class SequenceManager : MonoBehaviour
 
             currentState = SequenceState.NotBegun;
 
+            DisableInteraction();
             ShuffleSequence();
             StartCoroutine(InitializeSequence());
         }
