@@ -307,8 +307,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -444.0,
-            "y": -85.60000610351563,
+            "x": -444.79998779296877,
+            "y": -84.80000305175781,
             "width": 225.60003662109376,
             "height": 277.6000061035156
         }
@@ -336,6 +336,6 @@
     "m_FunctionName": "lightSumGet",
     "m_FunctionSource": "",
     "m_FunctionSourceUsePragmas": true,
-    "m_FunctionBody": "\r\nlightSum = float3(0,0,0);\r\n\r\n#ifndef SHADERGRAPH_PREVIEW\r\n\tInputData inputData = (InputData)0;\r\n        inputData.positionWS = positionWS;\t\n\r\n\tuint pixelLightCount = GetAdditionalLightsCount();\r\n\n\t\n\r\n\tLIGHT_LOOP_BEGIN(pixelLightCount)\r\n\t\r\n\tlightIndex = GetPerObjectLightIndex(lightIndex);\r\n\tLight light = GetAdditionalPerObjectLight(lightIndex,positionWS);\r\n\t\r\n\tlightSum += light.color *  light.distanceAttenuation;;\n\t//lightSum = light.color;\r\n\t\r\n\tLIGHT_LOOP_END\r\n\t\r\n#endif\r\n"
+    "m_FunctionBody": "\r\nlightSum = float3(0,0,0);\r\n\r\n#ifndef SHADERGRAPH_PREVIEW\r\n\r\n\tuint pixelLightCount = GetAdditionalLightsCount();\r\n\tInputData inputData = (InputData)0;\r\n        inputData.positionWS = positionWS;\t\r\n\r\n\t\r\n\t\n\r\n\tLIGHT_LOOP_BEGIN(pixelLightCount)\r\n\t\r\n\t//lightIndex = GetPerObjectLightIndex(lightIndex);\r\n\t//Light light = GetAdditionalPerObjectLight(lightIndex,positionWS);\n\n\tLight light = GetAdditionalLight(lightIndex,positionWS);\t\r\n\tlightSum += light.color *  light.distanceAttenuation;;\r\n\t//lightSum = light.color;\r\n\t\r\n\tLIGHT_LOOP_END\r\n\t\r\n\t\r\n\t\r\n#endif"
 }
 
