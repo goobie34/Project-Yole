@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4249903225901317022}
   - component: {fileID: 4080974853859256069}
+  - component: {fileID: 3248324195405596293}
   m_Layer: 0
   m_Name: CaravanManager
   m_TagString: Untagged
@@ -44,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f076a2a8f26208e41a83002331b12445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CaravanPhysManager
-  testPrefab: {fileID: 5899312610553927135, guid: c7561f725ed19ff498f6285ce41a6c13, type: 3}
   rootObject: {fileID: 5201937122052943169}
   rb: {fileID: 0}
   snake: []
@@ -53,6 +53,26 @@ MonoBehaviour:
   retractForceMult: 3
   extendForceMult: 0.1
   overLeniancy: 0.15
+--- !u!114 &3248324195405596293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239144283571232055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23389ba3a01524e42b4e216203fa6917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaravanManager
+  testLoadingArray:
+  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
+  - {fileID: 11400000, guid: 12e83a01489e68548b0823b2cddf7e63, type: 2}
+  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
+  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
+  - {fileID: 11400000, guid: 12e83a01489e68548b0823b2cddf7e63, type: 2}
+  caravanInventory: []
+  caravanPhysManager: {fileID: 4080974853859256069}
 --- !u!1 &376179927878851857
 GameObject:
   m_ObjectHideFlags: 0

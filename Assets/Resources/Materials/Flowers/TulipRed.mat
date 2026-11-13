@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: e4ef03d1b1b1e9147b1c152fc19e1e18, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ADDITIONAL_LIGHTS
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -99,6 +100,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ADDITIONAL_LIGHTS: 1
     - _AddPrecomputedVelocity: 0
     - _Alpha: 1
     - _AlphaClip: 0
@@ -162,11 +164,13 @@ Material:
     - _BaseColor: {r: 0.2432923, g: 0.39258298, b: 0.17034462, a: 1}
     - _Color: {r: 0.18867922, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _FlashColor_Interact: {r: 1, g: 1, b: 1, a: 0}
     - _Inner_Crevase_Color: {r: 0.080111735, g: 0.4716981, b: 0, a: 0.3372549}
     - _Inner_Edge_Color: {r: 0.10919225, g: 0.24528301, b: 0.10297258, a: 1}
     - _NightColor: {r: 0.21568623, g: 0.26274508, b: 0.41960776, a: 0}
     - _Outer_Crevase_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Outer_Edge_Color: {r: 0.037675757, g: 0.16037738, b: 0.024964407, a: 0.7254902}
+    - _OutlineColor_Interact: {r: 10.75301, g: 6.120811, b: 0, a: 0}
     - _OverlayColor: {r: 0, g: 0, b: 0, a: 0}
     - _Rim_Color: {r: 0.04905659, g: 0.04905659, b: 0.04905659, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
