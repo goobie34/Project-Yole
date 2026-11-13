@@ -6568,7 +6568,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SequenceParticleEmitterTest
   sequencePlayer: {fileID: 0}
-  emi: {fileID: 908926209}
 --- !u!135 &866173949
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6602,7 +6601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  isCurrentlyInteractable: 1
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -7663,7 +7662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SequenceParticleEmitterTest
   sequencePlayer: {fileID: 0}
-  emi: {fileID: 757071347}
 --- !u!135 &1013785974
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7697,7 +7695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  isCurrentlyInteractable: 1
+  isCurrentlyInteractable: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
