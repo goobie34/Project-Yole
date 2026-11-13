@@ -15,6 +15,10 @@ public class PickupObject : MonoBehaviour
 
     public void Pickup()
     {
+        // ansgars solution
+        if (carryController == null) carryController = FindFirstObjectByType<PlayerCarryController>();
+
+
         if (IsCarried || carryController == null) return;
 
         carryController.TryPickup(this);

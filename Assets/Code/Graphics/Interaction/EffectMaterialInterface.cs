@@ -12,6 +12,12 @@ public class EffectMaterialInterface : MonoBehaviour
 
     private static readonly Color trans = new Color(0,0,0,0);
 
+    private void Start()
+    {
+        rendererChildren = GetComponentsInChildren<MeshRenderer>();
+
+    }
+
     private void OnEnable()
     {
         if (rendererChildren != null)

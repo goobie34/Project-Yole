@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 public class CaravanPhysManager : MonoBehaviour
 {
-    public GameObject testPrefab;
+
 
     public Transform rootObject;
     public Rigidbody rb;
@@ -18,7 +19,7 @@ public class CaravanPhysManager : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         if(rb == null)
             rb = GetComponentInParent<Rigidbody>();
@@ -26,13 +27,7 @@ public class CaravanPhysManager : MonoBehaviour
         if(rootObject == null)
             rootObject = transform;
 
-        for (int i = 0; i < 4; i++)
-        {
-            var testBox = Instantiate(testPrefab);
-            snake.Add(testBox.GetComponent<Rigidbody>());
-            testBox.transform.position = rootObject.position + Random.insideUnitSphere;
-
-        }
+        
     }
 
     private void OnDestroy()
@@ -121,5 +116,26 @@ public class CaravanPhysManager : MonoBehaviour
         p2.y = 0;
 
         rb.rotation = Quaternion.LookRotation(p2 - p1, Vector3.up);
+    }
+
+    public void AddItemToSnake(Rigidbody rb)
+    {
+        if (snake == null)
+        {
+            snake = new();
+        }
+           
+
+        Transform prev = rootObject;
+
+        if(snake.Count != 0)
+        {
+            prev = snake[snake.Count - 1].transform;
+        }
+
+        rb.position = prev.position + Random.insideUnitSphere;
+
+        snake.Add(rb);
+        
     }
 }
