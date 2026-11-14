@@ -36,7 +36,9 @@ public class CaravanManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(caravanItemsHolder.gameObject != null)
+       
+
+        if(caravanItemsHolder != null)
             Destroy(caravanItemsHolder.gameObject);
     }
 
