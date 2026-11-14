@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 public class CaravanManager : MonoBehaviour
 {
-    public List<BaseItemType> testLoadingArray;
+    
 
     public List<BaseItemData> caravanInventory;
 
@@ -22,16 +22,28 @@ public class CaravanManager : MonoBehaviour
 
 
 
-        for(int i = 0; i < testLoadingArray.Count; i++)
-        {
-            var newItem = new BaseItemData();
-            newItem.type = testLoadingArray[i];
-            caravanInventory.Add(newItem);
-        }
 
+        LoadInventory();
 
         SpawnCaravan();
 
+    }
+
+    private void LoadInventory()
+    {
+        if (InventoryServiceLocator.Instance == null)
+            return;
+
+        if (!InventoryServiceLocator.Instance.TryGet(out var service))
+            return;
+
+        var inventory = service.GetInventory();
+
+        for(int i = 0; i < service.Count(); i++)
+        {
+            caravanInventory.Add(inventory[i]);
+        }
+        
     }
 
     private void OnDestroy()

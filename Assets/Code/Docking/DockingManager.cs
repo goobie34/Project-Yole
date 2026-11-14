@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DockingManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class DockingManager : MonoBehaviour
     [Header("Dock Variables")]
     public Transform[] dockingPositions;
     public bool HoldsBoat { get; private set; }
+
+    [Header("Events")]
+    public UnityEvent EVENT_DockBoat = new();
+    public UnityEvent EVENT_UndockBoat = new();
 
     public Transform GetTransformAtIndex(int index)
     {
@@ -111,8 +116,10 @@ public class DockingManager : MonoBehaviour
     public void SpawnDockedBoat()
     {
         HoldsBoat = true;
+        EVENT_DockBoat?.Invoke();
 
-        if(DockedBoat != null)
+
+        if (DockedBoat != null)
         {
             Destroy(DockedBoat);
         }
@@ -126,8 +133,10 @@ public class DockingManager : MonoBehaviour
     public void DestroyDockedBoat()
     {
         HoldsBoat = false;
+        EVENT_UndockBoat?.Invoke();
 
-        if(DockedBoat == null) return;
+
+        if (DockedBoat == null) return;
     }
 
     private void SpawnPlayer()

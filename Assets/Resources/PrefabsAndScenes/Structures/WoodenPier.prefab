@@ -37,6 +37,7 @@ Transform:
   - {fileID: 7586301488533233376}
   - {fileID: 7495295589868444149}
   - {fileID: 4026485016951596927}
+  - {fileID: 8757120294670900203}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8714239168702307754
@@ -59,6 +60,12 @@ MonoBehaviour:
   - {fileID: 9040251232344949506}
   - {fileID: 3976416143450658046}
   - {fileID: 6054283512552871914}
+  EVENT_DockBoat:
+    m_PersistentCalls:
+      m_Calls: []
+  EVENT_UndockBoat:
+    m_PersistentCalls:
+      m_Calls: []
   playerSpawPos: {fileID: 9049643144356555077}
   dockIndex: 0
   reversed: 0
@@ -457,6 +464,71 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &4371523257487145304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8757120294670900203}
+  - component: {fileID: 6955452094841681885}
+  - component: {fileID: 5472677140187452594}
+  m_Layer: 0
+  m_Name: DockInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8757120294670900203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371523257487145304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.22, y: 0, z: 0.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 686703403295588203}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6955452094841681885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371523257487145304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34db3625651b4ab48ae5f5b276ca1ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DockInventory
+  dockingManager: {fileID: 0}
+  inventory: []
+  templateGameObject: {fileID: 4138706578008119266, guid: d5393a7111c454a4e8673e6934b77179, type: 3}
+  heightDiff: 2
+--- !u!208 &5472677140187452594
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371523257487145304}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.5, y: 3.5, z: 1.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6910858743649577488
 GameObject:
   m_ObjectHideFlags: 0
