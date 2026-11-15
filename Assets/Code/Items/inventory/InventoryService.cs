@@ -16,7 +16,7 @@ public class InventoryService : MonoBehaviour, IInventoryService
 
         for(int i = 0; i < Mathf.Min(testStartingArray.Length, items.Length); i++)
         {
-            var newItem = new BaseItemData();
+            var newItem = ScriptableObject.CreateInstance<BaseItemData>();
             newItem.type = testStartingArray[i];
 
             TryAddItem(newItem);

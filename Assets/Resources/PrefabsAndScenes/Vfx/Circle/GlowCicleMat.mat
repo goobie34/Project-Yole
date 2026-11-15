@@ -96,7 +96,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0.4
+    - _Alpha: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -111,8 +111,8 @@ Material:
     - _DistRef: 0.5
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _Edge1: 0.088
-    - _Edge2: 1
+    - _Edge1: 0
+    - _Edge2: 0.96
     - _End: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -138,8 +138,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 5.656853, g: 4.5196004, b: 1.3982033, a: 1}
+    - _Color: {r: 5.656853, g: 4.5196004, b: 1.3982033, a: 0.043137256}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _InteriorColor: {r: 5.656853, g: 4.5196004, b: 1.3982033, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
