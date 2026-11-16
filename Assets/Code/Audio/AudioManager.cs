@@ -52,7 +52,7 @@ public class AudioManager : SingletonPersistent<AudioManager>
         return parameterDescription.id;
     }
 
-
+    #region Unused Code
     //    [SerializeField] bool debug = true;    
 
     //    Dictionary<EventReference, EventInstance> eventInstances;
@@ -149,4 +149,5 @@ public class AudioManager : SingletonPersistent<AudioManager>
     //{
     //    if (debug) Debug.Log(message);
     //}
+    #endregion
 }
