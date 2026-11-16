@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8714239168702307754}
   - component: {fileID: 5256182764631624505}
   - component: {fileID: 8658617989899264091}
+  - component: {fileID: 1741319900589564225}
   m_Layer: 0
   m_Name: WoodenPier
   m_TagString: Player
@@ -107,6 +108,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DockAnimator
   anchorSign: {fileID: 3654835494653378074}
   manager: {fileID: 0}
+--- !u!114 &1741319900589564225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201669914401727953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fc6b4cc4f19b945bfa838be0a7d33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicStarterScript
+  dockedMusic:
+    Guid:
+      Data1: 1541282098
+      Data2: 1211074252
+      Data3: -1575902573
+      Data4: 1044538361
+    Path: event:/Music/mus_island_puzzle
+  undockedMusic:
+    Guid:
+      Data1: 1048804427
+      Data2: 1100072925
+      Data3: -601842534
+      Data4: 315722272
+    Path: event:/Music/mus_ocean_day
 --- !u!1 &289150684517389312
 GameObject:
   m_ObjectHideFlags: 0

@@ -3913,6 +3913,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4a522c83b5fea478e69f6dedc73082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  startupMusicEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1001 &1676665450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4143,11 +4150,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicTriggerScript
   eventReference:
     Guid:
-      Data1: 81586069
-      Data2: 1285613417
-      Data3: 1661055631
-      Data4: 327799274
+      Data1: 1048804427
+      Data2: 1100072925
+      Data3: -601842534
+      Data4: 315722272
     Path: event:/Music/mus_ocean_day
+  triggerTag: 
 --- !u!65 &1759673378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4647,31 +4655,31 @@ PrefabInstance:
       objectReference: {fileID: 844690677}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 145.16232
+      value: 194.46977
       objectReference: {fileID: 0}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.019192
+      value: 45.992767
       objectReference: {fileID: 0}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.270344
+      value: -132.37262
       objectReference: {fileID: 0}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.02203421
+      value: 0.90405273
       objectReference: {fileID: 0}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00446119
+      value: 0.23359632
       objectReference: {fileID: 0}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9798653
+      value: -0.34655866
       objectReference: {fileID: 0}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19838993
+      value: 0.08954657
       objectReference: {fileID: 0}
     - target: {fileID: 3624162477477391878, guid: d1bdf402eeeb96e499369e4d4d69e18e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
