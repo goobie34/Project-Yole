@@ -66,7 +66,7 @@ public class ItemFactoryService : MonoBehaviour, IItemFactoryService
 
 
         var visuals = Instantiate(data.GetVisualsPrefabTemplate(), itemInstance.GetVisualsHolder);
-
+        visuals.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
 
         itemInstance.data = data;
 

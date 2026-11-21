@@ -133,7 +133,7 @@ public class CaravanPhysManager : MonoBehaviour
             prev = snake[snake.Count - 1].transform;
         }
 
-        rb.position = prev.position;
+        rb.transform.position = prev.position + Random.insideUnitSphere * 3;
 
         snake.Add(rb);
         

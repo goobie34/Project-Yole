@@ -9,7 +9,7 @@ public class SimpleIslandItemSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        createdData = new BaseItemData();
+        createdData = ScriptableObject.CreateInstance<BaseItemData>();
         createdData.type = type;
 
         SpawnItem();
