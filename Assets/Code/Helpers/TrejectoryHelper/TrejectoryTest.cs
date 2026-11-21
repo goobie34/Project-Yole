@@ -27,4 +27,25 @@ public class TrejectoryTest : MonoBehaviour
 
         transform.position = pos;
     }
+
+    private void OnDrawGizmos()
+    {
+        if(start == null || end == null) return;
+
+        int count = 30;
+        Gizmos.color = Color.red;
+
+        for (int i = 0; i < count; i++)
+        {
+            float time = i / (float)count;
+
+            var pos = TrejectoryLerpHelper.LerpParabolaTrejectory(start.position, end.position, time, uppVector, offsetDiffMult, offsetAdditionalHeight);
+
+            
+
+            Gizmos.DrawSphere(pos, 0.1f);
+        }
+        Gizmos.color = Color.white;
+    }
+
 }
