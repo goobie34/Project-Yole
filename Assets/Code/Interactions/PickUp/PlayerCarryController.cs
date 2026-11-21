@@ -27,9 +27,8 @@ public class PlayerCarryController : MonoBehaviour
     private float groundCheckHeight = 3f;
     [SerializeField]
     private float groundCheckDistance = 6f;
-    public bool IsDropping { get; private set; }
     [SerializeField]
-    private LayerMask groundMask;
+    private string groundTag = "Ground";
 
     [Header("Placement")]
     [SerializeField]
@@ -37,94 +36,116 @@ public class PlayerCarryController : MonoBehaviour
     [SerializeField]
     private float placementPadding = 0.05f;
 
-    private PickupObject carriedObject;
+    //private PickupObject carriedObject;
+    private Transform carriedObject;
 
     public bool IsCarrying => carriedObject != null;
-    public PickupObject CarriedObject => carriedObject;
+    public bool IsDropping { get; private set; }
+    //public PickupObject CarriedObject => carriedObject;
+    public Transform CarriedObject => carriedObject;
 
-    public bool TryPickup(PickupObject pickupObject)
+    private bool CanStartPickup()
     {
         if (carryAnimation == null) carryAnimation = GetComponent<CarryAnimationController>();
-        if (pickupObject == null || IsCarrying || pickupObject.IsCarried || carryPoint == null) return false;
-        if (carryAnimation != null && carryAnimation.IsAnimating) return false;
+        return isActiveAndEnabled && carryPoint != null && !IsCarrying && !IsDropping && (carryAnimation == null || !carryAnimation.IsAnimating);
+    }
 
-        carriedObject = pickupObject;
-        carriedObject.SetCarried(true);
+    public bool TryPickupTop(DockStackController stack)
+    {
+        if (!CanStartPickup() || stack == null || !stack.CanReach(transform.position)) return false;
+        if (!stack.TryTakeTop(out ItemInstance top)) return false;
 
-        NavMeshObstacle obstacle = carriedObject.GetComponent<NavMeshObstacle>();
+        BeginCarry(top.transform);
+        return true;
+    }
+
+    public bool TryPickup(Component target)
+    {
+        if (target == null || !CanStartPickup()) return false;
+        ItemInstance item = target.GetComponentInParent<ItemInstance>();
+        Transform root = item != null ? item.transform : target.transform;
+
+        if (root.GetComponentInParent<DockInventory>() != null || DockStackController.IsStored(root)) return false;
+        WorldItemInteraction state = root.GetComponent<WorldItemInteraction>();
+
+        if (state != null && (state.IsCarried || state.IsStored)) return false;
+        BeginCarry(root);
+        return true;
+    }
+
+    private void BeginCarry(Transform root)
+    {
+        carriedObject = root;
+        root.SetParent(null, true);
+
+        WorldItemInteraction world = WorldItemInteraction.GetOrCreate(root);
+        world.SetStored(false);
+        world.SetCarried(true);
+
+        NavMeshObstacle obstacle = root.GetComponent<NavMeshObstacle>();
         if (obstacle != null) obstacle.enabled = false;
 
-        Rigidbody rb = carriedObject.GetComponent<Rigidbody>();
-
+        Rigidbody rb = root.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            if (!rb.isKinematic)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
             rb.isKinematic = true;
         }
-
-        if (carryAnimation != null) carryAnimation.PlayPickup(carriedObject.transform);
+        if (carryAnimation != null && carryAnimation.CanPlayPickup)
+            carryAnimation.PlayPickup(root);
         else
         {
-            carriedObject.transform.SetParent(carryPoint);
-            carriedObject.transform.localPosition = Vector3.zero;
-            carriedObject.transform.localRotation = Quaternion.identity;
-        }    
-
-        Debug.Log("Picked up: " + carriedObject.name);
-        return true;
+            root.SetParent(carryPoint);
+            root.localPosition = Vector3.zero;
+            root.localRotation = Quaternion.identity;
+        }
     }
 
     public bool TryDrop()
     {
-        if (carryAnimation != null && carryAnimation.IsAnimating) return false;
-        if (!IsCarrying) return false;
+        if (!IsCarrying || IsDropping || (carryAnimation != null && carryAnimation.IsAnimating)) return false;
 
         Vector3 dropPosition = transform.position + transform.forward * dropDistance;
         Vector3 rayOrigin = dropPosition + Vector3.up * groundCheckHeight;
 
-        if (!Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, groundCheckDistance, groundMask))
-        {
-            Debug.LogWarning("Cannot drop object: No ground found.");
-            return false;
-        }
+        if (!TryFindGround(rayOrigin, out RaycastHit hit)) return false;
 
-        PickupObject droppedObject = carriedObject;
-        Collider objectCollider = droppedObject.GetComponent<Collider>();
+        Transform droppedObject = carriedObject;
 
-        float bottomOffset = 0f;
+        Collider objectCollider = droppedObject.GetComponentInChildren<Collider>();
+
+        float bottomOffset = objectCollider != null ? droppedObject.position.y - objectCollider.bounds.min.y : 0f;
+        Vector3 position = hit.point + Vector3.up * (bottomOffset + placementPadding);
 
         if (objectCollider != null)
         {
-            bottomOffset = droppedObject.transform.position.y - objectCollider.bounds.min.y;
-        }
+            Vector3 center = position + (objectCollider.bounds.center - droppedObject.position);
 
-        Vector3 finalPosition = hit.point + Vector3.up * (bottomOffset + placementPadding);        
-
-        if (objectCollider != null)
-        {
-            Vector3 halfExtents = objectCollider.bounds.extents * 0.95f;
-            Vector3 checkCenter = finalPosition + (objectCollider.bounds.center - droppedObject.transform.position);
-
-            Collider[] overlaps = Physics.OverlapBox(checkCenter, halfExtents, droppedObject.transform.rotation, obstacleMask, QueryTriggerInteraction.Ignore);
+            Collider[] overlaps = Physics.OverlapBox(center, objectCollider.bounds.extents * 0.95f, Quaternion.identity, obstacleMask, QueryTriggerInteraction.Ignore);
 
             foreach (Collider overlap in overlaps)
             {
-                if (overlap.transform == droppedObject.transform || overlap.transform.IsChildOf(droppedObject.transform)) continue;
-
+                if (overlap.transform == droppedObject || overlap.transform.IsChildOf(droppedObject)) continue;
                 Debug.LogWarning("Cannot drop object: Placement blocked by " + overlap.name);
                 return false;
             }
         }
 
-        if (carryAnimation != null)
+        IsDropping = true;
+        System.Action complete = () =>
         {
-            IsDropping = true;
-
-            carryAnimation.PlayDrop(droppedObject.transform, finalPosition, () =>
+            if (droppedObject != null)
             {
-                droppedObject.SetCarried(false);
+                droppedObject.SetParent(null, true);
+                droppedObject.SetPositionAndRotation(position, Quaternion.identity);
 
+                WorldItemInteraction world = WorldItemInteraction.GetOrCreate(droppedObject);
+                world.SetStored(false);
+                world.SetCarried(false);
                 PushPlayerOut(objectCollider);
 
                 NavMeshObstacle obstacle = droppedObject.GetComponent<NavMeshObstacle>();
@@ -132,30 +153,68 @@ public class PlayerCarryController : MonoBehaviour
 
                 Rigidbody rb = droppedObject.GetComponent<Rigidbody>();
                 if (rb != null) rb.isKinematic = false;
-
-                carriedObject = null;
-                IsDropping = false;
-            });
-        }
-        else
-        {
-            droppedObject.transform.SetParent(null);
-            droppedObject.transform.position = finalPosition;
-            droppedObject.SetCarried(false);
-
-            NavMeshObstacle obstacle = droppedObject.GetComponent<NavMeshObstacle>();
-            if (obstacle != null) obstacle.enabled = true;
-
-            Rigidbody rb = droppedObject.GetComponent<Rigidbody>();
-
-            if (rb != null)
-            {
-                rb.isKinematic = false;
             }
+            carriedObject = null;
+            IsDropping = false;
+        };
 
-            carriedObject = null;          
+        if (carryAnimation != null && carryAnimation.CanPlayDrop)
+            carryAnimation.PlayDrop(droppedObject, position, complete);
+        else complete();
+        return true;
+    }
+
+    private bool TryFindGround(Vector3 rayOrigin, out RaycastHit groundHit)
+    {
+        groundHit = default;
+        if (string.IsNullOrWhiteSpace(groundTag))
+        {
+            Debug.LogWarning("Cannot drop object: Set Ground Tag on PlayerCarryController.");
+            return false;
         }
-        Debug.Log("Dropped: " + droppedObject.name);
+
+        RaycastHit[] hits = Physics.RaycastAll(rayOrigin, Vector3.down, groundCheckDistance, ~0, QueryTriggerInteraction.Ignore);
+
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit candidate in hits)
+        {
+            if (candidate.collider == null) continue;
+            Transform surface = candidate.collider.transform;
+
+            if (BelongsTo(surface, carriedObject) || BelongsTo(surface, transform) || (playerTransform != null && BelongsTo(surface, playerTransform))) continue;
+
+            if (!candidate.collider.CompareTag(groundTag))
+            {
+                Debug.LogWarning("Cannot drop object: First surface '" + candidate.collider.name + "' must have the tag '" + groundTag + "'.");
+                return false;
+            }
+            groundHit = candidate;
+            return true;
+        }
+
+        Debug.LogWarning("Cannot drop object: No ground collider found within Ground check Distance");
+        return false;
+    }
+
+    private static bool BelongsTo(Transform target, Transform root) => root != null && (target == root || target.IsChildOf(root));
+
+    public bool TryReturnToStack(DockStackController stack)
+    {
+        if (!IsCarrying || IsDropping || stack == null || !stack.CanReach(transform.position) || (carryAnimation != null && carryAnimation.IsAnimating)) return false;
+
+        ItemInstance item = carriedObject.GetComponent<ItemInstance>();
+        if (item == null || !stack.TryPlace(item, out Vector3 position)) return false;
+        IsDropping = true;
+        System.Action complete = () =>
+        {
+            if (stack != null) stack.CompletePlacement(item, position);
+            carriedObject = null;
+            IsDropping = false;
+        };
+        if (carryAnimation != null && carryAnimation.CanPlayDrop)
+            carryAnimation.PlayDrop(item.transform, position, complete);
+        else complete();
         return true;
     }
 

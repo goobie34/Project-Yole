@@ -7053,6 +7053,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 289150684517389312, guid: afdc4af261c86014b9e175483304271f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1123950757}
+    - targetCorrespondingSourceObject: {fileID: 4371523257487145304, guid: afdc4af261c86014b9e175483304271f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1566857072}
   m_SourcePrefab: {fileID: 100100000, guid: afdc4af261c86014b9e175483304271f, type: 3}
 --- !u!4 &910605166 stripped
 Transform:
@@ -10993,6 +10996,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21bf6a822a4154c4caba0897cf7550d0, type: 3}
+--- !u!1 &1566857069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4371523257487145304, guid: afdc4af261c86014b9e175483304271f, type: 3}
+  m_PrefabInstance: {fileID: 910605165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1566857072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566857069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0afc37a9ed6be04b83ef8d58f6ca3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  isCurrentlyInteractable: 1
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeselect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1576224644
 GameObject:
   m_ObjectHideFlags: 0

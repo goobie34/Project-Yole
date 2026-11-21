@@ -1,20 +1,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(DockInventory))]
+[RequireComponent(typeof(DockInventory), typeof(Interactable))]
 public class DockStackController : MonoBehaviour
 {
     [Min(0f)] public float returnRange = 2.5f;
     [Range(0f, 180f)] public float returnAngle = 75f;
+    [SerializeField] private PlayerCarryController carryController;
 
     private static readonly List<DockStackController> stacks = new();
     private DockInventory dock;
-    private PickupObject placing;
-    private bool reportedProblem;
+    private Interactable interaction;
+    private ItemInstance placing;
+    private bool warned;
 
-    private void Awake() => dock = GetComponent<DockInventory>();
+    private void Awake()
+    {
+        dock = GetComponent<DockInventory>();
+        interaction = GetComponent<Interactable>();
+        interaction.OnInteract.AddListener(InteractWithStack);
+    }
     private void OnEnable() => stacks.Add(this);
-    private void OnDisable() => stacks.Remove(this);
+    private void OnDisable()
+    {
+        stacks.Remove(this);
+        if (interaction != null) interaction.isCurrentlyInteractable = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (interaction != null) interaction.OnInteract.RemoveListener(InteractWithStack);
+    }
 
     private bool HasBoat => dock.dockingManager != null && dock.dockingManager.HoldsBoat;
 
@@ -25,9 +41,9 @@ public class DockStackController : MonoBehaviour
 
         if (service is InventoryService)
         {
-            if (!reportedProblem)
+            if (!warned)
                 Debug.LogError("DockStackController: use StackInventoryService for this test scene. The original InventoryService has an index error in TryRemoveItem.", this);
-            reportedProblem = true;
+            warned = true;
             return false;
         }
         return true;
@@ -35,20 +51,21 @@ public class DockStackController : MonoBehaviour
 
     private void LateUpdate()
     {
+        interaction.isCurrentlyInteractable = Ready;
         if (dock.inventory == null) return;
-        bool valid = HasBoat && TryGetService(out var service) && Matches(service);
 
-        for (int i = 0; i < dock.inventory.Count; i++)
+        foreach (GameObject go in dock.inventory)
         {
-            GameObject go = dock.inventory[i];
             if (go == null) continue;
-            PickupObject pickup = go.AddComponent<PickupObject>();
-            if (pickup != null) pickup.SetDockStack(this);
-            Interactable interactable = go.GetComponent<Interactable>();
-            if (interactable != null)
-                interactable.isCurrentlyInteractable = valid && placing == null && i == dock.inventory.Count - 1 && pickup != null && !pickup.IsCarried;
+            WorldItemInteraction world = go.GetComponent<WorldItemInteraction>();
+
+            if (world != null) world.SetStored(true);
+
+            foreach (Interactable child in go.GetComponentsInChildren<Interactable>(true))
+                child.isCurrentlyInteractable = false;
 
             Rigidbody rb = go.GetComponent<Rigidbody>();
+
             if (rb != null) rb.isKinematic = true;
         }
     }
@@ -61,28 +78,63 @@ public class DockStackController : MonoBehaviour
         {
             GameObject go = dock.inventory[i];
             if (go == null) return false;
-            ItemInstance instance = go.GetComponent<ItemInstance>();
-            if (instance == null || instance.data == null || instance.data != data[i]) return false;
+            ItemInstance item = go.GetComponent<ItemInstance>();
+            if (item == null || item.data == null || item.data != data[i]) return false;
         }
         return true;
     }
 
-    public bool Contains(PickupObject item) =>
-        item != null && dock.inventory != null && dock.inventory.Contains(item.gameObject);
+    private bool Ready => isActiveAndEnabled && HasBoat && placing == null && TryGetService(out var serivce) && Matches(serivce);
 
-    public bool CanTake(PickupObject item)
+    public void InteractWithStack()
     {
-        return isActiveAndEnabled && HasBoat && placing == null && Contains(item) && dock.inventory[dock.inventory.Count - 1] == item.gameObject && TryGetService(out var service) && Matches(service);
+        if (!Ready) return;
+        if (carryController == null) carryController = FindFirstObjectByType<PlayerCarryController>();
+        if (carryController == null || !CanReach(carryController.transform.position)) return;
+
+        if (carryController.IsCarrying) carryController.TryReturnToStack(this);
+        else carryController.TryPickupTop(this);
     }
 
-    public bool TryTake(PickupObject item)
+    public bool Contains(Component item) =>
+        item != null && dock.inventory != null && dock.inventory.Contains(item.gameObject);
+
+    public static bool IsStored(Transform item)
     {
-        if (!CanTake(item) || !TryGetService(out var service)) return false;
+        foreach (DockStackController stack in stacks)
+            if (stack != null && stack.Contains(item)) return true;
+        return false;
+    }
+
+    public bool TryTakeTop(out ItemInstance item)
+    {
+        item = null;
+        if (!Ready || dock.inventory.Count == 0 || !TryGetService(out var service)) return false;
+        ItemInstance top = dock.inventory[dock.inventory.Count - 1].GetComponent<ItemInstance>();
+
         if (!service.TryRemoveItem(out _)) return false;
         dock.inventory.RemoveAt(dock.inventory.Count - 1);
-        item.SetDockStack(null);
-        item.transform.SetParent(null, true);
+        top.transform.SetParent(null, true);
+        WorldItemInteraction world = top.GetComponent<WorldItemInteraction>();
+
+        if (world != null) world.SetStored(false);
+        item = top;
         return true;
+    }
+
+    public bool TryTake(Component item)
+    {
+        if (!Contains(item) || dock.inventory[dock.inventory.Count -1] != item.gameObject) return false;
+        return TryTakeTop(out _);
+    }
+
+    public bool CanReach(Vector3 playerPosition)
+    {
+        Vector3 offset = transform.position - playerPosition;
+
+        if (Mathf.Abs(offset.y) > returnRange) return false;
+        offset.y = 0f;
+        return offset.sqrMagnitude <= returnRange * returnRange;
     }
 
     public static DockStackController FindReturnTarget(Vector3 playerPosition, Vector3 forward)
@@ -93,55 +145,52 @@ public class DockStackController : MonoBehaviour
 
         foreach (DockStackController stack in stacks)
         {
-            if (stack == null || !stack.isActiveAndEnabled || !stack.HasBoat) continue;
+            if (stack == null || !stack.isActiveAndEnabled || !stack.HasBoat || !stack.CanReach(playerPosition)) continue;
             Vector3 offset = stack.transform.position - playerPosition;
 
-            //Avoid selecting a stack on a different floor
-            if (Mathf.Abs(offset.y) > stack.returnRange) continue;
             offset.y = 0f;
             float distance = offset.sqrMagnitude;
-            if (distance > stack.returnRange * stack.returnRange || distance >= bestDistance) continue;
-            if (distance > 0.0001f && Vector3.Angle(forward,offset) > stack.returnAngle) continue;
+
+            if (distance >= bestDistance) continue;
+            if (distance > 0.0001f && Vector3.Angle(forward, offset) > stack.returnAngle) continue;
+
             best = stack;
             bestDistance = distance;
         }
         return best;
     }
 
-    public bool TryPlace(PickupObject item, out Vector3 position)
+    public bool TryPlace(ItemInstance item, out Vector3 position)
     {
         position = transform.position;
-        if (!isActiveAndEnabled || !HasBoat || placing != null || item == null || !item.IsCarried || Contains(item) || !TryGetService(out var service) || !Matches(service)) return false;
+        if (!Ready || item == null || Contains(item) || !TryGetService(out var service)) return false;
         
-        ItemInstance instance = item.GetComponent<ItemInstance>();
+        WorldItemInteraction world = item.GetComponent<WorldItemInteraction>();
 
-        if (instance == null || instance.data == null || instance.data.type == null)
-        {
-            Debug.LogWarning("This object needs ItemInstance with valid data before it can enter inventory.", item);
-            return false;
-        }
+        if (world == null || !world.IsCarried || world.IsStored || item.data == null || item.data.type == null) return false;
 
         if (dock.inventory.Count > 0)
             position = dock.inventory[dock.inventory.Count - 1].transform.position + Vector3.up * dock.heightDiff;
-
-        if (!service.TryAddItem(instance.data))
+        if (!service.TryAddItem(item.data))
         {
-            Debug.LogWarning("Inventory is full. The object stays in your hands.", this);
+            Debug.LogWarning("Inventory is full; the item stays in your hands.", this);
             return false;
         }
+
         dock.inventory.Add(item.gameObject);
-        item.SetDockStack(this);
+        world.SetStored(true);
         placing = item;
         return true;
     }
 
-    public void CompletePlacement(PickupObject item, Vector3 position)
+    public void CompletePlacement(ItemInstance item, Vector3 position)
     {
         if (Contains(item))
         {
             item.transform.SetParent(transform, true);
             item.transform.SetPositionAndRotation(position, Quaternion.identity);
-            item.SetCarried(false);
+            WorldItemInteraction world = item.GetComponent<WorldItemInteraction>();
+            if (world != null) world.SetCarried(false);
 
             Rigidbody rb = item.GetComponent<Rigidbody>();
             if (rb != null) rb.isKinematic = true;
