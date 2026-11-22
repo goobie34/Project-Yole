@@ -539,8 +539,8 @@ MonoBehaviour:
   m_Material: {fileID: -876546973899608171, guid: ac778033b29378849b4a39f3df2ba0ac, type: 3}
   m_DrawDistance: 1000
   m_FadeScale: 1
-  m_StartAngleFade: 0
-  m_EndAngleFade: 8.111874
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_RenderingLayerMask:
@@ -608,6 +608,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7131b2b42b60fc4439d2a637a4544897, type: 2}
+    - target: {fileID: 74002392230189737, guid: 2dc6c6b7ee4229e4e83165d8af4a5eca, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 74002392230189737, guid: 2dc6c6b7ee4229e4e83165d8af4a5eca, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 74002392230189737, guid: 2dc6c6b7ee4229e4e83165d8af4a5eca, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
