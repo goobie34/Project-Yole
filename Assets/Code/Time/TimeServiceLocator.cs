@@ -14,6 +14,7 @@ public interface ITimeService
 
     public double GetCurrentGameDayFraction();
 
+
     public float GetCurrentGameDayNightFraction();
 
 

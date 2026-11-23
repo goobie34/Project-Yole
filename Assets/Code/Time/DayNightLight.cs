@@ -8,6 +8,7 @@ public class DayNightLight : MonoBehaviour
 
     public float testAngle = 0;
 
+    public float rotationsPerDay = 1;
 
    
 
@@ -22,7 +23,7 @@ public class DayNightLight : MonoBehaviour
 
         
 
-        DayNightFrac = (float)service.GetCurrentGameDayFraction();
+        DayNightFrac = (float)service.GetCurrentGameTime().TotalDays * rotationsPerDay;
 
         RotateSun(DayNightFrac);
     }
@@ -34,7 +35,7 @@ public class DayNightLight : MonoBehaviour
 
         Vector3 axis = transform.forward;
 
-        var angle = dayFrac * 360;
+        var angle = (dayFrac * 360) % 360f;
 
         sunTransform.localRotation = Quaternion.Euler(angle, 0, 0);
     }

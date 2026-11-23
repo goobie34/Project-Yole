@@ -53,6 +53,7 @@ public class TimeService : MonoBehaviour, ITimeService
         return CurrentTime.TotalDays - (double)CurrentTime.Days;
     }
 
+
     public float GetCurrentGameDayNightFraction()
     {
         throw new NotImplementedException();
