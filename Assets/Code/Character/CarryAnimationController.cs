@@ -25,23 +25,47 @@ public class CarryAnimationController : MonoBehaviour
     private float dropDuration = 0.5f;
 
     private Coroutine currentAnimation;
-
+    private Action completion;
     public bool IsAnimating => currentAnimation != null;
+    public bool CanPlayPickup => isActiveAndEnabled && animator != null && animatedCarryPoint != null && carryPoint != null;
+    public bool CanPlayDrop => isActiveAndEnabled && animator != null && animatedCarryPoint != null;
 
     public void PlayPickup(Transform target)
     {
-        if (target == null || carryPoint == null || animatedCarryPoint == null || animator == null) return;
-        if (IsAnimating) return;
-
+        if (target == null || !CanPlayPickup || IsAnimating) return;
+        completion = () =>
+        {
+            if (target == null || carryPoint == null) return;
+            target.SetParent(carryPoint);
+            target.localPosition = Vector3.zero;
+            target.localRotation = Quaternion.identity;
+        };
         currentAnimation = StartCoroutine(AnimatePickup(target));
     }
 
     public void PlayDrop(Transform target, Vector3 destination, Action onComplete)
     {
-        if (target == null || animatedCarryPoint == null || animator == null) return;
-        if (IsAnimating) return;
-
+        if (target == null || !CanPlayDrop || IsAnimating) return;
+        completion = () =>
+        {
+            if (target != null) target.SetPositionAndRotation(destination, Quaternion.identity);
+            onComplete?.Invoke();
+        };
         currentAnimation = StartCoroutine(AnimateDrop(target, destination, onComplete));
+    }
+
+    private void Finish()
+    {
+        currentAnimation = null;
+        Action callback = completion;
+        completion = null;
+        callback?.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        if (currentAnimation != null) StopCoroutine(currentAnimation);
+        Finish();
     }
 
     private IEnumerator AnimatePickup(Transform target)
@@ -75,12 +99,7 @@ public class CarryAnimationController : MonoBehaviour
 
             yield return null;
         }
-
-        target.SetParent(carryPoint);
-        target.localPosition = Vector3.zero;
-        target.localRotation = Quaternion.identity;
-
-        currentAnimation = null;
+        Finish();
     }
 
     private IEnumerator AnimateDrop(Transform target, Vector3 destination, Action OnComplete)
@@ -96,7 +115,7 @@ public class CarryAnimationController : MonoBehaviour
         float elapsed = 0f;
         float duration = Mathf.Max(0.01f, dropDuration);
 
-        while (elapsed < duration)
+        while (elapsed < duration && target != null)
         {
             elapsed += Time.deltaTime;
 
@@ -111,11 +130,6 @@ public class CarryAnimationController : MonoBehaviour
 
             yield return null;
         }
-
-        target.position = destination;
-        target.rotation = Quaternion.identity;
-
-        currentAnimation = null;
-        OnComplete?.Invoke();
+        Finish();
     }
 }

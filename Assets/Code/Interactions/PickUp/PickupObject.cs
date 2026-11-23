@@ -7,6 +7,7 @@ public class PickupObject : MonoBehaviour
     private PlayerCarryController carryController;
 
     public bool IsCarried { get; private set; }
+    public DockStackController DockStack {  get; private set; }
 
     private void Awake()
     {
@@ -24,8 +25,25 @@ public class PickupObject : MonoBehaviour
         carryController.TryPickup(this);
     }
 
+    public void SetDockStack(DockStackController stack) => DockStack = stack;
+
+    public bool TryLeaveDockStack()
+    {
+        DockInventory parentDock = GetComponentInParent<DockInventory>();
+        
+        if (DockStack == null && parentDock != null)
+        {
+            DockStack = parentDock.GetComponent<DockStackController>();
+            if (DockStack == null) return false;
+        }
+        return DockStack == null || DockStack.TryTake(this);
+    }
+
     public void SetCarried(bool carried)
     {
         IsCarried = carried;
+        Interactable interactable = GetComponent<Interactable>();
+        
+        if (interactable != null) interactable.isCurrentlyInteractable = !carried;
     }
 }
