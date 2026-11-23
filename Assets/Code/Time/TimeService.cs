@@ -1,11 +1,15 @@
 using System;
+using System.Collections;
+using Unity.Mathematics;
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 public class TimeService : MonoBehaviour, ITimeService
 {
+    public int startHour;
+    public int startMinute;
 
-
-    public DateTime CurrentTime;
+    public TimeSpan CurrentTime;
 
     public float _24hCycleDurationSeconds = 60;
 
@@ -19,36 +23,34 @@ public class TimeService : MonoBehaviour, ITimeService
     {
         TimeServiceLocator.Instance.Register(this);
 
+        var cStartHour = math.clamp(startHour, 0, 23);
+        var cStartMinute = math.clamp(startMinute, 0, 60);
+
+        SetGameTime(new TimeSpan(cStartHour, cStartMinute, 0));
+
     }
 
-    public void Update()
-    {
-        SetGameTime(CurrentTime.AddSeconds(Time.deltaTime * SecondsIn24h / _24hCycleDurationSeconds * _timeRate));
-
-        
-    }
+  
 
     public void FixedUpdate()
     {
-        Debug.Log("TimeTest --- ");
-        Debug.Log($"test ({GetCurrentTimeFloatUnscaled()})");
-        Debug.Log($"target ({Time.time})");
+        SetGameTime(CurrentTime.Add(TimeSpan.FromSeconds(Time.fixedDeltaTime * (SecondsIn24h / _24hCycleDurationSeconds) * _timeRate)));
         
     }
 
-    public DateTime GetCurrentGameTime()
+    public TimeSpan GetCurrentGameTime()
     {
         return CurrentTime;
     }
-    public float GetCurrentTimeFloatUnscaled()
+    public double GetCurrentTimeFloatUnscaled()
     {
-        return (CurrentTime.Second + CurrentTime.Millisecond / 1000f) / (SecondsIn24h / _24hCycleDurationSeconds);
+        return CurrentTime.TotalSeconds / (SecondsIn24h / _24hCycleDurationSeconds);
     }
 
 
-    public float GetCurrentGameDayFraction()
+    public double GetCurrentGameDayFraction()
     {
-        throw new NotImplementedException();
+        return CurrentTime.TotalDays - (double)CurrentTime.Days;
     }
 
     public float GetCurrentGameDayNightFraction()
@@ -57,14 +59,59 @@ public class TimeService : MonoBehaviour, ITimeService
     }
 
 
-    public Coroutine WarpGameTimeTo(DateTime targetTime, float realTimeDuration)
+    public Coroutine WarpGameTimeTo(TimeSpan targetTime, float realTimeDuration)
     {
-        throw new NotImplementedException();
+        return StartCoroutine(LerpGameTimeCorutine(realTimeDuration, CurrentTime, targetTime));
     }
 
-    public void SetGameTime(DateTime targetTime)
+    private IEnumerator LerpGameTimeCorutine(float duration, TimeSpan start, TimeSpan end)
     {
-        throw new NotImplementedException();
+        _timeRate = 0;
+
+        float timer = 0;
+
+        float lerp = 0;
+
+
+        while (lerp < 1)
+        {
+            var lerpTime = LerpTimespan(start, end, SmoothCurve(lerp));
+
+            SetGameTime(lerpTime);
+
+            timer += Time.deltaTime;
+
+            lerp = Mathf.Clamp01(timer / duration);
+
+            yield return null;
+        }
+
+        SetGameTime(end);
+
+        _timeRate = 1;
     }
+
+    private TimeSpan LerpTimespan(TimeSpan a, TimeSpan b, float t)
+    {
+        return b * t + a * (1 - t);
+    }
+
+    private float SmoothCurve(float t)
+    {
+        return 1 - ((Mathf.Cos(t * Mathf.PI) + 1) * 0.5f);
+    }
+
+    public void SetGameTime(TimeSpan targetTime)
+    {
+        CurrentTime = targetTime;
+    }
+
+    public TimeSpan GetTime_NextMorning(TimeSpan time)
+    {
+        var days = math.ceil(time.TotalDays);
+
+        return TimeSpan.FromDays(days);
+    }
+
 
 }

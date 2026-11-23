@@ -3,22 +3,25 @@ using UnityEngine;
 
 public class TimeServiceLocator : ServiceLocator<ITimeService>
 {
-  
+
 }
 
 public interface ITimeService
 {
-    public DateTime GetCurrentGameTime();
-    public float GetCurrentTimeFloatUnscaled();
+    public TimeSpan GetCurrentGameTime();
+    public double GetCurrentTimeFloatUnscaled();
 
 
-    public float GetCurrentGameDayFraction();
+    public double GetCurrentGameDayFraction();
 
     public float GetCurrentGameDayNightFraction();
 
 
-    public Coroutine WarpGameTimeTo(DateTime targetTime, float realTimeDuration);
+    public Coroutine WarpGameTimeTo(TimeSpan targetTime, float realTimeDuration);
+    public void SetGameTime(TimeSpan targetTime);
 
-    public void SetGameTime(DateTime targetTime);
+    public TimeSpan GetTime_NextMorning(TimeSpan time);
+
+    
 
 }
