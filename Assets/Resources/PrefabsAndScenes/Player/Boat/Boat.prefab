@@ -65,12 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23389ba3a01524e42b4e216203fa6917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CaravanManager
-  testLoadingArray:
-  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
-  - {fileID: 11400000, guid: 12e83a01489e68548b0823b2cddf7e63, type: 2}
-  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
-  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
-  - {fileID: 11400000, guid: 12e83a01489e68548b0823b2cddf7e63, type: 2}
   caravanInventory: []
   caravanPhysManager: {fileID: 4080974853859256069}
 --- !u!1 &376179927878851857
@@ -435,12 +429,25 @@ MonoBehaviour:
       Data3: -745548358
       Data4: -1191301033
     Path: event:/SFX/sfx_boat_travel
+  splashEvent:
+    Guid:
+      Data1: -1925568864
+      Data2: 1208123414
+      Data3: 633268356
+      Data4: -466182130
+    Path: event:/SFX/sfx_boat_travel_splash
   velocityParameterString: velocity
   submersionParameterString: submersion
+  submersionSpeedParameterString: submersion_speed
+  sailTensionParameterString: sail_tension
   maxVelocity: 22
   minSubmersion: 0
   maxSubmersion: 1
-  debugFMODParameterValues: 0
+  maxSubmersionSpeed: 8
+  fmodVelocity: 0
+  fmodSubmersion: 0
+  fmodSubmersionSpeed: 0
+  fmodSailTension: 0
 --- !u!114 &8618758049637909223
 MonoBehaviour:
   m_ObjectHideFlags: 0

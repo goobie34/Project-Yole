@@ -3,6 +3,7 @@ using FMODUnity;
 using FMOD.Studio;
 using UnityEngine;
 using FMOD;
+using UnityEngine.UIElements;
 /// <summary>
 /// Manages FMOD banks, FMOD mix buses, and contains helper functions for FMOD playback.
 /// </summary>
@@ -50,6 +51,20 @@ public class AudioManager : SingletonPersistent<AudioManager>
         PARAMETER_DESCRIPTION parameterDescription;
         eventDescription.getParameterDescriptionByName(parameterName, out parameterDescription);
         return parameterDescription.id;
+    }
+
+    public static void PlayOneShotWithParameters(EventReference fmodEvent, Vector3 position, params (PARAMETER_ID id, float value)[] parameters)
+    {
+        FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+
+        foreach (var (id, value) in parameters)
+        {
+            instance.setParameterByID(id, value);
+        }
+
+        instance.set3DAttributes(position.To3DAttributes());
+        instance.start();
+        instance.release();
     }
 
     #region Unused Code
