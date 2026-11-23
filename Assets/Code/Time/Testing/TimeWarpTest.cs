@@ -6,7 +6,7 @@ public class TimeWarpTest : MonoBehaviour
 
     public bool btn;
 
-    public int days = 1;
+    public double days = 1;
 
     public float duration = 5f;
 
@@ -35,9 +35,9 @@ public class TimeWarpTest : MonoBehaviour
         if (!TimeServiceLocator.Instance.TryGet(out var service))
             return;
 
-        var targetTime = service.GetCurrentGameTime() + TimeSpan.FromDays(days);
+        var targetTime = service.GetCurrentGameTime() ;
 
-        targetTime = service.GetTime_NextMorning(targetTime);
+        targetTime = service.GetTime_NextMorning(targetTime) + TimeSpan.FromDays(days);
 
         service.WarpGameTimeTo(targetTime, duration);
 

@@ -34,6 +34,11 @@ public class TimeService : MonoBehaviour, ITimeService
 
     public void FixedUpdate()
     {
+        if (_24hCycleDurationSeconds < 0.001f)
+            return;
+
+        
+
         SetGameTime(CurrentTime.Add(TimeSpan.FromSeconds(Time.fixedDeltaTime * (SecondsIn24h / _24hCycleDurationSeconds) * _timeRate)));
         
     }

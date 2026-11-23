@@ -459,6 +459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7085595849593689981}
   - component: {fileID: 1402270107819439474}
+  - component: {fileID: 5798002672008331651}
   m_Layer: 0
   m_Name: Beams
   m_TagString: Untagged
@@ -489,7 +490,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6621555804217052744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7784cdc47c93d744bb28a016e7c6451, type: 3}
   m_Name: 
@@ -498,6 +499,22 @@ MonoBehaviour:
   DayNightFrac: 0
   testAngle: 0
   rotationsPerDay: 24
+--- !u!114 &5798002672008331651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621555804217052744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff32359f86118f24caf4389295231827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleDayNightCylce
+  cycleDuration: 10
+  sunTransform: {fileID: 4930106611686032017}
+  DayNightFrac: 0
+  testAngle: 0
 --- !u!1 &8574151060309612980
 GameObject:
   m_ObjectHideFlags: 0
