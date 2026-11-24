@@ -1,5 +1,7 @@
 
 using UnityEngine;
+
+#if UNITY_EDITOR 
 using UnityEditor;
 
 public class TerrainFootprintHoles : EditorWindow
@@ -328,3 +330,5 @@ public class TerrainFootprintHoles : EditorWindow
         SceneView.RepaintAll();
     }
 }
+
+#endif
