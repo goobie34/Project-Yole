@@ -30,8 +30,10 @@ public class Climbable : MonoBehaviour
         isClimbing = true;
 
         CharacterController controller = player.GetComponent<CharacterController>();
-
         if (controller != null ) controller.enabled = false;
+
+        PlayerInteractor playerInteractor = player.GetComponent<PlayerInteractor>();
+        if (playerInteractor != null) playerInteractor.canInteract = false;
 
         Vector3 startPosition = player.transform.position;
         Vector3 endPosition = climbPoint.position;
@@ -55,6 +57,7 @@ public class Climbable : MonoBehaviour
         player.transform.position = endPosition;
 
         if (controller != null) controller.enabled = true;
+        if (playerInteractor != null) playerInteractor.canInteract = true;
 
         isClimbing = false;
     }

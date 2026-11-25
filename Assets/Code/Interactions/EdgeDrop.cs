@@ -87,6 +87,10 @@ public class EdgeDrop : MonoBehaviour
     {
         isDropping = true;
 
+        PlayerInteractor playerInteractor = FindFirstObjectByType<PlayerInteractor>();
+
+        if (playerInteractor != null) playerInteractor.canInteract = false;
+
         controller.enabled = false;
         controller.currentVelocity = Vector3.zero;
 
@@ -121,6 +125,8 @@ public class EdgeDrop : MonoBehaviour
         controller.currentVelocity = Vector3.zero;
 
         isDropping = false;
+
+        if (playerInteractor != null) playerInteractor.canInteract = true;
     }
 }
 
