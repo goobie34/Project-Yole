@@ -40,6 +40,16 @@ public class PlayerCarryController : MonoBehaviour
     private Transform carriedObject;
 
     public bool IsCarrying => carriedObject != null;
+
+    public bool IsCarryingStackable()
+    {
+        if (!IsCarrying) return false;
+
+        Stackable stackable = carriedObject.GetComponent<Stackable>();
+
+        return stackable != null;
+    }
+
     public bool IsDropping { get; private set; }
     //public PickupObject CarriedObject => carriedObject;
     public Transform CarriedObject => carriedObject;

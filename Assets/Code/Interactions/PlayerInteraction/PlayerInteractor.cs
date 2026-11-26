@@ -63,7 +63,7 @@ public class PlayerInteractor : MonoBehaviour
                 {
 
                     //Debug.Log("HEJHEJ");
-                    if (!controller.IsCarrying) return;
+                    if (!controller.IsCarryingStackable()) return;
 
                     //Debug.Log("HEJDÅ");
 
