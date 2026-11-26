@@ -184,20 +184,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "785d2a08914446ee8a65b31169a82bd5"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "7db269a5af564f6293190e1fc67462a8"
-                },
-                "m_SlotId": 3
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "7db269a5af564f6293190e1fc67462a8"
                 },
                 "m_SlotId": 2
@@ -589,6 +575,9 @@
             "m_Id": "c4dc8557cdd44ce98159c2c91a555781"
         },
         {
+            "m_Id": "5f43c57d468048829d6d23187355ddd1"
+        },
+        {
             "m_Id": "3db000b860274bef8560496eefa6fc25"
         },
         {
@@ -614,7 +603,8 @@
         "d1ba4de1-815d-4866-aea9-c6e084cb786a",
         "8db9f8ee-9190-4436-9fb2-9fd5bec3c922",
         "2fe949f8-b811-4972-aa8c-66861355c37f",
-        "42598f34-791a-421d-9ef7-e2a40accb3a3"
+        "42598f34-791a-421d-9ef7-e2a40accb3a3",
+        "9ad055ab-fb72-48ea-a739-b56e3c7d87f5"
     ],
     "m_PropertyIds": [
         965952201,
@@ -623,7 +613,8 @@
         325234326,
         1054414943,
         -1623316400,
-        118869434
+        118869434,
+        1225321026
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []
@@ -1383,6 +1374,22 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "5f43c57d468048829d6d23187355ddd1",
+    "m_Id": 1225321026,
+    "m_DisplayName": "PerimiterFogOppacity",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_PerimiterFogOppacity",
+    "m_StageCapability": 3,
+    "m_Value": 1.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": [],
+    "m_LiteralMode": false
 }
 
 {
@@ -2310,7 +2317,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Opacity",
     "m_StageCapability": 3,
-    "m_Value": 1.0,
+    "m_Value": 0.0,
     "m_DefaultValue": 1.0,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -2399,7 +2406,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "_Scale",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 2.0,
     "m_DefaultValue": 0.0,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -2692,7 +2699,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "_High_Convex",
     "m_StageCapability": 2,
-    "m_Value": 0.05000000074505806,
+    "m_Value": 0.10000000149011612,
     "m_DefaultValue": 0.0,
     "m_Labels": [],
     "m_LiteralMode": false

@@ -54,7 +54,7 @@ Terrain:
   m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
+  m_DrawHeightmap: 0
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_StaticShadowCaster: 0
@@ -152,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 6425044989900255825, guid: 5f39a28041f763a40a45f44aeeaac60e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4b09aa88960a9b64ebf8c7e14acf5f29, type: 2}
+      objectReference: {fileID: 2100000, guid: 06197da5d9ded5f47843f54f45792bd5, type: 2}
     - target: {fileID: 6647481384877639618, guid: 5f39a28041f763a40a45f44aeeaac60e, type: 3}
       propertyPath: m_Layer
       value: 6

@@ -65,12 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23389ba3a01524e42b4e216203fa6917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CaravanManager
-  testLoadingArray:
-  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
-  - {fileID: 11400000, guid: 12e83a01489e68548b0823b2cddf7e63, type: 2}
-  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
-  - {fileID: 11400000, guid: b0251682ec9f34e40841dc28cebfbf4c, type: 2}
-  - {fileID: 11400000, guid: 12e83a01489e68548b0823b2cddf7e63, type: 2}
   caravanInventory: []
   caravanPhysManager: {fileID: 4080974853859256069}
 --- !u!1 &376179927878851857
@@ -97,6 +91,7 @@ GameObject:
   - component: {fileID: 3577698740940003234}
   - component: {fileID: 8618758049637909223}
   - component: {fileID: 7371179968231200644}
+  - component: {fileID: 5104180875810172467}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -395,11 +390,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatCollision
   minCollisionSpeed: 8
-  minMovementToExitStunned: 0.5
-  stunnedTimer: 2
-  stunnedExitTimer: 2
   fuzzyFlags: {fileID: 0}
   boat_animator: {fileID: 0}
+  stun_controler: {fileID: 0}
   stunned: 0
   stunnedAwaitingInput: 0
 --- !u!114 &5357058852177151173
@@ -542,6 +535,24 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5104180875810172467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376179927878851857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05b499a8f938ff459b26ba2282e03e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatStunControler
+  fuzzyFlags: {fileID: 0}
+  stunned: 0
+  stunnedAwaitingInput: 0
+  minMovementToExitStunned: 0.5
+  stunnedTimer: 2
+  stunnedExitTimer: 1
 --- !u!1 &2231576154536728877
 GameObject:
   m_ObjectHideFlags: 0
