@@ -46,17 +46,11 @@ public class PressurePlate : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            isStoodOn = true;
-        }
+        isStoodOn = true;
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            isStoodOn = false;
-        }
+        isStoodOn = false;
     }
 }

@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4753003729020394688}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3484578, y: 0.3544203, z: -0.14433596, w: 0.85564625}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.37716803, y: 0.000000036617454, z: -0.0000000096543165, w: 0.92614484}
+  m_LocalPosition: {x: 0, y: 42.42641, z: -42.426407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9113558191758937531}
-  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 44.317, y: 0, z: 0}
 --- !u!114 &5696004668547722028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 7351574925702341336}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -114,7 +114,7 @@ MonoBehaviour:
   RecenteringTarget: 1
   HorizontalAxis:
     Value: 45
-    Center: 0
+    Center: 45
     Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
@@ -184,6 +184,37 @@ MonoBehaviour:
   boatOrIsland: 0
   player: {fileID: 0}
   cam: {fileID: 0}
+--- !u!1 &7083519164360806488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7351574925702341336}
+  m_Layer: 0
+  m_Name: Temp Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7351574925702341336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083519164360806488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9113558191758937531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7369197196414230719
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,5 +245,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 567792042616716749}
+  - {fileID: 7351574925702341336}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

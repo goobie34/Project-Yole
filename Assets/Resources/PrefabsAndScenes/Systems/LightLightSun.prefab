@@ -74,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 53845949930189053}
   - component: {fileID: 6986843754514430990}
+  - component: {fileID: 7465696854105973528}
   m_Layer: 0
   m_Name: SimpleDayNightCycle
   m_TagString: Untagged
@@ -104,12 +105,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8288789601502622226}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff32359f86118f24caf4389295231827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleDayNightCylce
   cycleDuration: 500
+  sunTransform: {fileID: 792979762913831622}
+  DayNightFrac: 0
+  testAngle: 0
+--- !u!114 &7465696854105973528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288789601502622226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7784cdc47c93d744bb28a016e7c6451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayNightLight
   sunTransform: {fileID: 792979762913831622}
   DayNightFrac: 0
   testAngle: 0

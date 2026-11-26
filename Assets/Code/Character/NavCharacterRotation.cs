@@ -31,6 +31,9 @@ public class NavCharacterRotation : MonoBehaviour
 
     private void RotateTowardsMovement()
     {
+        if (character.edgePushTimer > 0)
+            return;
+
         Vector3 direction = character.CurrentVelocity;
 
         direction.y = 0f;

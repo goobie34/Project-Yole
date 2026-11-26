@@ -34,9 +34,15 @@ public class WaveSystem : MonoBehaviour, IWaveService
         WaveServiceLocator.Instance?.DeregisterIfThis(this);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        time += Time.fixedDeltaTime;
+        if (TimeServiceLocator.Instance == null)
+            return;
+
+        if (!TimeServiceLocator.Instance.TryGet(out var service))
+            return;
+
+        time = (float)service.GetCurrentTimeFloatUnscaled();
     }
 
     public void EvaluateWaves(Vector2 worldPos, float amplitudeMult, out float out_height, out Vector3 out_normal)

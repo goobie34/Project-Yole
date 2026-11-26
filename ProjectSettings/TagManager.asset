@@ -3,19 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Walkable
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Unoclude
   - Water
   - UI
   - Ground
   - Obstacles
   - UiOnly
   - WakesCauser
-  - 
+  - PressurePlate
   - 
   - 
   - 

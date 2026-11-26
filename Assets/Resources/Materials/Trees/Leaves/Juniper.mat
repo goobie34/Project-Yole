@@ -13,9 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
-  - _CLUSTER_LIGHT_LOOP
-  - _MAIN_LIGHT_SHADOWS
-  - _MAIN_LIGHT_SHADOWS_CASCADE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -94,7 +91,7 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
-    - _CLUSTER_LIGHT_LOOP: 1
+    - _CLUSTER_LIGHT_LOOP: 0
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -110,8 +107,8 @@ Material:
     - _GlossyReflections: 0
     - _Layer_Count: 10
     - _Layer_ID: 0
-    - _MAIN_LIGHT_SHADOWS: 1
-    - _MAIN_LIGHT_SHADOWS_CASCADE: 1
+    - _MAIN_LIGHT_SHADOWS: 0
+    - _MAIN_LIGHT_SHADOWS_CASCADE: 0
     - _MAIN_LIGHT_SHADOWS_SCREEN: 0
     - _MaxHeight: 1
     - _Metallic: 0

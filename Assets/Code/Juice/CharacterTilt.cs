@@ -24,9 +24,9 @@ public class CharacterTilt : MonoBehaviour
 
     [Header("Model Orientation")]
     [SerializeField]
-    private Vector3 forwardTiltAxis = Vector3.right;
+    private Vector3 forwardTiltAxis = Vector3.back;
     [SerializeField]
-    private Vector3 sidewaysTiltAxis = Vector3.forward;
+    private Vector3 sidewaysTiltAxis = Vector3.right;
 
     private Quaternion initialLocalRotation;
     private Vector3 previousDirection;
