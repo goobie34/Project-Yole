@@ -10022,6 +10022,78 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc67938588cf8a94992522ff0705bac7, type: 3}
+--- !u!1 &1344782009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344782010}
+  - component: {fileID: 1344782012}
+  - component: {fileID: 1344782011}
+  - component: {fileID: 1344782013}
+  m_Layer: 0
+  m_Name: PerimiterService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1344782010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344782009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 264.32297, y: 27.1813, z: -135.91264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1344782011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344782009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bb8ae187d454646b6c120f6fe386ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PerimeterBoundsServiceLocator
+--- !u!114 &1344782012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344782009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403bb3f811a0d654f9aa6559f036ae85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PerimeterBoundsService
+  radius: 500
+  origin: {x: 0, y: 0, z: 0}
+--- !u!114 &1344782013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344782009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4704aa22e83ce90428e3a229121c017a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParimiterShaderUpdator
 --- !u!4 &1350379443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8802745485483610171, guid: 44b632a0cb819294ea8f043410a2efd6, type: 3}
@@ -22273,3 +22345,4 @@ SceneRoots:
   - {fileID: 710640310}
   - {fileID: 2094552178}
   - {fileID: 1757017608}
+  - {fileID: 1344782010}
