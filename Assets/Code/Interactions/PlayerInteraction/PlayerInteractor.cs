@@ -46,4 +46,30 @@ public class PlayerInteractor : MonoBehaviour
             }
         }
     }
+
+    private void OnDrop(InputValue input)
+    {
+        if (!input.isPressed || objectSelector == null) return;
+
+        IInteractable selectedInteractable = objectSelector.SelectedInteractable;
+
+        PlayerCarryController controller = GetComponent<PlayerCarryController>();
+
+        if (selectedInteractable is Interactable interactable)
+        {
+            if (interactable.TryGetComponent<Stackable>(out var stackable))
+            {
+                if (controller != null && selectedInteractable != null)
+                {
+
+                    //Debug.Log("HEJHEJ");
+                    if (!controller.IsCarryingStackable()) return;
+
+                    //Debug.Log("HEJDÅ");
+
+                    controller.TryStack(stackable);
+                }
+            }
+        }
+    }
 }
