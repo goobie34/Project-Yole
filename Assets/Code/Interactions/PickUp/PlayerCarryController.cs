@@ -40,6 +40,16 @@ public class PlayerCarryController : MonoBehaviour
     private Transform carriedObject;
 
     public bool IsCarrying => carriedObject != null;
+
+    public bool IsCarryingStackable()
+    {
+        if (!IsCarrying) return false;
+
+        Stackable stackable = carriedObject.GetComponent<Stackable>();
+
+        return stackable != null;
+    }
+
     public bool IsDropping { get; private set; }
     //public PickupObject CarriedObject => carriedObject;
     public Transform CarriedObject => carriedObject;
@@ -95,6 +105,13 @@ public class PlayerCarryController : MonoBehaviour
             }
             rb.isKinematic = true;
         }
+
+        Stackable stackable = root.GetComponent<Stackable>();
+        if (stackable != null)
+        {
+            stackable.PickUp();
+        }
+
         if (carryAnimation != null && carryAnimation.CanPlayPickup)
             carryAnimation.PlayPickup(root);
         else
@@ -158,8 +175,76 @@ public class PlayerCarryController : MonoBehaviour
             IsDropping = false;
         };
 
+
+        if (droppedObject != null)
+        {
+            if (droppedObject.TryGetComponent<Stackable>(out var stackable))
+            {
+                stackable.PutDown(null);
+            }
+        }
+
         if (carryAnimation != null && carryAnimation.CanPlayDrop)
             carryAnimation.PlayDrop(droppedObject, position, complete);
+        else complete();
+        return true;
+    }
+
+    public bool TryStack(Stackable other)
+    {
+        if (!IsCarrying || IsDropping || (carryAnimation != null && carryAnimation.IsAnimating)) return false;
+
+        if (other == null) return false;
+
+        if (other.StackPoint == null || other.HasAbove()) return false;
+
+        Vector3 dropPosition = other.StackPoint.position;
+
+        Transform droppedObject = carriedObject;
+
+        Collider objectCollider = droppedObject.GetComponentInChildren<Collider>();
+
+        //if (objectCollider != null)
+        //{
+        //    Collider[] overlaps = Physics.OverlapBox(dropPosition, objectCollider.bounds.extents * 0.95f, Quaternion.identity, obstacleMask, QueryTriggerInteraction.Ignore);
+
+        //    foreach (Collider overlap in overlaps)
+        //    {
+        //        if (overlap.transform == droppedObject || overlap.transform.IsChildOf(droppedObject)) continue;
+        //        Debug.LogWarning("Cannot drop object: Placement blocked by " + overlap.name);
+        //        return false;
+        //    }
+        //}
+
+        IsDropping = true;
+        System.Action complete = () =>
+        {
+            if (droppedObject != null)
+            {
+                droppedObject.SetParent(null, true);
+                droppedObject.SetPositionAndRotation(dropPosition, Quaternion.identity);
+
+                WorldItemInteraction world = WorldItemInteraction.GetOrCreate(droppedObject);
+                world.SetStored(false);
+                world.SetCarried(false);
+                PushPlayerOut(objectCollider);
+
+                NavMeshObstacle obstacle = droppedObject.GetComponent<NavMeshObstacle>();
+                if (obstacle != null) obstacle.enabled = true;
+
+                Rigidbody rb = droppedObject.GetComponent<Rigidbody>();
+                if (rb != null) rb.isKinematic = false;
+            }
+            carriedObject = null;
+            IsDropping = false;
+        };
+
+        Stackable stackable = droppedObject.GetComponentInChildren<Stackable>();
+
+        if (stackable != null) stackable.PutDown(other);
+
+        if (carryAnimation != null && carryAnimation.CanPlayDrop)
+            carryAnimation.PlayDrop(droppedObject, dropPosition, complete);
         else complete();
         return true;
     }
