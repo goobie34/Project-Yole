@@ -10,7 +10,7 @@ public class SelectionOutline : MonoBehaviour
         if (interactable == null)
             interactable = GetComponent<Interactable>();
         if (anim == null)
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
 
         interactable?.OnSelect.AddListener(EnableOutline);
         interactable?.OnDeselect.AddListener(DisableOutline);

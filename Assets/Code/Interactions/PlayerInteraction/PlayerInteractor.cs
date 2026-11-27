@@ -61,11 +61,7 @@ public class PlayerInteractor : MonoBehaviour
             {
                 if (controller != null && selectedInteractable != null)
                 {
-
-                    //Debug.Log("HEJHEJ");
                     if (!controller.IsCarryingStackable()) return;
-
-                    //Debug.Log("HEJDÅ");
 
                     controller.TryStack(stackable);
                 }

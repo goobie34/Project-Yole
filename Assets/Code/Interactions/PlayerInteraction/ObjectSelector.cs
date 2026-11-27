@@ -14,6 +14,15 @@ public class ObjectSelector : MonoBehaviour
     [SerializeField] private float returnDelay = 1f;
     private float lastLookTime = 0f;
 
+    public float RotationAmount() 
+    {
+        if (Time.time - lastLookTime >= returnDelay && !Mouse.current.leftButton.isPressed)
+        {
+            return transform.eulerAngles.y;
+        }
+        return pointerTransform.eulerAngles.y;
+    }
+
     [SerializeField] private MeshRenderer pointer;
     [SerializeField] private float fadeSpeed = 5f;
 
@@ -99,9 +108,9 @@ public class ObjectSelector : MonoBehaviour
 
         Vector3 mouseMovement = new Vector3(lookInput.x, 0f, lookInput.y);
 
-        float rotationAmount = Vector3.Cross(targetDirection, mouseMovement).y;
+        float rotation = Vector3.Cross(targetDirection, mouseMovement).y;
 
-        targetDirection = Quaternion.Euler(0f, rotationAmount * mouseSensitivity, 0f) * targetDirection;
+        targetDirection = Quaternion.Euler(0f, rotation * mouseSensitivity, 0f) * targetDirection;
 
         targetDirection.Normalize();
 

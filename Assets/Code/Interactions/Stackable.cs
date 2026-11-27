@@ -35,20 +35,18 @@ public class Stackable : MonoBehaviour
     public void PutDown(Stackable other)
     {
         above = null;
-        Debug.Log("Test 1");
+
         if (!isBeingCarried) return;
-        Debug.Log("Test 2");
+
         if (other != null) PlacedOnStack(other);
         
         isBeingCarried = false;
-        Debug.Log("Test 5");
     }
 
     private void PlacedOnStack(Stackable other)
     {
-        Debug.Log("Test 3");
         if (other == this || other.isBeingCarried || other.HasAbove()) return;
-        Debug.Log("Test 4");
+
         below = other;
         other.above = this;
         other.interactable.isCurrentlyInteractable = false;

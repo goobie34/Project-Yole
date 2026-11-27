@@ -24,6 +24,8 @@ public class PlayerCarryController : MonoBehaviour
     [SerializeField]
     private float dropDistance = 1.5f;
     [SerializeField]
+    private float dropRotation = 0f;
+    [SerializeField]
     private float groundCheckHeight = 3f;
     [SerializeField]
     private float groundCheckDistance = 6f;
@@ -35,6 +37,10 @@ public class PlayerCarryController : MonoBehaviour
     private LayerMask obstacleMask;
     [SerializeField]
     private float placementPadding = 0.05f;
+
+    [Header("Stacking")]
+    [SerializeField]
+    private float reachableHeight = 2f;
 
     //private PickupObject carriedObject;
     private Transform carriedObject;
@@ -48,6 +54,11 @@ public class PlayerCarryController : MonoBehaviour
         Stackable stackable = carriedObject.GetComponent<Stackable>();
 
         return stackable != null;
+    }
+
+    private bool IsStackTooTall(Transform stackTop)
+    {
+        return stackTop.position.y - transform.position.y > reachableHeight;
     }
 
     public bool IsDropping { get; private set; }
@@ -125,8 +136,12 @@ public class PlayerCarryController : MonoBehaviour
     public bool TryDrop()
     {
         if (!IsCarrying || IsDropping || (carryAnimation != null && carryAnimation.IsAnimating)) return false;
+        
+        ObjectSelector objectSelector = GetComponent<ObjectSelector>();
+        if (objectSelector != null) dropRotation = objectSelector.RotationAmount();
 
-        Vector3 dropPosition = transform.position + transform.forward * dropDistance;
+        Vector3 dropPosition = transform.position + Quaternion.Euler(0f, dropRotation, 0f) * Vector3.forward * dropDistance;
+
         Vector3 rayOrigin = dropPosition + Vector3.up * groundCheckHeight;
 
         if (!TryFindGround(rayOrigin, out RaycastHit hit)) return false;
@@ -196,6 +211,11 @@ public class PlayerCarryController : MonoBehaviour
 
         if (other == null) return false;
 
+        if (IsStackTooTall(other.StackPoint))
+        {
+            return false;
+        }
+
         if (other.StackPoint == null || other.HasAbove()) return false;
 
         Vector3 dropPosition = other.StackPoint.position;
@@ -203,6 +223,10 @@ public class PlayerCarryController : MonoBehaviour
         Transform droppedObject = carriedObject;
 
         Collider objectCollider = droppedObject.GetComponentInChildren<Collider>();
+
+        Stackable stackable = droppedObject.GetComponentInChildren<Stackable>();
+
+        if (stackable == null) return false;
 
         //if (objectCollider != null)
         //{
@@ -239,9 +263,7 @@ public class PlayerCarryController : MonoBehaviour
             IsDropping = false;
         };
 
-        Stackable stackable = droppedObject.GetComponentInChildren<Stackable>();
-
-        if (stackable != null) stackable.PutDown(other);
+        stackable.PutDown(other);
 
         if (carryAnimation != null && carryAnimation.CanPlayDrop)
             carryAnimation.PlayDrop(droppedObject, dropPosition, complete);
@@ -337,5 +359,22 @@ public class PlayerCarryController : MonoBehaviour
             playerTransform.position = hit.position;
             Debug.Log("Player pushed out of dropped box.");
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        ObjectSelector objectSelector = GetComponent<ObjectSelector>();
+
+        float angle = objectSelector != null
+            ? objectSelector.RotationAmount()
+            : transform.eulerAngles.y;
+
+        Vector3 dropPosition = transform.position +
+            Quaternion.Euler(0f, angle, 0f) *
+            Vector3.forward * dropDistance;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(dropPosition, 1f);
+        Gizmos.DrawLine(transform.position, dropPosition);
     }
 }
